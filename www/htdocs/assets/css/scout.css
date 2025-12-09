@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+/*======================
+  スカウトメール
+========================*/
+
+article#scout {
+	background: #001537;
+	margin-bottom: 5%;
+}
+
+.submit_btn  {
+	color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 2px 40px;
+    margin-top: 45px;
+}
+
+/* 注意書き -------------*/
+
+.note {
+	margin-bottom: 20px;
+	font-size: 1.1em;
+}
+
+/* タブ -------------*/
+
+.tab {
+	width: 18%;
+    margin: 10px 20px 0 60px;
+	padding: 0px;
+	display: table;
+	table-layout: fixed;
+}
+.tab li {
+	border-top-right-radius: 8px;
+	border-top-left-radius:  8px;
+	color: #fff;
+	font-size: 14px;
+	width: 7em;
+	font-weight: bold;
+	margin-left: 8px;
+	padding: 5px 2px 4px;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	background: #1d2f50;
+	box-sizing: border-box;
+	text-align: center;
+}
+.tab li.current {
+	width: 7em;
+	color: #001537;
+	background: #fff;
+}
+.scout_content {
+	background: #001537;
+	color: #fff;
+	margin: 0;
+	padding: 30px;
+	border-top: none;
+	overflow: hidden;
+}
+
+.scout_contents {
+	border-top: solid 2px #fff;
+	font-size: 14px;
+	padding-bottom: 40px;
+}
+
+.scout_contents .scout_content {
+	display: none;
+}
+.scout_contents .scout_content:nth-child(1) {
+	display: block;
+}
+
+/*======================
+  絞り込み表示結果
+========================*/
+
+.table_cmn table th {
+	vertical-align: middle;
+}
+
+.scout_day {
+	width: 80px;
+}
+
+.scout_name {
+	width: 150px;
+}
+
+.scout_reason {
+	width: 290px;
+}
+
+th.scout_mail {
+	width: 160px;
+}
+
+
+.scout_check td {
+	font-size: 15px;
+}
+
+.scout_check a {
+	text-decoration: underline;
+}
+
+.scout_check a:hover {
+	text-decoration: none;
+}
+
+.select_address .ms-drop ul {
+	height: 150px;
+}
+
+
+
+/*ボタン*/
+
+.scout_searc_btn {
+    float: right;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-right: 12px;
+}
+
+.scout_searc_btn li {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.scout_searc_btn li input,
+.all_btn {
+	color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 2px 40px;
+}
+
+.all_btn {
+    padding: 3px 48px;
+}
+
+
+/*======================
+  メール送信画面
+========================*/
+
+.scout_mail_wrap {
+	color: #fff;
+	font-size: 18px;
+	width: 1000px;
+	margin: 0 auto;
+	padding: 20px 0 30px;
+}
+
+.scout_mail_wrap h2 {
+	padding-bottom: 20px;
+}
+
+.scout_mail_inner {
+	border: solid 1px #fff;
+	padding: 20px;
+}
+
+.scout_mail_inner > p {
+	display: inline-block;
+	padding-bottom: 15px;
+}
+
+.scout_mail_ttl {
+	color: #000;
+	border: solid 1px #ccc;
+	background: #fff;
+	display: inline-block;
+	width: 20%;
+	text-align: center;
+	min-height: 24px;
+}
+
+.scout_mail_tmplt {
+	background: #fff;
+	border-radius: 5px;
+	border: solid 1px #ccc;
+	color: #000;
+	margin-top: 15px;
+	padding: 20px;
+	width: 80%;
+	min-height: 180px;
+}
+
+.scout_mail_btn {
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.scout_mail_btn input {
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 2px 40px;
+}
+
+.select_tmpl {
+	width: 20%;
+}

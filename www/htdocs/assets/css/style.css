@@ -1,0 +1,1720 @@
+@charset "UTF-8";
+/*----------------------
+/共通スタイル
+------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-size: 1rem;
+  background: #e5dbcc;
+  height: 100%;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+    sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+.btn_more {
+  text-align: center;
+  font-size: 20px;
+  margin: 40px 0;
+}
+
+.btn_more span {
+  color: #fff;
+  background: #604c3f;
+  padding: 10px 40px;
+}
+
+.top_content {
+  margin-bottom: 88px;
+}
+
+.top_content h1 {
+  font-size: 20px;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 88px;
+}
+
+.top_content h1 span {
+  background: #604c3f;
+  padding: 5px 15px;
+  display: inline-block;
+}
+
+.top_content h1 + p {
+  margin: 40px 0 78px 0;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #231815;
+}
+.description {
+  font-size: 12px;
+  padding: 0 20px;
+  color: #fff;
+}
+
+/*----------------------
+swal
+------------------------*/
+
+.swal-text {
+  font-weight: bold;
+}
+
+.swal-button {
+  background-color: #f7931e;
+}
+
+.swal-button:active {
+  background-color: #e28c53;
+}
+
+.swal-title {
+  font-size: 18px;
+}
+
+/*----------------------
+header
+------------------------*/
+
+header {
+  font-size: 1.4rem;
+}
+
+header .inner {
+  background: #001537;
+  padding: 10px 0;
+}
+
+header .container {
+  position: relative;
+}
+
+header h1 {
+  color: #604c3f;
+  font-weight: bold;
+}
+
+header h1 span {
+  color: #fff;
+  font-size: 30px;
+  font-size: 3rem;
+  margin-left: 20px;
+  font-weight: lighter;
+}
+
+header .logout {
+  background: #fff;
+  padding: 7px;
+  border-radius: 10px;
+  margin-left: 8px;
+  position: relative;
+  top: -3px;
+}
+
+header .logout a {
+  color: #000;
+  text-decoration: none;
+}
+
+header h1,
+header .logout {
+  display: inline-block;
+}
+
+header .input {
+  position: absolute;
+  right: 460px;
+  top: 21px;
+  font-size: 16px;
+}
+
+header .searchbox {
+  position: absolute;
+  right: 200px;
+  top: 23px;
+}
+
+header .print {
+  position: absolute;
+  top: 18px;
+  right: 0;
+}
+
+header .print span {
+  color: #fff;
+  position: relative;
+  top: -8px;
+  font-size: 14px;
+}
+
+header form {
+  position: relative;
+  top: -3px;
+  left: 30px;
+}
+
+header form .search_form {
+  background-color: transparent;
+  border: none;
+  background-image: url(../img/bg_searchform.png);
+  background-repeat: no-repeat;
+  background-size: 208px 30px;
+  padding: 3px 18px;
+  width: 208px;
+}
+
+header form .search_btn {
+  position: relative;
+  left: -6px;
+  top: -1.5px;
+}
+
+header nav {
+  background: #fff;
+}
+
+header ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header ul li {
+  *display: inline;
+  *zoom: 1;
+  width: 20%;
+  text-align: center;
+  background: #fff;
+  font-size: 16px;
+  color: #ff731e;
+  border: 0.5px solid #9fa0a0;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #ff731e;
+  display: block;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+header ul li ul.dropmenu {
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  transition: 0.2s;
+}
+
+header ul li ul.dropmenu li {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f8f8f8+0,dfdfdf+100 */
+  background: #f8f8f8;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f8f8f8 0%, #dfdfdf 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f8f8f8 0%, #dfdfdf 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f8f8f8 0%, #dfdfdf 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dfdfdf', GradientType=0);
+  /* IE6-9 */
+  padding: 10px;
+  text-align: left;
+  overflow: hidden;
+  transition: 0.2s;
+  padding: 10px;
+  border: none;
+}
+
+header ul li ul.dropmenu li a {
+  font-size: 13px;
+  color: #000;
+  display: block;
+}
+
+header ul li ul.dropmenu li:hover {
+  background: url(../img/icon_arrow_2.png) no-repeat right 10px center,
+    linear-gradient(to bottom, #f7931e 0%, #f15a24 100%);
+  background-size: 12px;
+}
+
+header ul li ul.dropmenu li:hover a {
+  color: #fff;
+}
+
+header ul li.active,
+header ul li:hover,
+header ul li ul.dropmenu li.active {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7931e+0,f15a24+100 */
+  background: #f7931e;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f7931e 0%, #f15a24 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f7931e 0%, #f15a24 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f7931e 0%, #f15a24 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7931e', endColorstr='#f15a24', GradientType=0);
+  /* IE6-9 */
+}
+
+header ul li.active a,
+header ul li:hover a,
+header ul li ul.dropmenu li.active a {
+  color: #fff;
+}
+
+header ul li:hover ul {
+  top: 100%;
+  width: 100%;
+}
+
+header ul li:hover ul li {
+  overflow: visible;
+  padding: 10px;
+}
+
+header ul li:hover ul li a {
+  white-space: nowrap;
+}
+
+input.search_form {
+  height: 30px !important;
+}
+
+/*======================
+編集中リスト
+========================*/
+
+header .edit {
+  position: absolute;
+  display: inline-block;
+  left: 420px;
+  top: 21px;
+  font-size: 16px;
+}
+
+.edit input {
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 2px 10px;
+}
+
+.btn_orange.edit2 {
+  width: 140px;
+}
+
+/* 編集中リスト内容 -------------*/
+
+#edit_list {
+  background: #fff !important;
+}
+
+#edit_list article {
+  padding: 50px 20px;
+  font-size: 16px;
+  line-height: 2.2;
+}
+
+.edit_list table {
+  width: 100%;
+}
+
+.edit_list thead {
+  font-size: 18px;
+}
+
+.edit_list table td {
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.edit_list table tr {
+  border-bottom: solid 1px #888;
+}
+
+.edit_btn input {
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 2px 10px;
+}
+
+.btn_orange.edit2 {
+  width: 140px;
+}
+
+.edit_list a {
+  color: #000;
+  text-decoration: underline;
+}
+
+/*======================
+アラート
+========================*/
+
+.alert_btn {
+  position: fixed;
+  width: 48px;
+  height: 45px;
+  right: 29px;
+  top: 18px;
+  z-index: 999;
+  /*display: none;*/
+}
+
+.alert_btn img {
+  width: 100%;
+}
+
+/* リスト内容 -------------*/
+
+#alert_list {
+  background: #fff !important;
+}
+
+#alert_list article {
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.alert_list {
+  border-top: solid 1px #888;
+}
+
+.alert_list div {
+  padding: 10px;
+  border-bottom: solid 1px #888;
+  position: relative;
+}
+
+.alert_list div em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.alert_list a {
+  text-decoration: underline;
+  color: #000;
+}
+
+.alert_stop_btn {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  width: 185px !important;
+  height: 40px;
+}
+
+.alert_update_btn {
+  width: 185px !important;
+  height: 40px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/*======================
+面接予定ドロワー
+========================*/
+
+.drawer-hamburger {
+  width: 8vw;
+  background: #ff731e;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  padding: 7px 0;
+  box-shadow: 4px -1px 4px #666;
+  right: 0;
+  top: 100px;
+  right: 50%;
+}
+
+.drawer-hamburger:hover {
+  background-color: #fff;
+  color: #ff731e;
+}
+
+.drawer-open .drawer-nav {
+  width: 50%;
+}
+
+.drawer--right.drawer-open .drawer-hamburger {
+  right: 50%;
+}
+
+.drawer-menu {
+  font-size: 20px;
+  padding: 8% 5%;
+}
+
+.drawer-menu_search {
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+/* 面接予定 -------------*/
+
+.intrv_sch {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 2;
+  font-size: 1.5em;
+  margin-top: 12em;
+}
+
+.intrv_sch thead {
+  border-bottom: solid 2px #000;
+  padding: 5px;
+}
+
+.intrv_sch th {
+  letter-spacing: 1px;
+}
+
+.intrv_sch tr {
+  border-bottom: solid 1px #000;
+}
+
+.intrv_sch td {
+  padding-bottom: 3px;
+}
+
+.intrv_sch a {
+  color: #151516;
+  text-decoration: underline;
+}
+
+.intrv_sch a:hover {
+  color: #ccc;
+}
+
+#intv_list {
+  background: #ffffff !important;
+  padding: 2em 0;
+  margin-top: 2em;
+}
+
+.intv_list_btn {
+  position: absolute;
+  left: 3%;
+  top: 166px;
+}
+
+.intv_list_btn input {
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 2px 40px;
+}
+
+/*======================
+採用情報
+========================*/
+
+.girl_search_col {
+  padding: 0 20px 65px;
+  margin-top: 20px !important;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.col_border {
+  border: solid 1px #727272;
+}
+
+.mg_bottom10 {
+  margin-bottom: 10px !important;
+}
+
+.girl_info_col {
+  background: #001537;
+  padding: 20px;
+  color: #fff;
+  margin-top: 70px !important;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.girl_info_col h1 {
+  position: absolute;
+  font-size: 16px;
+  background: #001537;
+  top: -30px;
+  padding: 10px 30px 21px;
+  border-radius: 10px;
+}
+
+.girl_info_col .left_col,
+.girl_info_col .right_col {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+
+.girl_info_col .left_col {
+  width: 240px;
+  margin-right: 30px;
+}
+
+.girl_info_col .left_col .btn_list_1 {
+  font-size: 0;
+}
+
+.girl_info_col .left_col .btn_list_1 li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 240px;
+  border: 1px solid #fff;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 5px;
+  transition: background-color 0.2s linear;
+}
+
+.girl_info_col .left_col .btn_list_1 li a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.girl_info_col .left_col .btn_list_1 li:nth-child(2),
+.girl_info_col .left_col .btn_list_1 li:nth-child(4) {
+  margin-right: 0;
+}
+
+.girl_info_col .left_col .btn_list_1 li:hover {
+  background: #fff;
+}
+
+.girl_info_col .left_col .btn_list_1 li:hover a {
+  color: #000;
+}
+
+.girl_info_col .left_col .btn_list_1 li:first-child {
+  width: 240px;
+}
+
+.girl_info_col .left_col .btn_list_1 li:nth-child(2) {
+  margin-right: 3px;
+}
+
+.girl_info_col .left_col .btn_list_2 li {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7931e+0,f15a24+100 */
+  background: #f7931e;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f7931e 0%, #f15a24 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f7931e 0%, #f15a24 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f7931e 0%, #f15a24 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7931e', endColorstr='#f15a24', GradientType=0);
+  /* IE6-9 */
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 5px;
+  transition: all 0.1s linear;
+}
+
+.girl_info_col .left_col .btn_list_2 li a {
+  color: #fff;
+}
+
+.girl_info_col .left_col .btn_list_2 li:hover {
+  opacity: 0.7;
+}
+
+.girl_info_col .right_col {
+  width: 880px;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.girl_info_col .right_col .girl_info_item_wrap {
+  margin-bottom: 10px;
+}
+
+.girl_info_col .right_col .girl_info_item_1 {
+  display: inline-block;
+  margin-right: 5px;
+  *display: inline;
+  *zoom: 1;
+}
+
+.girl_info_col .right_col .girl_info_item_1 span {
+  color: #000;
+  background: #fff;
+  padding: 3px 15px 3px 5px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-left: 6px;
+  margin-right: 5px;
+  position: relative;
+  top: -1px;
+}
+
+.girl_info_col .right_col .radio_item img {
+  position: relative;
+  bottom: -3px;
+}
+
+.girl_info_col .right_col .radio_item span {
+  background: none;
+  color: #fff;
+  padding: 0;
+  font-size: 14px;
+}
+
+.girl_info_col .bottom_col {
+  position: relative;
+  font-size: 15px;
+  background-image: url(../img/bg_remarks.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.girl_info_col .bottom_col ul {
+  position: absolute;
+  left: 50px;
+  top: -2px;
+}
+
+.girl_info_col .bottom_col ul li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.girl_info_col .bottom_col ul li span {
+  position: relative;
+  top: -4px;
+  margin-left: 3px;
+  margin-right: 10px;
+}
+
+.girl_info_col .bottom_col .girl_info_item_2,
+.girl_info_col .bottom_col .girl_info_item_4 {
+  margin-bottom: 10px;
+  margin-top: 24px;
+}
+
+.girl_info_col .bottom_col .girl_info_item_3,
+.girl_info_col .bottom_col .girl_info_item_5 {
+  background-color: #fff;
+  padding: 10px;
+  color: #000;
+  line-height: 24px;
+  min-height: 80px;
+  border-radius: 2px;
+}
+
+.girl_info_col .bottom_col .girl_info_item_3 {
+  background-image: url(../img/bg_remarks.png);
+  background-repeat: no-repeat;
+}
+
+.girl_info_col .bottom_col .girl_info_item_4 {
+  text-align: right;
+}
+
+.girls_info_img {
+  width: 240px;
+}
+
+.girls_info_img img {
+  width: 100%;
+}
+
+.girl_info_day {
+  position: absolute;
+  color: #000;
+  right: 7px;
+  top: 7px;
+}
+
+.white_box.indexname {
+  width: 38%;
+}
+
+/*======================
+面接予定情報
+========================*/
+
+.interview_wrap {
+  background: #001537;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.interview_wrap a {
+  text-decoration: underline;
+}
+
+.interview_whitebox {
+  position: relative;
+  padding-bottom: 150px;
+  margin-bottom: 54px;
+}
+
+#interview .white_box {
+  margin-left: 20px;
+  padding: 10px 5px 10px;
+  margin-bottom: 10px;
+}
+
+#interview .white_box > p {
+  display: inline-block;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+#interview .white_box.space {
+  margin-left: -1px;
+}
+
+.select_intvw {
+  width: 65% !important;
+}
+
+.optgroup {
+  margin-left: 0.2em;
+  font-size: 14px !important;
+}
+
+#interview .table_cmn table {
+  letter-spacing: 0;
+  font-size: 15px;
+}
+
+#interview .table_cmn table td {
+  letter-spacing: 0;
+  padding: 8px 10px;
+}
+
+#interview .table_cmn table th {
+  font-size: 15px;
+}
+
+.intvw_jizen {
+  position: relative;
+}
+
+.none {
+  padding: 3px !important;
+}
+
+.intvw_conf {
+  width: 100px;
+}
+
+.select_intvw_txt {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding-left: 2px;
+}
+
+.select_conf select {
+  width: 102%;
+  padding: 4px 4px;
+  background-size: 27px, 100%;
+  line-height: 1.5;
+}
+
+.red {
+  color: red;
+}
+
+.red a {
+  color: red !important;
+}
+
+.color {
+  color: #001537;
+}
+
+.color-1 {
+  background-color: #fcff80;
+}
+
+.color-2 {
+  background-color: #e2ffa4;
+}
+
+.color-3 {
+  background-color: #ffe499;
+}
+
+.color-4 {
+  background-color: #cf79d1;
+}
+
+.color-5 {
+  background-color: #4dcdf4;
+}
+
+.color-6 {
+  background-color: #c9c9c9;
+}
+
+input.intvw_check {
+  display: none;
+}
+
+.btn_orange.conf {
+  position: absolute;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 2px 40px;
+  margin-top: 25px;
+  right: 10px;
+  top: -65px;
+}
+
+.conf a {
+  text-decoration: none;
+}
+
+.radio-sqar {
+  display: none;
+  clear: both;
+}
+
+span.radio-txt {
+  padding-right: 30px !important;
+  position: relative;
+}
+
+.radio-txt::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #fff;
+}
+
+.radio-sqar:checked + .radio-txt::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  width: 6px;
+  height: 11px;
+  transform: rotate(40deg);
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.mg_bottom50 {
+  margin-bottom: 50px !important;
+}
+
+/*======================
+追跡予定情報
+========================*/
+
+#chase {
+  position: relative;
+}
+
+.chase_white_box {
+  padding: 22px 20px 205px;
+  margin-bottom: 62px;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+#chase .white_box {
+  padding: 10px 15px 10px;
+  margin-bottom: 10px;
+}
+
+.white_box.chase {
+  width: 58%;
+}
+
+#chase .white_box > p {
+  display: inline-block;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+#chase .table_cmn table td {
+  letter-spacing: 0;
+  padding: 8px 10px;
+  font-size: 15px;
+}
+
+.select_y.chase {
+  width: 11%;
+}
+
+.select_md.chase {
+  width: 9%;
+}
+
+.select_arrow.slect_chase {
+  width: 56%;
+}
+
+.select_arrow.slect_recruit {
+  width: 68%;
+}
+
+/*======================
+問合せリスト
+========================*/
+
+.datalist_white_box {
+  position: relative;
+  padding: 22px 20px 255px;
+  margin-bottom: 62px;
+}
+
+#datalist .white_box {
+  padding: 10px 15px 10px;
+  margin-bottom: 10px;
+}
+
+.white_box.datalist {
+  width: 48%;
+}
+
+#datalist .white_box > p {
+  display: inline-block;
+  padding-bottom: 0;
+  vertical-align: middle;
+}
+
+.white_box.datatel {
+  width: 25%;
+}
+
+.white_box > .txt {
+  padding: 0 5px;
+}
+
+#datalist .table_cmn table td {
+  letter-spacing: 0;
+  padding: 8px 10px;
+  font-size: 15px;
+}
+
+.chase_yellow {
+  color: #ffff00;
+}
+
+.btn_orange.chase a {
+  text-decoration: none;
+}
+
+/*======================
+グループ登録
+========================*/
+
+.group_wrap {
+  border: solid 1px #fff;
+  color: #fff;
+  margin: 0 20px;
+  padding: 20px;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.group_wrap ul {
+  width: 70%;
+  float: right;
+}
+
+.group_wrap ul li {
+  display: inline-block;
+  width: 32%;
+  padding-bottom: 22px;
+  margin-right: 6px;
+}
+
+/*確定ボタン*/
+
+.group_btn .btn_orange {
+  position: absolute;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 2px 40px;
+  right: 12px;
+  top: 21px;
+}
+
+/*チェックボックス*/
+
+.check_group-sqar {
+  display: none;
+  clear: both;
+}
+
+span.check_group-txt {
+  padding-left: 30px !important;
+  position: relative;
+}
+
+.check_group-txt::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #fff;
+}
+
+.check_group-sqar:checked + .check_group-txt::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 6px;
+  height: 11px;
+  transform: rotate(40deg);
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+/*登録ページ*/
+
+#group_conf {
+  background: #001537;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.group_conf_wrap {
+  width: 300px;
+  margin: 60px auto 30px;
+  color: #fff;
+  font-size: 18px;
+  padding-top: 100px;
+}
+
+.group_conf_wrap h3 {
+  margin-bottom: 30px;
+  margin-left: -1em;
+}
+
+.group_conf_wrap li {
+  padding-bottom: 15px;
+}
+
+.group_conf_btn {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 33px;
+  text-align: center;
+}
+
+.group_conf_enter button {
+  background: linear-gradient(#ff9c00, #f83d13);
+  border-radius: 2px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  letter-spacing: 2px;
+  padding: 4px 153px 3px 151px;
+  margin-bottom: 15px;
+}
+
+.group_conf_return button {
+  background: linear-gradient(#fff, #a2a2a2d1);
+  border-radius: 2px;
+  color: #001537;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  letter-spacing: 1px;
+  padding: 3px 88px 2px 95px;
+  margin-bottom: 10px;
+}
+
+/*======================
+マスター登録
+========================*/
+
+.master_wrap {
+  background: #001537;
+  padding-bottom: 40px;
+  margin-top: 20px;
+}
+
+.master_wrap h1 {
+  color: #fff;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.master_wrap h1 .btn_master_new {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7931e+0,f15a24+100 */
+  background: #f7931e;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f7931e 0%, #f15a24 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f7931e 0%, #f15a24 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f7931e 0%, #f15a24 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7931e', endColorstr='#f15a24', GradientType=0);
+  /* IE6-9 */
+  width: 160px;
+  text-align: center;
+  padding: 6px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.master_wrap h1 a {
+  color: #fff;
+}
+
+.master_wrap h1 div,
+.master_wrap h1 span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.master_wrap table {
+  color: #fff;
+  font-size: 16px;
+  width: 1160px;
+  margin-left: 20px;
+}
+
+.master_wrap table th {
+  background: #3f3c3c;
+  padding: 5px;
+  border: 1px solid #fff;
+}
+
+.master_wrap table .w_sm {
+  width: 90px;
+}
+
+.master_wrap table .w_md {
+  width: 186px;
+}
+
+.master_wrap table .w_lg {
+  width: 360px;
+}
+
+.master_wrap table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #fff;
+  letter-spacing: 0px;
+}
+
+.master_wrap table td a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* マスター新規登録 -------------*/
+
+.mstr_signup {
+  width: 75%;
+  margin: 25px auto 15%;
+  position: relative;
+}
+
+.mstr_signup_box {
+  border: solid 1px #fff;
+  padding: 10px 20px;
+}
+
+.mstr_signup_box > p {
+  color: #fff;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.signup_txt {
+  margin: 0 15px 0 100px;
+  width: 680px;
+  height: 28px;
+  border-radius: 3px;
+}
+
+.mstr_signup_btn {
+  text-align: center;
+}
+
+.mstr_signup_btn button,
+.mstr_signup_btn input[type="submit"] {
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 2px 40px;
+  margin-top: 25px;
+}
+
+/* publicity */
+
+.mstr_signup_box.radio p {
+  padding-right: 115px;
+}
+
+.mstr_signup_box label {
+  margin-right: 20px;
+  color: #fff;
+  font-size: 16px;
+  vertical-align: middle;
+}
+.mstr_signup_box input[type="radio"] {
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+  margin-right: 0.5em;
+  margin-top: -2px;
+}
+
+/* staff */
+
+.master_name_txt {
+  margin: 0px 15px 0 18px;
+  width: 295px;
+  height: 28px;
+  border-radius: 3px;
+}
+
+.master_name_txt.mail {
+  width: 414px;
+}
+
+.select_mstr_mail {
+  width: 27%;
+  margin: 3px;
+}
+
+.checkbx.mstr_sender {
+  position: absolute;
+  top: 240px;
+  left: 24px;
+}
+
+.checkbx_txt.mstr_sender {
+  color: #fff;
+  font-size: 16px;
+}
+
+.checkbx_sqar.mstr_sender {
+  display: none;
+  clear: both;
+}
+
+.checkbx_txt.mstr_sender::before {
+  left: -12px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+}
+
+.checkbx_sqar.mstr_sender:checked + .checkbx_txt.mstr_sender::after {
+  top: 0;
+  left: -8px;
+  width: 7px;
+  height: 13px;
+  transform: rotate(40deg);
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+}
+
+/* group */
+
+.signup_txt.group {
+  margin: 0 15px 0 100px;
+  width: 620px;
+}
+
+/* media */
+
+.mstr_signup_box.mail {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* tmpl */
+
+.signup_txt.tmpl {
+  margin: 0 15px 8px 27px;
+  width: 300px;
+  top: 6px;
+}
+
+.signup_txt.tmpl2 {
+  margin: 5px 15px 15px 61px;
+  width: 300px;
+  top: 9px;
+}
+
+.tmpl_txt {
+  margin: 10px 0;
+  width: 700px;
+  height: 175px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* address */
+
+.signup_txt.domain {
+  margin: 0 15px 0 80px;
+  width: 600px;
+}
+
+/*----------------------
+footer
+------------------------*/
+
+.footerwrap {
+  background: #604c3f;
+  padding: 40px 0;
+}
+
+.footerwrap ul:first-child {
+  text-align: center;
+}
+
+.footerwrap ul:first-child li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  padding: 0 10px;
+  border-right: 1px solid #a48b78;
+}
+
+.footerwrap ul:first-child li a {
+  color: #fff;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.footerwrap ul:first-child li:last-child {
+  border-right: none;
+}
+
+.footerwrap ul:last-child {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footerwrap ul:last-child li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin: 0 5px;
+}
+
+.footerwrap ul:last-child li a img {
+  width: 20px;
+}
+
+/*======================
+bxslider打ち消し
+========================*/
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+/*======================
+マスタ登録
+========================*/
+
+.master_list {
+  margin: 2% 5%;
+}
+
+.master_list ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.master_list li {
+  font-size: 16px;
+  background: #fff;
+  font-weight: bold;
+  margin-right: 20px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.master_list li a {
+  color: #ff731e;
+  text-decoration: none;
+  display: block;
+  padding: 15px 30px;
+  border-radius: 7px;
+}
+
+.master_list li a:hover {
+  color: #fff;
+  background: #ff731e;
+}
+
+/*======================
+ページャー
+========================*/
+
+.pagination {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.pagination span.active {
+  color: #fff;
+  background-color: #f46d2b;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.pagination span {
+  display: inline-block;
+  margin: 3px;
+  border: 1px solid #333;
+  color: #111;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.4s ease-out 0s;
+  font-size: 16px;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  line-height: 26px;
+}
+
+.pagination span a {
+  color: #333;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 点滅 */
+.blinking {
+  -webkit-animation: blink 1.5s ease-in-out infinite alternate;
+  -moz-animation: blink 1.5s ease-in-out infinite alternate;
+  animation: blink 1.5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.master_list_table {
+  background: #001537;
+}
+
+.sort_th {
+  width: 60px;
+}
+
+.sort_td {
+  font-size: 1.2em;
+}
+
+.ui-sortable-helper {
+  width: 100% !important;
+}
+
+.fa-sort {
+  width: 100%;
+}
+
+.display_menu {
+  display: flex;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.display_menu li {
+  margin-right: 15px;
+}
+
+.display_menu li a {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.reminder_attention {
+  font-size: 1.5em;
+  color: #fff;
+  padding-bottom: 22px;
+  text-align: center;
+}
+
+.btn_normal {
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  padding: 2px 5px;
+  width: 95px;
+}
+
+.password_reset_link {
+  color: #fff;
+  font-size: 15px;
+  margin-left: 15px;
+  text-decoration: underline;
+}
+
+button#dl-excel {
+  background-image: url(/assets/img/btn_export.png);
+  width: 200px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.master_error_attention {
+  color: red;
+  font-size: 14px;
+  margin-left: 190px;
+  margin-top: 10px;
+}
+
+.grop_select_wrap {
+  margin-bottom: 20px;
+}
+
+.grop_select_wrap p {
+  margin-bottom: 10px;
+}
+
+.datalist_sort {
+  margin-left: 20px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.datalist_sort a {
+  color: #fff;
+}
+
+span.alert_list_bg {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 5, 160, 0.82);
+  z-index: -1;
+}
+
+span.alert_list_ng {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: rgba(207, 206, 203, 0.82);
+  z-index: -1;
+}
+
+span.alert_list_over {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: rgba(253, 247, 30, 0.82);
+  z-index: -1;
+}

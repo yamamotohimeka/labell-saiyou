@@ -1,0 +1,526 @@
+@charset "UTF-8";
+/*----------------------
+/共通スタイル
+------------------------*/
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%;
+  height: 100%; }
+
+body {
+  font-size: 1rem;
+  background: #E5DBCC;
+  height: 100%;
+  letter-spacing: 1px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif; }
+
+li {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+textarea {
+  border-radius: 4px;
+}
+
+.container {
+  width: 1200px;
+  margin: auto; }
+
+.clear {
+  clear: both;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+
+/*----------------------
+header
+------------------------*/
+header {
+  font-size: 1.4rem; }
+  header .inner {
+    background: #001537;
+    padding: 10px 0; }
+  header .container {
+    position: relative; }
+  header h1 {
+    color: #604C3F;
+    font-weight: bold; }
+    header h1 span {
+      color: #fff;
+      font-size: 30px;
+      font-size: 3rem;
+      margin-left: 20px;
+      font-weight: lighter; }
+  header .logout {
+    background: #fff;
+    padding: 7px;
+    border-radius: 10px;
+    margin-left: 8px;
+    position: relative;
+    top: -3px; }
+    header .logout a {
+      color: #000;
+      text-decoration: none; }
+  header h1, header .logout {
+    display: inline-block; }
+  header .searchbox {
+    position: absolute;
+    right: 200px;
+    top: 23px; }
+  header .print {
+    position: absolute;
+    top: 18px;
+    right: 0; }
+    header .print span {
+      color: #fff;
+      position: relative;
+      top: -8px;
+      font-size: 14px; }
+  header form {
+    position: relative;
+    top: -4px; }
+    header form .search_form {
+      background-color: transparent;
+      border: none;
+      background-image: url(../img/bg_searchform.png);
+      background-repeat: no-repeat;
+      background-size: 208px;
+      padding: 10px 18px;
+      width: 208px; }
+    header form .search_btn {
+      position: relative;
+      left: -5px;
+      top: -3.5px; }
+  header nav {
+    background: #fff; }
+  header ul li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    width: 240px;
+    text-align: center;
+    background: #fff;
+    padding: 20px 0;
+    font-size: 16px;
+    color: #FF731E;
+    border: 0.5px solid #9FA0A0;
+    position: relative; }
+    header ul li a {
+      text-decoration: none;
+      color: #FF731E;
+      display: block; }
+    header ul li ul.dropmenu {
+      position: absolute;
+      z-index: 9999;
+      top: 100%;
+      left: 0;
+      overflow: hidden;
+      width: 0;
+      transition: .2s; }
+      header ul li ul.dropmenu li {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f8f8f8+0,dfdfdf+100 */
+        background: #f8f8f8;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #f8f8f8 0%, #dfdfdf 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #f8f8f8 0%, #dfdfdf 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #f8f8f8 0%, #dfdfdf 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dfdfdf',GradientType=0 );
+        /* IE6-9 */
+        padding: 10px;
+        text-align: left;
+        overflow: hidden;
+        transition: .2s;
+        padding: 10px;
+        border: none; }
+        header ul li ul.dropmenu li a {
+          font-size: 13px;
+          color: #000;
+          display: block; }
+      header ul li ul.dropmenu li:hover {
+        background: url(../img/icon_arrow_2.png) no-repeat right 10px center, linear-gradient(to bottom, #f7931e 0%, #f15a24 100%);
+        background-size: 12px; }
+        header ul li ul.dropmenu li:hover a {
+          color: #fff; }
+  header ul li.active, header ul li:hover {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7931e+0,f15a24+100 */
+    background: #f7931e;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f7931e 0%, #f15a24 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f7931e 0%, #f15a24 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f7931e 0%, #f15a24 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7931e', endColorstr='#f15a24',GradientType=0 );
+    /* IE6-9 */ }
+    header ul li.active a, header ul li:hover a {
+      color: #fff; }
+  header ul li:hover ul {
+    top: 100%;
+    width: 100%; }
+    header ul li:hover ul li {
+      overflow: visible;
+      padding: 10px; }
+      header ul li:hover ul li a {
+        white-space: nowrap; }
+/*----------------------
+top_content_wrap
+------------------------*/
+
+.top_content_wrap {
+  padding: 30px 0;
+}
+
+
+/*----------------------
+footer
+------------------------*/
+.footerwrap {
+  background: #604C3F;
+  padding: 40px 0; }
+  .footerwrap ul:first-child {
+    text-align: center; }
+    .footerwrap ul:first-child li {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      vertical-align: middle;
+      padding: 0 10px;
+      border-right: 1px solid #A48B78; }
+      .footerwrap ul:first-child li a {
+        color: #fff;
+        font-size: 14px;
+        font-size: 1.4rem; }
+    .footerwrap ul:first-child li:last-child {
+      border-right: none; }
+  .footerwrap ul:last-child {
+    text-align: center;
+    margin-top: 20px; }
+    .footerwrap ul:last-child li {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      margin: 0 5px; }
+      .footerwrap ul:last-child li a img {
+        width: 20px; }
+
+/*----------------------
+ボタン関係
+------------------------*/
+.btn_orange {
+    background: #f7931e; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f7931e 0%, #f15a24 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #f7931e 0%,#f15a24 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #f7931e 0%,#f15a24 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7931e', endColorstr='#f15a24',GradientType=0 ); /* IE6-9 */
+    width: 160px;
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    }
+  .btn_orange a {
+      color: #fff;
+    }
+
+.btn_orange.kensaku {
+  position: absolute;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  padding: 2px 40px;
+  left: 21px;
+  bottom: 0;
+  width: 180px;
+}
+
+.btn_orange.kensaku a {
+  text-decoration: none;
+}
+
+/*----------------------
+パンくず
+------------------------*/
+
+.breadcrumb {
+  color: #fff;
+  font-size: 18px;
+  padding: 20px;
+}
+
+/*----------------------
+テーブル　共通部分
+------------------------*/
+.table_cmn {
+  background: #001537;
+  padding-bottom: 40px;
+  margin-top: 20px !important;
+}
+.table_cmn h1 div, .table_cmn h1 span {
+  display: inline-block;
+}
+.table_cmn table {
+  color: #fff;
+  font-size: 18px;
+  width: 1160px;
+  margin-left: 20px;
+}
+.table_cmn table th {
+  background: #3F3C3C;
+  padding: 10px;
+  border: 1px solid #fff;
+  font-size: 18px;
+}
+.table_cmn table .xs {
+  letter-spacing: 10px;
+}
+.table_cmn table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #fff;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.table_cmn table td a {
+  color: #fff;
+}
+
+
+/*----------------------
+条件ボックス
+------------------------*/
+
+.white_box {
+  background: #fff; 
+  display: inline-block;
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  padding: 10px 15px 20px;
+  position: relative;
+  width: 21%;
+}
+
+/*boxの大きさ、色*/
+
+.white_box.XSmall{
+  width: 12%;
+}
+
+.white_box.SSmall{
+  width: 15%;
+}
+
+.white_box.SSSmall{
+  width: 19%;
+}
+
+.white_box.Small{
+  width: 23%;
+}
+
+.white_box.XSMedium{
+  width: 33%;
+}
+
+.white_box.XMedium{
+  width: 40%;
+}
+
+.white_box.Medium{
+  width: 56%;
+}
+
+.white_box.MMedium{
+  width: 57%;
+}
+
+.white_box.Large{
+  width: 67%;
+}
+
+.white_box.SLarge{
+  width: 72%;
+}
+
+
+.white_box.LLarge{
+  width: 80%;
+}
+
+.white_box > p {
+  color: #001537;
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+/*select矢印などの設定*/
+
+.select_arrow {
+  background: #fff;
+  display: inline-block;
+  width: 100%;
+  border-radius: 4px;
+  height: 25px;
+}
+
+.select_arrow select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.select_arrow select {
+  width: 100%;
+  display: inline-block;
+  padding: 0 4px;
+  border: 1px solid #7f8a9b;
+  background-image: url(../img/icon_arrow.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 25px, 100%;
+  height: 25px;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+/*年月日select*/
+
+.select_y {
+  width: 13%;
+}
+.select_md {
+  width: 10%;
+}
+
+/*補助テキスト*/
+
+.select_ymd_txt {
+  color: #001537;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 2px;
+  vertical-align: middle;
+}
+
+.at {
+  color: #001537;
+  padding: 0 5px 0 9px;
+}
+
+.hyphen {
+  color: #7f8a9b;
+  padding: 0 4px;
+}
+
+.select_other_txt {
+  color: #001537;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 2px;
+}
+
+/*チェックボタン*/
+
+.checkbx {
+    position: absolute;
+    top: 12px;
+    left: 24px;
+}
+
+.checkbx_sqar{
+  display: none;
+  clear: both;
+}
+
+span.checkbx_txt{
+  color: #001537;
+  padding-left: 20px !important;
+  position:relative;
+  font-size: 1.4rem;
+}
+
+.checkbx_txt::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #999;
+}
+.checkbx_sqar:checked + .checkbx_txt::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 4px;
+    width: 6px;
+    height: 11px;
+    transform: rotate(40deg);
+    border-bottom: 2px solid #001537;
+    border-right: 2px solid #001537;
+}
+
+/*年齢・身長・体重・・select*/
+
+.select_other {
+  width: 29%;
+}
+
+@-moz-document url-prefix() {
+  .select_other {
+  width: 28%;
+  }
+}
+
+/*住所select*/
+
+.select_address {
+  width: 18%;
+}
+
+input[type="text"] {
+  color: #000;
+    background: #fff;
+    display: inline-block;
+    padding: 3px 4px;
+    font-size: 13px;
+    position: relative;
+    top: -1px;
+    border: 1px solid #7f8a9b;
+}
+
+.address_txt {
+  margin-left: 15px;
+  width: 620px;
+}
+
+/* エラーメッセージ */
+.error_msg {
+    font-size: 1.5em;
+    color: #FFF;
+    background: red;
+    display: inline-block;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+}

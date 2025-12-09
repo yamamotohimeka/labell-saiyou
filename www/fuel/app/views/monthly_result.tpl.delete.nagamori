@@ -1,0 +1,455 @@
+{include file=$smarty.const.ADMIN_HEADER}
+
+
+<article>
+    <section class="top_content_wrap">
+    </section>
+    <section id="analyze_monthly">
+        <div class="container analyze_wrap date_info_col">
+            <h1 class="breadcrumb">&gt;&nbsp;集計</h1>
+            {include file=$smarty.const.ANALYZE_MENU}
+
+            <!-- TODO before -->
+            <div class="analyze_result_inner">
+                {*<div class="btn_export">*}
+                    {*<button id="dl-excel"></button>*}
+                {*</div>*}
+                <div class="analyze_result_header bold">
+                    {assign var="total" value=0}
+                    {assign var="interview_count" value=0}
+                    {foreach from=$result.total_result item=value key=key}
+                        {assign var="total" value="`$total+$value.count`"}
+                        {if isset($value.interview_result) AND $value.interview_result}
+                        {assign var="interview_count" value="`$interview_count+$value.count`"}
+                        {/if}
+                    {/foreach}
+                    <ul>
+                        <li class="title">&gt;月間集計</li>
+                        <li class="day">{$smarty.get.submission_year_from|default:"-"}.{$smarty.get.submission_month_from|default:"-"}〜{$smarty.get.submission_year_to|default:"-"}.{$smarty.get.submission_month_to|default:"-"}</li>
+                        <li class="num count">面接件数{$interview_count|default:"0"}名</li>
+                        <li class="num">面接振り件数{$total|default:"0"}</li>
+                    </ul>
+                </div>
+                {*<div class="monthly_result">*}
+                    {*<ul>*}
+                        {*{foreach from=$result.total_result item=value key=key}*}
+                            {*{if isset($value.interview_result) AND $value.interview_result}*}
+                        {*<li>{$setting_data.interview_result[$value.interview_result]|default:""}&nbsp;{$value.count}件</li>*}
+                            {*{/if}*}
+                        {*{/foreach}*}
+                    {*</ul>*}
+                {*</div>*}
+
+                <div class="analyze_result_contents">
+
+                    {foreach from=$result.detail_result item=value key=key}
+                        {if $key}
+                    <div class="analyze_result_block">
+                        <table class="mon_tbl02">
+                            <tbody>
+                            <tr><th><span class="brown_box btm">{$masterData.belonging_store[$key]|default:"不明"}</span></th><td class="monthly_num">面接振り件数　{$value.total}</td></tr>
+                            {assign var="interview_result_total" value=0}
+                            {foreach from=$setting_data["interview_result"] item=value2 key=key2}
+                                {if $key2}
+                            <tr><th>{$value2|default:"不明"}</th>
+                                <td class="monthly_num">
+                                    {assign var="interview_result_count" value=$result.detail_result[$key][$key2]|default:0}
+                                    {$result.detail_result[$key][$key2]|default:"0"}
+                                </td>
+                            </tr>
+                                    {assign var="interview_result_total" value="`$interview_result_total+$interview_result_count`"}
+                                {/if}
+                            {/foreach}
+                            <tr><th></th><td class="monthly_num">面接件数　{$interview_result_total}</td></tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                        {/if}
+                    {/foreach}
+                </div><!-- analyze_result_contents-->
+            </div><!-- analyze_result_inner-->
+
+
+            <!-- TODO after -->
+            <div class="analyze_result_inner">
+                <header class="analyze_result_header bold">
+                    <h2 class="analyze_result_title">月間集計</h2>
+                    <time datetime="">【日付】H.30.{$smarty.get.submission_month_from|default:"-"}.{$smarty.get.submission_day_from|default:"-"}～H30.{$smarty.get.submission_month_to|default:"-"}.{$smarty.get.submission_day_to|default:"-"}</time>
+                    <!--TODO 和暦表記、日が-で表示されてしまう {$smarty.get.submission_year_from|default:"-"}{$smarty.get.submission_year_to|default:"-"}-->
+                </header>
+
+                <div class="analyze_table_wrapper table_col_2">
+                    <!-- TODO 全店 -->
+                    <table class="analyze_table">
+                        <thead>
+                        <tr>
+                            <th class="table_right_db">&nbsp;</th>
+                            <th>採用</th>
+                            <th>不採用</th>
+                            <th>撃沈</th>
+                            <th class="table_left_db">合計</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th class="table_right_db">全店</th>
+                            <td>200</td>
+                            <td>20</td>
+                            <td>30</td>
+                            <td class="table_left_db">260</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="analyze_table">
+                        <thead class="table_row_2">
+                        <tr>
+                            <th colspan="5">採用</th>
+                        </tr>
+                        <tr>
+                            <th>求人</th>
+                            <th>SC</th>
+                            <th>出戻り</th>
+                            <th>紹介</th>
+                            <th>移籍</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>175</td>
+                            <td>15</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>5</td>
+                        </tr>
+                    </table>
+
+                    <!-- TODO 各店舗 -->
+                    <!--
+                    {assign var="interview_result_total" value=0}
+                    {foreach from=$setting_data["interview_result"] item=value2 key=key2}
+                        {if $key2}
+                            <tr><th>{$value2|default:"不明"}</th>
+                                <td class="monthly_num">
+                                    {assign var="interview_result_count" value=$result.detail_result[$key][$key2]|default:0}
+                                    {$result.detail_result[$key][$key2]|default:"0"}
+                                </td>
+                            </tr>
+                            {assign var="interview_result_total" value="`$interview_result_total+$interview_result_count`"}
+                        {/if}
+                    {/foreach}
+                    -->
+
+                    <table class="analyze_table">
+                        <thead>
+                        <tr>
+                            <th class="table_right_db">&nbsp;</th>
+                            <th>採用</th>
+                            <th>不採用</th>
+                            <th>撃沈</th>
+                            <th class="table_left_db">合計</th>
+                        </tr>
+                        </thead>
+
+                        {assign var="interview_result_total" value=0}
+                        {foreach from=$setting_data["interview_result"] item=value2 key=key2}
+                            {if $key2}
+                            <tr>
+                                <th class="table_right_db">スピード梅田 {$key2}</th>
+                                <td>32</td><!-- TODO 採用 -->
+                                <td>5</td> <!-- TODO 不採用 -->
+                                <td>5</td> <!-- TODO 撃沈 -->
+                                <td class="table_left_db">42</td><!-- TODO 合計 -->
+                            </tr>
+                            {/if}
+                        {/foreach}
+
+                        <!-- TODO 一旦コメントアウト
+                        <tr>
+                            <th class="table_right_db">スピード梅田</th>
+                            <td>32</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td class="table_left_db">42</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">スピード京橋</th>
+                            <td>22</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td class="table_left_db">27</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">スピード難波</th>
+                            <td>16</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td class="table_left_db">21</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">スピード日本橋</th>
+                            <td>17</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td class="table_left_db">27</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">エコ梅田</th>
+                            <td>16</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="table_left_db">16</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">エコ京橋</th>
+                            <td>17</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td class="table_left_db">22</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">エコ難波</th>
+                            <td>16</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td class="table_left_db">21</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">エコ日本橋</th>
+                            <td>11</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="table_left_db">11</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">エコ天王寺</th>
+                            <td>11</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td class="table_left_db">21</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">ティーク谷9</th>
+                            <td>12</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td class="table_left_db">17</td>
+                        </tr>
+                        <tr>
+                            <th class="table_right_db">さくら日本橋</th>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td class="table_left_db">35</td>
+                        </tr>
+                        -->
+                    </table>
+
+                    <!-- TODO 採用内訳 -->
+                    <table class="analyze_table">
+                        <thead class="table_row_2">
+                        <tr>
+                            <th colspan="5">採用</th>
+                        </tr>
+                        <tr>
+                            <th>求人</th>
+                            <th>SC</th>
+                            <th>出戻り</th>
+                            <th>紹介</th>
+                            <th>移籍</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>30</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>0</td>
+                            <td>5</td>
+                            <td>0</td>
+                            <td>5</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</article>
+
+
+<table class="table table-bordered table-condensed table-to-export" data-sheet-name="月間集計" style="border:1px solid #333;display:none;">
+    <thead>
+    <tr><th></th></tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>集計期間</td>
+        <td>{$smarty.get.submission_year_from|default:"-"}.{$smarty.get.submission_month_from|default:"-"}〜{$smarty.get.submission_month_to|default:"-"}</td>
+    </tr>
+    <tr>
+        <td>面接振り件数</td>
+        <td>{$total}件</td>
+    </tr>
+    <tr>
+        <td>面接件数</td>
+        <td>{$interview_count}名</td>
+    </tr>
+    {foreach from=$result.total_result item=value key=key}
+        {if isset($value.interview_result) AND $value.interview_result}
+    <tr>
+        <td>{$setting_data.interview_result[$value.interview_result]|default:""}</td>
+        <td>{$value.count}件</td>
+    </tr>
+        {/if}
+    {/foreach}
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+    <thead>
+    <tr>
+        <th>店名</th>
+        <th>面接振り件数</th>
+        {foreach from=$setting_data["interview_result"] item=value2 key=key2}
+            {if $key2}
+        <th>{$value2|default:"不明"}</th>
+            {/if}
+        {/foreach}
+        <th>面接件数</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach from=$result.detail_result item=value key=key}
+    {if $key}
+    <tr>
+        <td>{$masterData.belonging_store[$key]|default:"不明"}</td>
+        <td>{$value.total|default:0}</td>
+        {assign var="interview_result_total" value=0}
+        {foreach from=$setting_data["interview_result"] item=value2 key=key2}
+        {if $key2}
+        <td>
+            {assign var="interview_result_count" value=$result.detail_result[$key][$key2]|default:0}
+            {$result.detail_result[$key][$key2]|default:"0"}
+        </td>
+            {assign var="interview_result_total" value="`$interview_result_total+$interview_result_count`"}
+        {/if}
+        {/foreach}
+        <td>{$interview_result_total}</td>
+    </tr>
+    {/if}
+    {/foreach}
+    </tbody>
+</table>
+
+{literal}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.0/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+<script>
+    $('#dl-excel').click(function () {
+        var wopts = {
+            bookType: 'xlsx',
+            bookSST: false,
+            type: 'binary'
+        };
+
+        var workbook = {SheetNames: [], Sheets: {}};
+
+        document.querySelectorAll('table.table-to-export').forEach(function (currentValue, index) {
+            var n = currentValue.getAttribute('data-sheet-name');
+            if (!n) {
+                n = 'Sheet' + index;
+            }
+            workbook.SheetNames.push(n);
+            workbook.Sheets[n] = XLSX.utils.table_to_sheet(currentValue, wopts);
+        });
+
+        var wbout = XLSX.write(workbook, wopts);
+
+        function s2ab(s) {
+            var buf = new ArrayBuffer(s.length);
+            var view = new Uint8Array(buf);
+            for (var i = 0; i != s.length; ++i) {
+                view[i] = s.charCodeAt(i) & 0xFF;
+            }
+            return buf;
+        }
+
+        var workbookname = $(".table.table-to-export").attr('data-sheet-name');
+
+        workbookname = workbookname + '{/literal}{$smarty.get.submission_year_from|default:"-"}.{$smarty.get.submission_month_from|default:"-"}〜{$smarty.get.submission_month_to|default:"-"}{literal}';
+        saveAs(new Blob([s2ab(wbout)], {type: 'application/octet-stream'}), workbookname + '.xlsx');
+    });
+</script>
+{/literal}
+
+{include file=$smarty.const.ADMIN_FOOTER}

@@ -1,0 +1,284 @@
+@charset "UTF-8";
+.analyze_info_title {
+  margin-left: auto;
+  margin-right: 30px;
+  margin-bottom: 24px;
+  padding: 10px 0;
+  border-radius: 0 0 5px 5px;
+  width: 24%;
+  background: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.analyze_result_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 16px 16px;
+  margin-bottom: 32px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: solid 1px #231815;
+}
+
+.analyze_result_header .analyze_result_title {
+  font-size: 20px;
+}
+
+.analyze_table_caption {
+  margin-bottom: 8px;
+}
+
+.analyze_table_annotation {
+  margin-top: -24px;
+  margin-bottom: 32px;
+  text-align: right;
+  color: red;
+}
+
+.analyze_table_wrapper.table_col_2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-column-gap: 48px;
+  grid-row-gap: 32px;
+}
+
+.analyze_table_wrapper.table_col_2 .analyze_table {
+  width: 100%;
+  border: 2px solid #000;
+  border-collapse: collapse;
+}
+
+.analyze_table_wrapper.table_col_2 .analyze_table tr {
+  border: 2px solid #000;
+}
+
+.analyze_table_wrapper.table_col_2 .analyze_table td, .analyze_table_wrapper.table_col_2 .analyze_table th {
+  border: 1px solid #000;
+}
+
+.analyze_table_wrapper.table_col_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.analyze_table_wrapper.table_col_1 .analyze_table_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+.analyze_table_wrapper.table_col_1 .analyze_table {
+  min-width: 30%;
+  margin-bottom: 32px;
+  border-collapse: collapse;
+  border: 2px solid #000;
+}
+
+.analyze_table_wrapper.table_col_1 .analyze_table tr {
+  border: 2px solid #000;
+}
+
+.analyze_table_wrapper.table_col_1 .analyze_table td, .analyze_table_wrapper.table_col_1 .analyze_table th {
+  border-left: 1px solid #000;
+}
+
+.analyze_table_wrapper.table_col_1 .analyze_table tfoot tr {
+  border-top: 3px double #000;
+}
+
+.analyze_table_wrapper.table_scrollable {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 75vh;
+}
+
+.analyze_table_wrapper.table_scrollable .analyze_table {
+  white-space: nowrap;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.analyze_table_wrapper.table_scrollable .table_split_cell,
+.analyze_table_wrapper.table_scrollable .split_cell {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 102;
+  padding: 0;
+  height: 64px;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
+.analyze_table_wrapper.table_scrollable .table_split_cell .table_split_flex,
+.analyze_table_wrapper.table_scrollable .split_cell .table_split_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 8px;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, transparent), color-stop(49%, transparent), color-stop(50%, #000), color-stop(51%, transparent), to(transparent));
+  background-image: linear-gradient(to right top, transparent 0, transparent 49%, #000 50%, transparent 51%, transparent 100%);
+}
+
+.analyze_table_wrapper.table_scrollable .row_fixed1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  border-top: 2px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable .row_fixed2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 32px;
+  z-index: 100;
+  background-color: #fff;
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable .row_fixed2:not(.table_right_bb) {
+  border-right: 1px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable .col_fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  z-index: 101;
+  background-color: #fff;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable tbody tr:not(:last-child) th {
+  border-bottom: 1px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable tbody td:not(.table_right_bb) {
+  border-right: 1px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable tfoot th {
+  border: 2px solid #000;
+  border-top: 3px double #000;
+}
+
+.analyze_table_wrapper.table_scrollable tfoot td {
+  border-top: 3px double #000;
+  border-bottom: 2px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable tfoot td:not(.table_right_bb) {
+  border-right: 1px solid #000;
+}
+
+.analyze_table_wrapper.table_scrollable .total_col {
+  border: 3px double #000;
+  border-bottom: 0;
+}
+
+.analyze_table_wrapper.divide tr:last-child > * {
+  border-bottom: 2px solid #000;
+}
+
+.analyze_table_wrapper .ranking_head {
+  border-bottom: 3px double #000;
+}
+
+.analyze_table {
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.analyze_table th {
+  padding: 8px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+.analyze_table td {
+  padding: 0 8px;
+  font-weight: bold;
+  height: 32px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.analyze_table .table_right_db {
+  border-right: 3px double #000 !important;
+}
+
+.analyze_table .table_left_db {
+  border-left: 3px double #000 !important;
+}
+
+.analyze_table .table_right_bb {
+  border-right: 2px solid #000 !important;
+}
+
+.analyze_table .table_left_bb {
+  border-left: 2px solid #000 !important;
+}
+
+.analyze_table .table_right_sb {
+  border-right: 1px solid #000 !important;
+}
+
+.analyze_table .table_left_sb {
+  border-left: 1px solid #000 !important;
+}
+
+/* 2段テーブルヘッダー */
+.table_row_2 tr:first-child {
+  border-bottom-width: 1px;
+}
+
+.table_row_2 tr:last-child {
+  border-top-width: 1px;
+}
+
+.table_row_2 td,
+.table_row_2 th {
+  height: 16px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/*# sourceMappingURL=analyze2020.css.map */

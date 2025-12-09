@@ -1,0 +1,1051 @@
+@charset "UTF-8";
+
+
+/*======================
+   データ入力
+========================*/
+
+.input_alert {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.input_alert > p {
+    background: #f9f203;
+
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.input_top_line {
+	margin: 15px 20px 10px;
+}
+
+.officer {
+	background: #ef0034;
+	color: #fff;
+	padding: 7px;
+	width: 150px;
+	text-align: center;
+	display: inline-block;
+}
+
+.input_show_index {
+	float: right;
+}
+
+.btn_orange.index {
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	padding: 2px 40px;
+	width: 210px;
+}
+
+.date_info_col {
+	background: #001537;
+	font-size: 1.4rem;
+	padding: 20px 40px;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	position: relative;
+	min-height: 35vw;
+}
+
+
+.date_info_breadcrumb {
+    padding: 10px;
+}
+
+.date_info_inner {
+	background: #fff;
+	margin-top: 15px;
+	margin-bottom: 50px;
+	overflow: hidden;
+	position: relative;
+	color: #001537;
+}
+
+.required {
+	color: #FF1537;
+}
+
+.required2 {
+	color: #3a9ed9;
+}
+
+span.required3 {
+    color: #3a9ed9;
+    display: none;
+}
+
+
+/* 新規作成 -------------*/
+
+.date_right_new label {
+    position: absolute;
+    right: 2.9%;
+    top: 3.2%;
+}
+
+.date_right_new input {
+	display: none;
+}
+
+/* コンテンツ左側 -------------*/
+
+.date_left_col {
+	float: left;
+	padding: 15px 3px 0 10px;
+	width: 255px;
+	font-weight: bold;
+}
+
+.white_box.input_left {
+	width: 100%;
+	margin-right: 0;
+	padding: 5px 0;
+	margin-bottom: 10px;
+}
+
+/*select年月日*/
+
+.select_input_y {
+	width: 28%;
+}
+.select_input_md {
+	width: 21%;
+}
+
+.select_input_ymd_txt {
+	color: #001537;
+	font-size: 13px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+/*select時間*/
+
+.select_input_h {
+	width: 23%;
+}
+
+/*仮予約*/
+
+.relative {
+	position: relative;
+}
+.tbd {
+    position: absolute;
+    right: 5px;
+    top: 33px;
+}
+.tbd input {
+	vertical-align: -2px;
+}
+.tbd label span.text_right  {
+	padding-right: 10px;
+}
+.select_input_half {
+	width: 75%;
+}
+.input_left .description,.input_right .description,.input_check2 .description {
+	font-size: 11px;
+	padding: 10px 0;
+	letter-spacing: 0px;
+	color: #FF1537;
+}
+
+/*タイマー*/
+.timer {
+    position: absolute;
+    left: 77px;
+    top: 3px;
+}
+.timer input {
+	vertical-align: -2px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+/*店舗スタッフ*/
+
+.tenpostaff {
+    position: absolute;
+    left: -5px;
+    top: 0px;
+}
+.tenpostaff input {
+	vertical-align: -2px;
+}
+
+.bottom20 {
+	padding-bottom: 20px !important;
+}
+
+/* 画像参照　*/
+
+.white_box.input_img {
+	width: 100%;
+	margin-right: 0;
+	padding: 30px 0 0;
+	margin-bottom: 10px;
+}
+
+.imgInput > p {
+	display: inline-block;
+}
+
+.img-refer {
+	background: #001537;
+	color: #fff;
+	border: none;
+	letter-spacing: 3px;
+	padding: 2px 27px;
+}
+.photo_input {
+	background: #001537;
+	padding: 6px 55px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+.del_photo_wrap {
+    width: 100px;
+    background: #666;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #FFF;
+    margin-top: 10px;
+}
+
+.del_photo_wrap label {
+    width: 100%;
+    display: block;
+}
+
+.del_photo_wrap label input {
+    width: 20px;
+    height: 15px;
+}
+
+.imgView {
+	width: 180px;
+	display: inline-block;
+	padding-top: 15px;
+	margin-left: 10px;
+}
+
+
+/* コンテンツ右側 -------------*/
+
+.date_right_col {
+	display: inline-block;
+	padding: 14px 10px 68px;
+	width: 865px;
+	font-weight: bold;
+	border-left: solid 2px #6f7b8e;
+}
+
+.white_box.input_right {
+	margin-right: 10px;
+	padding: 5px 0;
+	margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="mail"] {
+	color: #000;
+    background: #fff;
+    display: inline-block;
+    padding: 3px 4px;
+    font-size: 13px;
+    position: relative;
+    top: -1px;
+    border: 1px solid #7f8a9b;
+    border-radius: 4px;
+    height: 25px;
+}
+
+select {
+    color: #000;
+}
+
+.slect_input_cup {
+	width: 63%;
+}
+
+.input_right> p {
+	color: #001537;
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.white_box.Mail{
+  width: 50%;
+}
+
+
+/* コンテンツ右・下側 -------------*/
+
+.date_right_btm_col {
+	border-top: solid 2px #6f7b8e;
+    width: 100%;
+    clear: both;
+    padding-top: 20px;
+}
+
+/* 画像アップロード */
+
+#img_selectFile {
+    padding-top: 20px;
+    margin-left: 20px;
+    width: 500px;
+}
+
+.photo_input_img {
+    background: #001537;
+    padding: 2px 31px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: normal;
+    border: none;
+}
+
+.filename {
+    display: inline-block;
+    font-size: 13px;
+    border: solid 1px #001537;
+    padding: 4px 5px;
+}
+
+
+/* 検索ワード */
+.word_col {
+	display: inline-block;
+}
+.word_number {
+	display: inline-block;
+}
+
+/* 初回出勤日 */
+
+.right_absl {
+	position: absolute;
+	width: 60%;
+	top: -8px;
+	right: -60px;
+}
+
+.white_box.input_absl {
+	width: 68%;
+	display: inline-block;
+	margin-right: 0;
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+.select_absl_y {
+	width: 21%;
+}
+
+.select_absl_md {
+	width: 15%;
+}
+
+.input_bikou {
+	width: 800px;
+}
+
+/* 追跡 */
+
+.white_box.input_how {
+    width: 30%;
+    display: inline-block;
+    margin-right: 0;
+    padding: 0;
+    margin: 30px 0 10px;
+}
+
+.select_how {
+	width: 60%;
+}
+.remark_box {
+	padding-bottom: 10px;
+}
+.select_remark_y {
+	width: 10%;
+}
+
+.select_remark_md {
+	width: 7%;
+}
+
+
+/* チェックボックス */
+
+.white_box.input_check,
+.white_box.input_check2 {
+	width: 100%;
+	padding: 5px 0;
+	margin-bottom: 10px;
+}
+
+.checkbox,
+.checkbox2 {
+	width: 100%;
+	padding-top: 3px;
+	line-height: 2.3;
+}
+
+.checkbox3 {
+	width: 22%;
+	display: inline-block;
+	line-height: 2.3;
+}
+
+.checkbox4 {
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+
+.checkbox-sqar{
+	display: none;
+	clear: both;
+}
+
+span.checkbox-txt{
+	padding-left: 20px !important;
+	position:relative;
+	font-size: 1.3rem;
+}
+
+.checkbox-txt::before{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #999;
+}
+.checkbox-sqar:checked + .checkbox-txt::after{
+  	content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 4px;
+    width: 6px;
+    height: 11px;
+    transform: rotate(40deg);
+    border-bottom: 2px solid #001537;
+    border-right: 2px solid #001537;
+}
+
+.text_right{
+	padding-right: 20px;
+}
+
+
+/*データ入力ボタン -------------*/
+
+
+.confirm_btn {
+	clear: both;
+	padding-top: 20px;
+}
+
+.confirm_btn button {
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 2px 40px;
+}
+
+.date_right_x {
+    position: absolute;
+    right: -7px;
+    top: -4px;
+}
+
+.date_right_x input {
+	display: none;
+}
+
+.date_right_koshin {
+    position: absolute;
+    right: 0;
+    top: 67px;
+}
+.date_right_hukusei {
+    position: absolute;
+    right: 0;
+    top: 135px;
+}
+
+.date_right_delete {
+    position: absolute;
+    right: 0;
+    top: 210px;
+}
+
+.date_right_koshin button,
+.date_right_hukusei button,
+.date_right_delete button{
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    padding: 2px 5px;
+    width: 95px;
+}
+
+.hukusei {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #6797e0), color-stop(1.00, #1a59b5));
+	background: -webkit-linear-gradient(#6797e0, #1a59b5);
+	background: -moz-linear-gradient(#6797e0, #1a59b5);
+	background: -o-linear-gradient(#6797e0, #1a59b5);
+	background: -ms-linear-gradient(#6797e0, #1a59b5);
+	    background: linear-gradient(#6797e0, #1a59b5);
+}
+
+.btn_orange.delete {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #20d779), color-stop(1.00, #255b0e));
+  background: -webkit-linear-gradient(#20d779, #255b0e);
+  background: -moz-linear-gradient(#20d779, #255b0e);
+  background: -o-linear-gradient(#20d779, #255b0e);
+  background: -ms-linear-gradient(#20d779, #255b0e);
+      background: linear-gradient(#20d779, #255b0e);
+}
+
+/* 過去の履歴 -------------*/
+
+
+.bordernone {
+	border: none;
+}
+
+.input_return,
+.timer_estab {
+	font-size: 16px !important;
+	font-weight: normal !important;
+	color: #000 !important;
+	display: inline-block;
+}
+
+.date_info_pust_inner {
+	background: #fff;
+    margin-top: -16px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+    color: #001537;
+    clear: both;
+}
+
+.date_left_col.past {
+    padding: 0 3px 15px 10px;
+}
+
+.date_right_col.past {
+	padding: 0 10px 70px;
+}
+
+.tbd2 {
+	position: absolute;
+    right: 69px;
+    top: 25px;
+    font-size: 13px;
+    color: #fff;
+    background: #c4c4c4;
+    border-radius: 4px;
+    font-weight: normal;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.tbd_staff {
+    left: 0;
+    top: -15px;
+    font-size: 15px;
+}
+
+.tbd2.timer {
+    top: 0px;
+    width: 49px;
+}
+
+.tbd2.chaise {
+    top: 2px;
+    width: 80px;
+    left: 0;
+}
+
+.input_terms {
+	margin-bottom: 5px;
+}
+.input_terms > p {
+	color: #fff;
+	background: #c4c4c4;
+	border-radius: 4px;
+	font-weight: normal;
+	padding: 5px 10px;
+	font-size: 16px;
+	display: inline-block;
+	margin: 10px 15px 0 0;
+}
+
+.term_on {
+	background: #97ca3e !important;
+}
+
+.undecided {
+	left: 138px;
+	top: 26px;
+	width: 66px;
+}
+
+.input_past_txt {
+	color: #001537;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 13px;
+	padding-right: 5px;
+}
+
+/*　履歴のボタン*/
+
+.date_right_koshin.past button,
+.date_right_hukusei.past button {
+	width: 82px;
+}
+
+
+.triangle {
+	position: absolute;
+	bottom: 7%;
+    right: 43%;
+	width: 0;
+	height: 0;
+	margin-left: 17vw;
+	border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #001537;
+}
+
+.triangle2 {
+    position: absolute;
+    bottom: 2%;
+    right: 43%;
+    width: 0;
+    height: 0;
+    margin-left: 17vw;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #001537;
+    z-index: 5;
+}
+
+
+/* 送信 -------------*/
+
+.send_wrap {
+	text-align: center;
+	margin-top: 15%;
+}
+
+.info_send button {
+	background: linear-gradient(#ff9c00, #f83d13);
+	border-radius: 2px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 2px;
+    padding: 4px;
+    margin-bottom: 15px;
+    width: 335px;
+}
+
+.info_return button {
+	background: linear-gradient(#fff, #a2a2a2d1);
+	border-radius: 2px;
+    color: #001537;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 1px;
+    padding: 3px;
+    margin-bottom: 10px;
+    width: 335px;
+}
+
+/* 面接予定送信/採用情報送信 -------------*/
+
+.send_col {
+    background: #fff;
+    font-size: 1.4rem;
+    padding: 100px 40px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    position: relative;
+    min-height: 35vw;
+}
+
+.send_col_wrap {
+	text-align: center;
+}
+
+.send_col_wrap h2,
+.send_col h2 {
+	font-size: 30px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.white_box.send {
+	float: none;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+.white_box.send .btn_orange {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    padding: 1px 20px;
+    right: 303px;
+    top: 34px;
+    width: 79px;
+}
+
+.select_input_send {
+	width: 300px;
+}
+
+.input_sender_wrap {
+	color: #001537;
+	font-size: 15px;
+	width: 60%;
+	margin: 40px auto;
+	position: relative;
+	text-align: left;
+}
+
+.input_sender_wrap > p {
+	font-weight: bold;
+	line-height: 2.5;
+	letter-spacing: 2px;
+}
+
+.btn_wht {
+    border: solid 1px #001537;
+    border-radius: 5px;
+    padding: 3px;
+    position: absolute;
+    left: 75px;
+    top: 5px;
+}
+
+.sender_check {
+	padding-top: 20px;
+}
+
+.sender_check li {
+	display: inline-block;
+    width: 20%;
+    padding-bottom: 30px;
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+/*チェックボックス*/
+
+.check_sender-sqar {
+  display: none;
+  clear: both;
+}
+
+span.check_sender-txt {
+  padding-left: 30px !important;
+  position:relative;
+}
+
+.check_sender-txt::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #001537;
+}
+
+.check_sender-sqar:checked + .check_sender-txt::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 6px;
+  height: 11px;
+  transform: rotate(40deg);
+  border-bottom: 2px solid #001537;
+  border-right: 2px solid #001537;
+}
+
+/* メール送信画面 -------------*/
+
+.send_mail_col {
+	background: #001537;
+	font-size: 1.4rem;
+	padding: 40px 40px 100px;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	position: relative;
+}
+
+.send_mail_col h2 {
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+}
+
+.send_mail_wrap {
+    width: 60%;
+    margin:40px auto;
+}
+
+.send_mail_line {
+	vertical-align: middle;
+	padding-bottom: 15px;
+}
+
+.send_mail_tl {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.4;
+    width: 150px;
+    margin-left: 5px;
+}
+
+.send_mail_txt {
+    width: 430px;
+    padding: 5px 10px !important;
+    height: 28px !important;
+}
+
+.send_mail_contents {
+	width: 100%;
+	margin-top: 10px;
+	padding: 20px 20px 50px;
+	font-size: 15px;
+	line-height: 1.4;
+}
+
+.mail_button button {
+	width: 310px;
+	margin: 0 10px;
+}
+
+/* メール送信完了 -------------*/
+
+.mail_complete {
+	padding: 150px 0;
+	text-align: center;
+}
+
+.mail_complete > p {
+	color: #fff;
+	font-size: 18px;
+	padding-bottom: 20px;
+}
+
+
+
+
+
+/* 画像拡大
+-------------------------- */
+.lb {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.7);
+    opacity: 0;
+    transition: .3s opacity ease;
+    z-index: -1;
+}
+
+.lb img {
+    width: auto !important;
+    max-height: 100%!important;
+    transform: scale(.7);
+    transition: .4s transform ease;
+    pointer-events: none;
+}
+
+.lb_target {
+    opacity: 1;
+    z-index: 103;
+}
+
+.lb_target img {
+    transform: scale(1);
+}
+
+.lb::before,.lb::after {
+    display: block;
+    position: fixed;
+    content: "";
+    width: 24px;
+    height:3px;
+    top: 24px;
+    right: 12px;
+    background: #fff;
+    border-radius: 4px;
+}
+.lb::before {
+    transform: rotate(-315deg);
+}
+.lb::after {
+    transform: rotate(315deg);
+}
+
+.photo_preview {
+    width: 135px;
+    height: 25px;
+    line-height: 20px;
+    text-align: center;
+}
+
+input:disabled {
+    background: #EEE!important;
+}
+
+select:disabled {
+    background: #EEE;
+}
+
+.input_check .description {
+    font-size: 11px;
+    padding: 0;
+    letter-spacing: 0px;
+    color: #FF1537;
+    display: inline-block;
+}
+
+/* 20190424 =================== */
+
+/** メモ **/
+.memo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 800px;
+  margin-bottom: 16px;
+}
+
+.input_memo {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #7f8a9b;
+}
+
+.upper_memo {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.upper_memo label {
+  margin: 0 4px;
+}
+.upper_memo .separate {
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  border-left: 1px solid #aaa;
+  margin: 0 6px;
+}
+
+/** ニコイチ **/
+#form_nikoiti {
+  /*width: 120px;*/
+	width: 330px;
+  margin-right: 20px;
+}
+
+/** 色分け **/
+.atleast,
+.atleast + .ms-parent .ms-choice,
+.atleast + .checkbox-txt::before {
+  background-color: rgb(255, 209, 209) !important;
+}
+/** 無効な入力 **/
+.invalid {
+  background-color: red !important;
+}
+
+/**面接前確認欄 **/
+.confirm_box {
+  margin-top: 16px;
+}
+
+
+.input_error {
+	background-color: red;
+	color: #FFF;
+	display: inline-block;
+	padding: 3px;
+	border-radius: 10px;
+	font-weight: initial;
+	box-shadow: 1px 1px 1px #999;
+}
+
+
+.layer{
+	position: absolute;
+	width: 94%;
+	height: 94%;
+	z-index:10000;
+	background-color:rgba(255,0,0,0.15);
+}
+
+.date_right_btm_col_layer_yellow1 {
+	border-top: solid 2px #6f7b8e;
+	background-color: rgba(238, 238, 0, 0.24);
+	width: 100%;
+	/*height: auto;*/
+	/*min-height: 100px;*/
+	clear: both;
+	padding: 20px 10px 10px 10px;
+}
+
+.date_right_btm_col_layer_yellow2 {
+	border-top: solid 2px #6f7b8e;
+	background-color: rgba(238, 238, 0, 0.24);
+	width: 100%;
+	/*height: auto;*/
+	/*min-height: 100px;*/
+	clear: both;
+	padding: 20px 10px 10px 10px;
+}
+
+.yellow_box{
+	background-color: transparent !important;
+}
