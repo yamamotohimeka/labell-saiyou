@@ -242,12 +242,15 @@ footer
 
 .btn_orange.kensaku {
   position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   color: #fff;
   font-size: 16px;
   border: none;
   padding: 2px 40px;
-  left: 21px;
-  bottom: 0;
   width: 180px;
 }
 
@@ -277,10 +280,16 @@ footer
   display: inline-block;
 }
 .table_cmn table {
-  color: #fff;
+  width: 98%;
+  margin: 0 auto;
   font-size: 18px;
-  width: 1160px;
-  margin-left: 20px;
+  color: #fff;
+}
+.table_cmn table thead {
+  th{
+    font-size:13px !important;
+    padding: 5px 2px;
+  }
 }
 .table_cmn table th {
   background: #3F3C3C;
@@ -292,17 +301,48 @@ footer
   letter-spacing: 10px;
 }
 .table_cmn table td {
-  text-align: center;
-  padding: 10px;
+  text-align: left;
+  padding: 10px 5px;
   border: 1px solid #fff;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-weight: 100;
 }
 .table_cmn table td a {
   color: #fff;
 }
-
-
+/*----------------------
+テーブル　共通 横幅
+------------------------*/
+.shopname-width{
+  min-width:120px;
+}
+.date-width{
+  width: 70px;
+}
+.baitainame-width{
+  min-width: 200px;
+}
+.interviewTime-width{
+  width: 60px;
+}
+.mail-width{
+  max-width: 100px;
+}
+.girlname-width{
+  width: 150px;
+}
+.contact-width{
+  width: 100px;
+}
+.result-width{
+  width: 100px;
+}
+.intvw_conf{
+  width: 70px;
+}
+.tel-width{
+  width: 120px;
+}
 /*----------------------
 条件ボックス
 ------------------------*/
@@ -405,9 +445,11 @@ footer
 
 .select_y {
   width: 13%;
+  min-width: 80px;
 }
 .select_md {
   width: 10%;
+  min-width: 50px;
 }
 
 /*補助テキスト*/

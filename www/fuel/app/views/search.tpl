@@ -13,12 +13,13 @@
             <button type="submit" class="btn_orange" name="search" value="1">検索</button>
         </div>
         <!-- ID -->
-        <div class="white_box SSmall" style="width: 8%;">
+        <div class="white_search_box">
             <p>ID</p>
             {$forms.search_id.html}
         </div>
+        <div class="grid__wrapper">
         <!-- 申込日-->
-        <div class="white_box MMedium clear">
+        <div class="white_search_box">
             <p>申込日</p>
             <div class="select_arrow select_y">
                 {$forms.submission_year_from.html}
@@ -50,7 +51,7 @@
             <span class="select_ymd_txt">日&nbsp;迄</span>
         </div>
         <!-- 申込時間-->
-        <div class="white_box Small">
+        <div class="white_search_box">
             <p>申込時間</p>
             <div class="select_arrow select_h">
                 {$forms.submission_hour_from.html}
@@ -62,12 +63,12 @@
             <span class="select_ymd_txt">時&nbsp;迄</span>
         </div>
         <!-- 申込名-->
-        <div class="white_box SSmall">
+        <div class="white_search_box">
             <p>申込名</p>
             {$forms.submission_name.html}
         </div>
         <!-- 面接日-->
-        <div class="white_box MMedium">
+        <div class="white_search_box">
             <p>面接日</p>
             <div class="select_arrow select_y">
                 {$forms.interview_year_from.html}
@@ -96,7 +97,7 @@
         </div>
 
         <!--面接店舗-->
-        <div class="white_box SSSmall">
+        <div class="white_search_box">
             <p>面接店舗</p>
             <div class="select_arrow">
                 <select id="select_interviewshop" name="面接店舗" style="width:195px;">
@@ -106,7 +107,7 @@
             </div>
         </div>
         <!--所属店舗-->
-        <div class="white_box SSSmall">
+        <div class="white_search_box">
             <p>所属店舗</p>
             <div class="select_arrow">
                 <select id="select_belonging_store" name="所属店舗" style="width:195px;">
@@ -116,29 +117,29 @@
             </div>
         </div>
         <!-- 源氏名-->
-        <div class="white_box SSmall clear">
+        <div class="white_search_box">
             <p>源氏名</p>
             {$forms.genji_name.html}
         </div>
         <!-- 源氏名（ふりがな）-->
-        <div class="white_box SSmall">
+        <div class="white_search_box ">
             <p>源氏名（ふりがな）</p>
             {$forms.genji_namekana.html}
         </div>
         <!-- 名前-->
-        <div class="white_box XSMedium">
+        <div class="white_search_box">
             <p>名前</p>
             <span class="search_select_txt">姓</span>{$forms.surname.html}
             <span class="search_select_txt space">名</span>{$forms.name.html}
         </div>
         <!-- 名前（ふりがな）-->
-        <div class="white_box XSMedium">
+        <div class="white_search_box">
             <p>名前（ふりがな）</p>
             <span class="search_select_txt">姓</span>{$forms.surnamekana.html}
             <span class="search_select_txt space">名</span>{$forms.namekana.html}
         </div>
         <!--年齢-->
-        <div class="white_box clear">
+        <div class="white_search_box">
             <p>年齢</p>
             <div class="select_arrow select_other">
                 {$forms.age_from.html}
@@ -150,7 +151,7 @@
             <span class="select_other_txt">歳</span>
         </div>
         <!--身長-->
-        <div class="white_box Small">
+        <div class="white_search_box">
             <p>身長</p>
             <div class="select_arrow select_other">
                 {$forms.tall_from.html}
@@ -162,7 +163,7 @@
             <span class="select_other_txt">cm</span>
         </div>
         <!--体重-->
-        <div class="white_box">
+        <div class="white_search_box ">
             <p>体重</p>
             <div class="select_arrow select_other">
                 {$forms.weight_from.html}
@@ -174,7 +175,7 @@
             <span class="select_other_txt">kg</span>
         </div>
         <!--カップ数-->
-        <div class="white_box Small">
+        <div class="white_search_box">
             <p>カップ数</p>
             <div class="select_arrow">
                 <select id="select_cup" name="カップ数" style="width:150px;">
@@ -192,7 +193,7 @@
             {*<span class="select_other_txt">cup</span>*}
         </div>
         <!--経験-->
-        <div class="white_box Small">
+        <div class="white_search_box">
             <p>経験</p>
             <div class="select_arrow">
                 <select id="select_experience" name="経験" style="width:150px;">
@@ -202,7 +203,7 @@
             </div>
         </div>
         <!--都道府県-->
-        <div class="white_box Small">
+        <div class="white_search_box">
         <p>都道府県</p>
         <div class="select_arrow select_pref">
         <select id="select_pref" name="住所" style="width:160px;">
@@ -212,7 +213,7 @@
         </div>
         </div>
         <!--面接前確認-->
-        <div class="white_box Small">
+        <div class="white_search_box">
             <p>面接前確認</p>
             <div class="select_arrow select_check">
                 <select id="select_check" name="面接前確認" style="width:160px;">
@@ -223,7 +224,7 @@
         </div>
 
         {*<!--住所-->*}
-        {*<div class="white_box LLarge">*}
+        {*<div class="white_search_box  LLarge">*}
             {*<p>住所</p>*}
             {*<div class="select_arrow select_address">*}
                 {*<select id="select_address" name="住所" style="width:160px;">*}
@@ -235,7 +236,7 @@
             {*{$forms.address.html}*}
         {*</div>*}
         <!--身分証-->
-        <div class="white_box clear">
+        <div class="white_search_box ">
             <p>身分証</p>
             <div class="select_arrow">
                 <select id="select_identity_card_select" name="身分証" style="width:210px;">
@@ -245,12 +246,12 @@
             </div>
         </div>
         <!--TEL-->
-        <div class="white_box">
+        <div class="white_search_box ">
             <p>TEL</p>
             {$forms.tel01.html}<span class="hyphen">-</span>{$forms.tel02.html}<span class="hyphen">-</span>{$forms.tel03.html}
         </div>
         <!--Mail-->
-        <div class="white_box XMedium">
+        <div class="white_search_box  XMedium">
             <p>Mail</p>
             {$forms.mail01.html}<span class="at">＠</span>
             <div class="select_arrow select_mail">
@@ -258,7 +259,7 @@
             </div>
         </div>
         <!--面接結果-->
-        <div class="white_box XSmall clear">
+        <div class="white_search_box  XSmall">
             <p>面接結果</p>
             <div class="select_arrow">
                 <select id="select_interview_result" name="interview_result" style="width:110px;">
@@ -268,7 +269,7 @@
             </div>
         </div>
         <!--面接担当-->
-        <div class="white_box XSmall">
+        <div class="white_search_box  XSmall">
             <p>面接担当</p>
             <div class="select_arrow">
                 <select id="select_interview_staff" name="interview_staff" style="width:120px;">
@@ -278,7 +279,7 @@
             </div>
         </div>
         <!--KS担当-->
-        <div class="white_box XSmall">
+        <div class="white_search_box  XSmall">
             <p>KS担当</p>
             <div class="select_arrow">
                 <select id="select_ks_staff" name="ks_staff" style="width:120px;">
@@ -288,7 +289,7 @@
             </div>
         </div>
         <!--勤務形態-->
-        <div class="white_box XSmall clear">
+        <div class="white_search_box  XSmall">
             <p>勤務形態</p>
             <div class="select_arrow">
                 <select id="select_work" name="work" style="width:110px;">
@@ -298,7 +299,7 @@
             </div>
         </div>
         <!--給料-->
-        <div class="white_box Small">
+        <div class="white_search_box">
             <p>給料</p>
             <div class="select_arrow select_yen">
                 {$forms.salary_from.html}
@@ -310,7 +311,7 @@
             <span class="select_ymd_txt">円</span>
         </div>
         <!--特別指名料-->
-        <div class="white_box Small">
+        <div class="white_search_box">
             <p>特別指名料</p>
             <div class="select_arrow select_yen">
                 {$forms.nomination_fee_from.html}
@@ -322,7 +323,7 @@
             <span class="select_ymd_txt">円</span>
         </div>
         <!-- 退店 -->
-        <div class="white_box search3 clear">
+        <div class="white_search_box  search3">
             <div class="checkbox_serch">
                 <label>
                     <input type="hidden" name="leaving_check" value="0" />
@@ -332,7 +333,7 @@
             </div>
         </div>
         <!-- 退店日 -->
-        <div class="white_box MMedium">
+        <div class="white_search_box">
             <p>退店日</p>
             <div class="select_arrow select_y">
                 {$forms.leaving_year_from.html}
@@ -364,7 +365,7 @@
             <span class="select_ymd_txt">日&nbsp;迄</span>
         </div>
         <!--退店理由-->
-        <div class="white_box">
+        <div class="white_search_box ">
             <p>退店理由</p>
             <div class="select_arrow">
                 <select id="select_leaving_reason" name="leaving_reason" style="width:210px;">
@@ -374,7 +375,7 @@
             </div>
         </div>
         <!--掲載媒体-->
-        <div class="white_box clear">
+        <div class="white_search_box ">
             <p>掲載媒体</p>
             <div class="select_arrow">
                 <select id="select_publicity" name="publicity" style="width: 190px;">
@@ -384,7 +385,7 @@
             </div>
         </div>
         <!--検索エリア-->
-        <div class="white_box SSmall">
+        <div class="white_search_box ">
             <p>検索エリア</p>
             <div class="select_arrow">
                 <select id="select_area" name="area" style="width:150px;">
@@ -394,7 +395,7 @@
             </div>
         </div>
         <!--掲載求人-->
-        <div class="white_box">
+        <div class="white_search_box ">
             <p>掲載求人</p>
             <div class="select_arrow">
                 <select id="select_media" name="media" style="width: 190px;">
@@ -404,7 +405,7 @@
             </div>
         </div>
         <!--掲載業種-->
-        <div class="white_box">
+        <div class="white_search_box ">
             <p>掲載業種</p>
             <div class="select_arrow">
                 <select id="select_genre" name="genre" style="width: 190px;">
@@ -414,7 +415,7 @@
             </div>
         </div>
         <!--SC-->
-        <div class="white_box">
+        <div class="white_search_box ">
             <p>SC</p>
             <div class="select_arrow select_medium">
                 <select id="select_scout" name="scout" style="width: 190px;">
@@ -424,7 +425,7 @@
             </div>
         </div>
         <!--出戻り・移籍・紹介-->
-        <div class="white_box SSmall">
+        <div class="white_search_box ">
             <p>出戻り・移籍・紹介</p>
             <div class="select_arrow">
                 <select id="select_move" name="move" style="width:150px;">
@@ -434,7 +435,7 @@
             </div>
         </div>
         {*<!--他店紹介-->*}
-        <div class="white_box XMedium">
+        <div class="white_search_box  XMedium">
             <p>他店紹介</p>
             <div class="select_arrow select_yen">
                 <select id="select_another_shop" name="another_shop" style="width:170px;">
@@ -445,7 +446,7 @@
             <span class="select_other_txt2">備考</span>{$forms.another_shop_remarks.html}
         </div>
         <!--検索ワード-->
-        <div class="white_box SSmall clear">
+        <div class="white_search_box ">
             <p>検索ワード</p>
             <div class="select_arrow select_word">
                 <select id="select_word" name="word" style="width:150px;">
@@ -455,7 +456,7 @@
             </div>
         </div>
         <!--チェック-->
-        <div class="white_box search4">
+        <div class="white_search_box  search4">
             <div class="checkbox_serch">
                 <label>
                     <input type="hidden" name="working_away_flg" value="0" />
@@ -464,7 +465,7 @@
                 </label>
             </div>
         </div>
-        <div class="white_box search">
+        <div class="white_search_box  search">
             <div class="checkbox_serch">
                 <label>
                     <input type="hidden" name="nikoiti_flg" value="0" />
@@ -473,7 +474,7 @@
                 </label>
             </div>
         </div>
-        <div class="white_box search2">
+        <div class="white_search_box  search2">
             <div class="checkbox_serch">
                 <label>
                     <input type="hidden" name="scout_mail_flg" value="0" />
@@ -483,7 +484,7 @@
             </div>
         </div>
         <!--店舗スタッフ-->
-        <div class="white_box SSmall clear">
+        <div class="white_box  clear">
             <label for="staff_flg" class="tenpo_radio">
                 <input type="hidden" name="staff_flg" value="0" />
                 <input id="staff_flg" name="staff_flg" type="radio" value="1">
@@ -495,7 +496,7 @@
                 {*<span class="checkbox_serch-txt">店舗スタッフ</span>*}
             {*</label>*}
         </div>
-
+        </div>
     </section>
     </form>
 </article>

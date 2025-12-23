@@ -134,21 +134,38 @@
 
         <div class="table_cmn">
             <table>
+                <colgroup>
+                    <col class="date-width">
+                    <col>
+                    <col class="baitainame-width">
+                    <col>
+                    <col class="girlname-width">
+                    <col>
+                    <col class="girlname-width">
+                    <col>
+                    <col class="tel-width">
+                    <col class="mail-width">
+                    <col>
+                    <col class="result-width">
+                    <col class="intvw_conf">
+                </colgroup>
+                <thead>
                 <tr>
-                    <th class="">申込日</th>
+                    <th class="date-width">申込日</th>
                     <th class="">ID</th>
-                    <th class="">掲載求人名</th>
+                    <th class="baitainame-width">掲載求人</th>
                     <th class="">掲載媒体</th>
-                    <th class="">申込名</th>
+                    <th class="girlname-width">申込名</th>
                     <th class="">申込方法</th>
-                    <th class="">名前</th>
+                    <th class="girlname-width">名前</th>
                     <th class="">年齢</th>
-                    <th class="" style="width: 140px">TEL</th>
-                    <th class="">メールアドレス</th>
+                    <th class="tel-width">TEL</th>
+                    <th class="mail-width">メールアドレス</th>
                     <th class="">進捗</th>
-                    <th class="">面接結果</th>
-                    <th class="">追跡状況</th>
+                    <th class="result-width">面接結果</th>
+                    <th class="intvw_conf">追跡状況</th>
                 </tr>
+                </thead>
                 {foreach from=$result item=value key=key}
                 <tr{if $value.interview_send == 1 AND $value.status <= 1 } style="background-color: red"{/if}>
                     <td><a href="/inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m.%d"}</a></td>

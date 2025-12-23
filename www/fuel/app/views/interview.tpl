@@ -62,23 +62,40 @@
             </form>
         <div class="table_cmn intvw">
             <table>
+                <colgroup>
+                    <col class="date-width">
+                    <col class="interviewTime-width">
+                    <col class="shopname-width">
+                    <col class="girlname-width">
+                    <col>
+                    <col>
+                    <col class="baitainame-width">
+                    <col class="date-width">
+                    <col class="contact-width">
+                    <col class="none">
+                    <col>
+                    <col>
+                    <col class="intvw_conf">
+                </colgroup>
+                <thead>
                 <tr>
-                    <th class="">面接日</th>
-                    <th class="">面接時間</th>
-                    <th class="">面接店舗</th>
-                    <th class="">申込名</th>
+                    <th class="date-width">面接日</th>
+                    <th class="interviewTime-width">面接</br>時間</th>
+                    <th class="shopname-width">面接店舗</th>
+                    <th class="girlname-width">申込名</th>
                     <th class="">年齢</th>
                     <th class="">経験</th>
-                    <th class="">掲載求人</th>
-                    <th class="">申込日</th>
+                    <th class="baitainame-width">掲載求人</th>
+                    <th class="date-width">申込日</th>
                     <th class="">送信日</th>
-                    <th class="">連絡方法</th>
-                    <th class="none">タイマー設定時間</th>
+                    <th class="contact-width" width="170">連絡方法</th>
+                    <th class="none">タイマー<br>設定時間</th>
                     <th class="intvw_conf">確認状況</th>
                     {if isset($userData.group) && $userData.group == 1}
-                        <th class="intvw_conf">追跡状況</th>
+                        <th class="intvw_conf" width="80">追跡状況</th>
                     {/if}
                 </tr>
+                </thead>
                 {foreach from=$interview_data name="interview" item=value key=key}
                     {*『面接予定時間』の仮予約にチェックがあるデータは赤字で求人センタースタッフのログインのみ表示*}
                     {if $value.tentative_reserve_flg === "1"}

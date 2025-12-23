@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+/*変数の設定*/
+:root{
+  --bg-color:#09275D ;
+}
+
 html {
   font-size: 62.5%;
   height: 100%;
@@ -14,7 +19,7 @@ html {
 
 body {
   font-size: 1rem;
-  background: #e5dbcc;
+  background: var(--bg-color);
   height: 100%;
   letter-spacing: 1px;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
@@ -34,7 +39,7 @@ a:hover {
 }
 
 .container {
-  width: 1200px;
+  width: clamp(1200px, 100%, 1500px);
   margin: auto;
 }
 
@@ -151,9 +156,18 @@ header .logout {
   display: inline-block;
 }
 
+header .username{
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  top: -3px;
+  color: #fff;
+  font-size: 19px;
+}
+
 header .input {
   position: absolute;
-  right: 460px;
+  right: 130px;
   top: 21px;
   font-size: 16px;
 }
@@ -323,7 +337,7 @@ input.search_form {
 header .edit {
   position: absolute;
   display: inline-block;
-  left: 420px;
+  right: 310px;
   top: 21px;
   font-size: 16px;
 }
@@ -551,12 +565,13 @@ header .edit {
 ========================*/
 
 .girl_search_col {
-  padding: 0 20px 65px;
+  padding:25px 20px 55px;
   margin-top: 20px !important;
   margin-bottom: 30px;
   position: relative;
   overflow: hidden;
   font-size: 14px;
+  background: #fff;
 }
 
 .col_border {
@@ -692,7 +707,7 @@ header .edit {
   color: #000;
   background: #fff;
   padding: 3px 15px 3px 5px;
-  border-radius: 6px;
+  border-radius: 3px;
   font-size: 14px;
   margin-left: 6px;
   margin-right: 5px;
@@ -835,7 +850,7 @@ header .edit {
 
 #interview .table_cmn table td {
   letter-spacing: 0;
-  padding: 8px 10px;
+  padding: 10px 5px;
 }
 
 #interview .table_cmn table th {
@@ -848,10 +863,6 @@ header .edit {
 
 .none {
   padding: 3px !important;
-}
-
-.intvw_conf {
-  width: 100px;
 }
 
 .select_intvw_txt {
@@ -869,11 +880,12 @@ header .edit {
 }
 
 .red {
-  color: red;
+  color: #ff5252;
+  font-weight: bold !important;
 }
 
 .red a {
-  color: red !important;
+  color: #ff5252 !important;
 }
 
 .color {
@@ -993,7 +1005,7 @@ span.radio-txt {
 
 #chase .table_cmn table td {
   letter-spacing: 0;
-  padding: 8px 10px;
+  padding: 10px 5px;
   font-size: 15px;
 }
 
@@ -1717,4 +1729,22 @@ span.alert_list_over {
   width: 100%;
   background: rgba(253, 247, 30, 0.82);
   z-index: -1;
+}
+/*======================
+検索条件
+========================*/
+.grid__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 10px;
+  padding-top: 20px;
+}
+.white_search_box {
+  background: #fff;
+  padding: 10px 15px 20px;
+  flex-grow: 1;
+
+  p{
+    padding-bottom: 5px;
+  }
 }

@@ -31,6 +31,7 @@
 <article>
     <section class="edit_list">
         <table>
+
             <thead>
             <tr>
                 <th>日時</th>

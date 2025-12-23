@@ -125,6 +125,7 @@
 
         <div class="table_cmn">
             <table>
+                <thead>
                 <tr>
                     <th class="">追跡予定日（時）</th>
                     <th class="">申込日</th>
@@ -136,6 +137,7 @@
                     <th class="">追跡理由</th>
                     <th class="">連絡方法</th>
                 </tr>
+                </thead>
                 {foreach from=$tracking_data name="tracking_data" item=value key=key}
                 <tr>
                     <td>{$value.scheduled_date|date_format:"%y.%m%d"}{if isset($value.scheduled_date_hour)}（{if $value.scheduled_date_hour == 0}深夜{/if}{$value.scheduled_date_hour}時）{/if}</td>

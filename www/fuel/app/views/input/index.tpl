@@ -1226,21 +1226,24 @@
 {*                                </div>*}
 {*                                <span class="select_ymd_txt">日</span>*}
                             </div>
-                            <div class="white_box yellow_box input_right XMedium" style="margin-top:14px;{if isset($userData.group) && $userData.group == 2}display: none;{/if}">
+                            <div class="white_box yellow_box input_right XMedium input_flex" style="{if isset($userData.group) && $userData.group == 2}display: none;{/if}">
                                 <p></p>
                                 <div id="slectReset" class="select_arrow select_input_md">
                                     {$forms.scheduled_date_hour.html}
                                 </div>
                                 <span class="select_ymd_txt">時</span>
                                 <!--追跡中止-->
-                                <div class="white_box yellow_box input_how" style="float:right;margin-top:0px;margin-left:10px;{if isset($userData.group) && $userData.group == 2}display: none;{/if}">
-                                    <div class="checkbox4">
+                                <div class="white_box yellow_box input_how" style="float:right;margin-top:10px;margin-left:10px;{if isset($userData.group) && $userData.group == 2}display: none;{/if}">
+                                    <div class="">
                                         <label>
                                             <input type="hidden" name="stop_tracking_flg" value="1" />
                                             {$forms.stop_tracking_flg.html}
                                             <span class="checkbox-txt text_right">追跡中止</span>
                                         </label>
                                     </div>
+                                </div>
+                                <div class="">
+                                    <button>追跡振り分け更新</button>
                                 </div>
                             </div>
                         <!--追跡備考-->
@@ -1880,17 +1883,74 @@
     // });
 
 
-    // チェックがないと半透明に  checkbox-check
-    $( document ).on('change', '.checkbox-check', function(){
-
+    // チェックがないと半透明に（チェック状態を正しく確認）
+    // 修正: opacityを直接targetに適用し、.checkをトグル。解除時に点滅クラスも削除
+    // 追加: 親要素に .check クラスをトグルし、点滅アニメーションを同期
+    $(document).on('change', '.checkbox-check', function() {
         var target = $(this).parent();
-        var set_class = target.attr('class');
-        console.log(set_class);
 
-        var opacity = $('.' + set_class).css('opacity');
-        if(opacity == 1){ $('.' + set_class).css({'opacity':'0.3'}); }else{ $('.' + set_class).css({'opacity':'1'}); }
+        // 不透明度の制御（チェック状態に基づく）
+        if ($(this).is(':checked')) {
+            target.css({'opacity': '1'});  // チェックあり: 不透明
+            target.removeClass('check-blink-on check-blink-off'); // 念のため点滅クラスをクリア
+            target.addClass('check');     // 点滅対象に追加
+        } else {
+            target.css({'opacity': '0.3'}); // チェックなし: 半透明
+            target.removeClass('check check-blink-on check-blink-off'); // 点滅対象とクラスを削除（背景リセット）
+        }
 
+        // 追加: 点滅アニメーションを更新（同期のため）
+        updateBlinkAnimation();
     });
+
+    // 追加: グローバルタイマー変数
+    let blinkTimer = null;
+
+    // 追加: 点滅アニメーションを更新する関数（同期のため）
+    function updateBlinkAnimation() {
+        // 既存のタイマーをクリア
+        if (blinkTimer) clearInterval(blinkTimer);
+
+        // .check 要素が存在する場合のみタイマーを開始
+        if ($('.check').length > 0) {
+            let isOn = false; // 点滅状態のトラッキング
+            blinkTimer = setInterval(() => {
+                // すべての .check 要素のクラスをトグル（同期）
+                $('.check').toggleClass('check-blink-on', isOn).toggleClass('check-blink-off', !isOn);
+                isOn = !isOn; // 状態反転
+            }, 500); // 500msごとにトグル（調整可能）
+        }
+    }
+
+    // 追加: 初期化（ページロード時に既に .check がある場合）
+    $(document).ready(function() {
+        updateBlinkAnimation();
+    });
+
+    // 申込名フィールドのセレクタを指定（name属性で特定）
+    $(document).on('input', '[name="submission_name"]', function() {
+        var input = $(this);
+        var value = input.val();
+
+        // 全角英数字を検知（正規表現: 全角A-Z, a-z, 0-9）
+        if (/[Ａ-Ｚａ-ｚ０-９]/.test(value)) {
+            // 自動変換関数
+            var converted = value.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) - 0xFEE0); // 全角→半角変換
+            });
+            input.val(converted); // 値を置き換え
+
+            // 警告表示（例: フィールド下にエラーメッセージ追加）
+            if (!input.next('.error-msg').length) {
+                input.after('<span class="error-msg" style="color: red; font-size: 0.8em; display: block;">全角英数字を半角に変換しました。</span>');
+            }
+            // 一定時間後にメッセージを消す（オプション）
+            setTimeout(function() {
+                input.next('.error-msg').fadeOut(300, function() { $(this).remove(); });
+            }, 3000);
+        }
+    });
+
 
 
     // 希望バック の 円 に入力があったら

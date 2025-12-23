@@ -44,6 +44,7 @@ article#search {
 
 .select_h {
   width: 27%;
+  min-width: 50px;
 }
 
 .select_mail {
