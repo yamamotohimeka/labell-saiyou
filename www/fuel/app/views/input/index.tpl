@@ -1928,28 +1928,45 @@
     });
 
     // 申込名フィールドのセレクタを指定（name属性で特定）
-    $(document).on('input', '[name="submission_name"]', function() {
-        var input = $(this);
-        var value = input.val();
+    let isComposing = false;
 
-        // 全角英数字を検知（正規表現: 全角A-Z, a-z, 0-9）
-        if (/[Ａ-Ｚａ-ｚ０-９]/.test(value)) {
-            // 自動変換関数
-            var converted = value.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
-                return String.fromCharCode(s.charCodeAt(0) - 0xFEE0); // 全角→半角変換
-            });
-            input.val(converted); // 値を置き換え
+    function normalizeSubmissionName($input) {
+        const value = $input.val();
 
-            // 警告表示（例: フィールド下にエラーメッセージ追加）
-            if (!input.next('.error-msg').length) {
-                input.after('<span class="error-msg" style="color: red; font-size: 0.8em; display: block;">全角英数字を半角に変換しました。</span>');
-            }
-            // 一定時間後にメッセージを消す（オプション）
-            setTimeout(function() {
-                input.next('.error-msg').fadeOut(300, function() { $(this).remove(); });
-            }, 3000);
+        // 全角英数字がなければ何もしない
+        if (!/[Ａ-Ｚａ-ｚ０-９]/.test(value)) return;
+
+        const converted = value.replace(/[Ａ-Ｚａ-ｚ０-９]/g, s =>
+            String.fromCharCode(s.charCodeAt(0) - 0xFEE0)
+        );
+
+        if (value !== converted) {
+            $input.val(converted);
         }
+    }
+
+    // IME変換開始
+    $(document).on('compositionstart', '[name="submission_name"]', function () {
+        isComposing = true;
     });
+
+    // IME変換確定
+    $(document).on('compositionend', '[name="submission_name"]', function () {
+        isComposing = false;
+
+        // ★ 変換確定時に必ず正規化する
+        normalizeSubmissionName($(this));
+    });
+
+    // 通常入力・delete・paste など
+    $(document).on('input', '[name="submission_name"]', function () {
+        if (isComposing) return;
+
+        normalizeSubmissionName($(this));
+    });
+
+
+
 
 
 
