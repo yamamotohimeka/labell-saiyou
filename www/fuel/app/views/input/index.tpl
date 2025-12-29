@@ -1885,7 +1885,7 @@
 
     // チェックがないと半透明に（チェック状態を正しく確認）
     // 修正: opacityを直接targetに適用し、.checkをトグル。解除時に点滅クラスも削除
-    // 追加: 親要素に .check クラスをトグルし、点滅アニメーションを同期
+        // 追加: 親要素に .check クラスをトグルし、点滅アニメーションを同期
     $(document).on('change', '.checkbox-check', function() {
         var target = $(this).parent();
 
