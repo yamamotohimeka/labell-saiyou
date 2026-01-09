@@ -102,9 +102,16 @@
             $('#check_hidden').val(select_check);
         });
 
-        $('#select_tenpo').multipleSelect('setSelects', [{/literal}{$search.tenpo_hidden|default:""}{literal}]);
 
-        $('#select_check').multipleSelect('setSelects', [{$search.check_hidden|default:""}]);
+          $('#select_tenpo').multipleSelect(
+            'setSelects',
+            ('{/literal}{$search.tenpo_hidden|default:""}{literal}' ? '{/literal}{$search.tenpo_hidden|default:""}{literal}'.split(',') : [])
+          );
+
+          $('#select_check').multipleSelect(
+            'setSelects',
+            ('{/literal}{$search.check_hidden|default:""}{literal}' ? '{/literal}{$search.check_hidden|default:""}{literal}'.split(',') : [])
+          );
     });
 </script>
 {/literal}

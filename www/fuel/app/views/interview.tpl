@@ -101,7 +101,7 @@
                     {if $value.tentative_reserve_flg === "1"}
                         {if isset($userData.group) && $userData.group == 1}
                             <tr>
-                            <td class="red">{$value.interview_date|date_format:"%y.%m.%d"}</td>
+{                           <td class="red">{$value.interview_date|date_format:"%y.%m.%d"}（{$value.interview_weekday_ja|default:''}）</td>
                             <td class="red">{$value.interview_hour|string_format:"%02d"}:{$value.interview_time|string_format:"%02d"}</td>
                             <td class="red">{$value.interviewshop|default:""}</td>
                             <td abbr="" class="red">{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""}</td>
@@ -118,7 +118,7 @@
                         {/if}
                     {else}
                         <tr>
-                            <td>{$value.interview_date|date_format:"%y.%m.%d"}</td>
+                            <td>{$value.interview_date|date_format:"%y.%m.%d"}（{$value.interview_weekday_ja|default:''}）</td>
                             <td>{$value.interview_hour|string_format:"%02d"}:{$value.interview_time|string_format:"%02d"}</td>
                             <td>{$value.interviewshop|default:""}</td>
                             <td abbr="" >{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""}</td>

@@ -54,7 +54,7 @@
             <div class="container">
                 <h1><img src="/assets/img/logo.png" width="53"><span>HeadOffice</span></h1>
                 <div class="logout"><a href="/login/logout">LOGOUT</a></div>
-                <div class="username">担当：　　　</div>
+                <div class="username">担当：  {if isset(Auth::check()) && Auth::check()}{if Auth::check()}{Auth::get_profile_fields('name')|escape}{/if}{/if}</div>
                 {if isset($userData.group) && $userData.group == 1}
                     <div class="edit">
                         <input type="submit" class="btn_orange edit2" onclick="winCenter2()" value="編集中リスト">
