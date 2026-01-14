@@ -426,7 +426,7 @@
                             {/if}
                         {/if}
                         <!--掲載求人-->
-                        <div class="white_box input_right SSSmall">
+                        <div class="white_box input_right XSMedium">
                             <p>掲載求人<span class="required2">※必須</span></p>
                             <div class="select_arrow">
                                 {$forms.media.html}
@@ -881,9 +881,8 @@
 
 
                             <div class="date_right_btm_col_layer_yellow2">
-
                                 <!--所属店舗-->
-                                <div class="white_box yellow_box input_right SSmall">
+                                <div class="white_box yellow_box input_right Small">
                                     <p>店舗</p>
                                     <div class="select_arrow">
                                         {$forms.belonging_store.html}
@@ -1197,7 +1196,7 @@
                                     <p class="description">※旧字を使用するとエラーになり入力した内容がなくなりますので注意してください</p>
                                 </div>
                                 <!--追跡理由-->
-                                <div class="white_box yellow_box input_right SSSmall clear" {if isset($userData.group) && $userData.group == 2}style="display: none;"{/if}>
+                                <div class="white_box yellow_box input_right Small clear" {if isset($userData.group) && $userData.group == 2}style="display: none;"{/if}>
                                     <p>追跡理由</p>
                                     <div id="slectReset" class="select_arrow">
                                         {$forms.reason.html}

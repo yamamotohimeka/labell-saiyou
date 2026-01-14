@@ -129,7 +129,7 @@
         <a href="{$smarty.server.REQUEST_URI}{if $smarty.server.QUERY_STRING != '/datalist'}&sort=submission_date{else}?sort=submission_date{/if}">申し込み日順▼</a>
         |
         <a href="{$smarty.server.REQUEST_URI}{if $smarty.server.QUERY_STRING != '/datalist'}&sort=updated_at{else}?sort=updated_at{/if}">更新順▼</a>　
-            <span class="required">※背景色が赤色の女の子は面接予定情報がある女の子です。</span>
+            <span class="required">※背景色が黄色の女の子は面接予定情報がある女の子です。</span>
         </div>
 
         <div class="table_cmn">
@@ -138,14 +138,14 @@
                     <col class="date-width">
                     <col>
                     <col class="baitainame-width">
-                    <col>
+                    <col class="media-width">
                     <col class="girlname-width">
                     <col>
                     <col class="girlname-width">
-                    <col>
+                    <col class="apply-width"">
                     <col class="tel-width">
-                    <col class="mail-width">
                     <col>
+                    <col class="progress-width">
                     <col class="result-width">
                     <col class="intvw_conf">
                 </colgroup>
@@ -154,36 +154,36 @@
                     <th class="date-width">申込日</th>
                     <th class="">ID</th>
                     <th class="baitainame-width">掲載求人</th>
-                    <th class="">掲載媒体</th>
+                    <th class="media-width">掲載媒体</th>
                     <th class="girlname-width">申込名</th>
-                    <th class="">申込方法</th>
+                    <th class="apply-width">申込方法</th>
                     <th class="girlname-width">名前</th>
                     <th class="">年齢</th>
                     <th class="tel-width">TEL</th>
-                    <th class="mail-width">メールアドレス</th>
-                    <th class="">進捗</th>
+                    <th>MAIL</th>
+                    <th class="progress-width">進捗</th>
                     <th class="result-width">面接結果</th>
                     <th class="intvw_conf">追跡状況</th>
                 </tr>
                 </thead>
                 {foreach from=$result item=value key=key}
-                <tr{if $value.interview_send == 1 AND $value.status <= 1 } style="background-color: red"{/if}>
+                <tr{if $value.interview_send == 1 AND $value.status <= 1 } style="background-color: #F6DFA4;"{/if}>
                     <td><a href="/inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m.%d"}</a></td>
                     <td>{$value.id}</td>
                     <td>{$value.media}</td>
-                    <td>{$value.publicity}</td>
-                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""}</td>
+                    <td>{$value.publicity|truncate:8:"..."}</td>
+                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:8:"..."}</td>
                     <td>{$value.apply|default:""}</td>
                     <td>{$value.surname|default:""}{$value.name|default:""}</td>
                     <td>{$value.age|default:""}</td>
                     <td>{$value.tel01|default:""}-{$value.tel02|default:""}-{$value.tel03|default:""}</td>
                     <td>
                         {if $value.mail01|default:"" !== "" AND $value.maildomain|default:"" !== ""}
-                        {$value.mail01|default:""}@{$value.maildomain|default:""}
+                        {$value.mail01|default:""}@{$value.maildomain|default:""|truncate:5:"..."}
                         {/if}
                     </td>
-                    <td>{$value.check}</td>
-                    <td{if !empty($value.interview_result) } style="background-color: #ffff00;color: #000;"{/if}>{$value.interview_result}</td>
+                    <td>{$value.check|truncate:5:"..."}</td>
+                    <td{if !empty($value.interview_result) } style="background-color: #DB1817cc;color: #fff;"{/if}>{$value.interview_result|truncate:6:"..."}</td>
                     <td {if $value.stop_tracking_flg === "1"}class="chase_yellow"{/if}>{if $value.stop_tracking_flg === "1"}追跡中{/if}</td>
                 </tr>
                 {/foreach}

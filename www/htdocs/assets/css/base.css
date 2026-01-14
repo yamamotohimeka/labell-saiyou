@@ -316,32 +316,59 @@ footer
 .shopname-width{
   min-width:120px;
 }
+/*面接日*/
 .date-width{
-  width: 70px;
+  width: 100px;
 }
 .baitainame-width{
   min-width: 200px;
 }
 .interviewTime-width{
-  width: 60px;
+  width: 50px;
 }
+
+/*掲載媒体*/
+.media-width{
+  width: 140px;
+}
+/*メール*/
 .mail-width{
-  max-width: 100px;
+  max-width: 80px;
 }
+/*申込名*/
 .girlname-width{
-  width: 150px;
+  width: 115px;
 }
+/*申込方法*/
+.apply-width{
+  max-width: 155px;
+}
+/*送信日*/
+.sentdate-width{
+  width: 135px;
+}
+/*連絡方法*/
 .contact-width{
   width: 100px;
 }
+
+/*経験*/
+.experience-width{
+  width: 110px;
+}
+/*進捗*/
+.progress-width{
+  width: 80px;
+}
+/*面接結果*/
 .result-width{
-  width: 100px;
+  width: 70px;
 }
 .intvw_conf{
   width: 70px;
 }
 .tel-width{
-  width: 120px;
+  width: 140px;
 }
 /*----------------------
 条件ボックス

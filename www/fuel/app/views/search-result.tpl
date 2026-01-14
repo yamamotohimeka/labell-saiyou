@@ -253,7 +253,7 @@
                     <th class="girlname-width">申込名</th>
                     <th class="">年齢</th>
                     <th class="tel-width">TEL</th>
-                    <th class="mail-width">メールアドレス</th>
+                    <th class="mail-width">MAIL</th>
                     <th class="result-width">面接結果</th>
                     <th class="intvw_conf">追跡状況</th>
                 </tr>
@@ -262,19 +262,19 @@
                 <tr>
                     <td><a href="/inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m%d"}</a></td>
                     <td>{$value.id}</td>
-                    <td>{$value.surname|default:""} {$value.name|default:""}</td>
-                    <td>{$value.publicity}</td>
+                    <td>{$value.surname|default:""} {$value.name|default:""|truncate:6:"..."}</td>
+                    <td>{$value.publicity|truncate:8:"..."}</td>
                     <td>{$value.media}</td>
-                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""}</td>
+                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:8:"..."}</td>
                     <td>{$value.age|default:""}</td>
                     <td>{$value.tel01|default:""}-{$value.tel02|default:""}-{$value.tel03|default:""}</td>
                     <td>
                         {if $value.mail01|default:"" !== "" AND $value.maildomain|default:"" !== ""}
-                            {$value.mail01|default:""}@{$value.maildomain|default:""}
+                            {$value.mail01|default:""}@{$value.maildomain|default:""|truncate:5:"..."}
                         {/if}
                     </td>
                     <td>{$value.interview_result|default:""}</td>
-                    <td>{if $value.stop_tracking_flg === "1"}<span class="yellow">追跡中</span>{else}追跡中止{/if}</td>
+                    <td {if $value.stop_tracking_flg === "1"}class="chase_yellow"{/if}>{if $value.stop_tracking_flg === "1"}追跡中{/if}</td>
                 </tr>
                 {/foreach}
             </table>
