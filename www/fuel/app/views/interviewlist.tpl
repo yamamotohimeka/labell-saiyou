@@ -112,6 +112,7 @@
             'setSelects',
             ('{/literal}{$search.check_hidden|default:""}{literal}' ? '{/literal}{$search.check_hidden|default:""}{literal}'.split(',') : [])
           );
+      
     });
 </script>
 {/literal}

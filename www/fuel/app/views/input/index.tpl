@@ -881,6 +881,7 @@
 
 
                             <div class="date_right_btm_col_layer_yellow2">
+
                                 <!--所属店舗-->
                                 <div class="white_box yellow_box input_right Small">
                                     <p>店舗</p>

@@ -161,19 +161,30 @@
 </article>
 
 <script>
-    $(function(){
-        $('.btn_orange').click(function(){
-            var select_interviewshop = $('#select_tenpo').multipleSelect('getSelects');
-            $('#interviewshop_hidden').val(select_interviewshop);
+  $(function(){
+    $('.btn_orange').click(function(){
+      var select_interviewshop = $('#select_tenpo').multipleSelect('getSelects');
+      $('#interviewshop_hidden').val(select_interviewshop);
 
-            var select_check = $('#select_check').multipleSelect('getSelects');
-            $('#check_hidden').val(select_check);
-        });
-
-        $('#select_tenpo').multipleSelect('setSelects', [{$search.interviewshop_hidden|default:""}]);
-
-        $('#select_check').multipleSelect('setSelects', [{$search.check_hidden|default:""}]);
+      var select_check = $('#select_check').multipleSelect('getSelects');
+      $('#check_hidden').val(select_check);
     });
+
+    $('#select_tenpo').multipleSelect('setSelects', [{$search.interviewshop_hidden|default:""}]);
+
+    $('#select_check').multipleSelect('setSelects', [{$search.check_hidden|default:""}]);
+
+    // 検索の日付の start の年月日を選択したら、 end の年月日にコピーセットする
+    $('#form_interview_date_year_from, #form_interview_date_month_from, #form_interview_date_day_from').on('change', function () {
+      syncInterviewDateTo();
+    });
+    function syncInterviewDateTo() {
+      $('#form_interview_date_year_to').val($('#form_interview_date_year_from').val());
+      $('#form_interview_date_month_to').val($('#form_interview_date_month_from').val());
+      $('#form_interview_date_day_to').val($('#form_interview_date_day_from').val());
+    }
+
+  });
 </script>
 
 {include file=$smarty.const.ADMIN_FOOTER}
