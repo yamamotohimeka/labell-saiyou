@@ -284,6 +284,7 @@ footer
   margin: 0 auto;
   font-size: 18px;
   color: #fff;
+  table-layout: auto;
 }
 .table_cmn table thead {
   th{
@@ -318,10 +319,12 @@ footer
 }
 /*面接日*/
 .date-width{
-  width: 100px;
+  max-width: 104px;
+  width: 80px;
 }
 .baitainame-width{
-  min-width: 200px;
+  width: 100%;
+  max-width: 13%;
 }
 .interviewTime-width{
   width: 50px;
@@ -334,10 +337,12 @@ footer
 /*メール*/
 .mail-width{
   max-width: 80px;
+  width: 10%;
 }
 /*申込名*/
 .girlname-width{
   width: 115px;
+  max-width: 126px;
 }
 /*申込方法*/
 .apply-width{
@@ -354,7 +359,7 @@ footer
 
 /*経験*/
 .experience-width{
-  width: 110px;
+  width: 113px;
 }
 /*進捗*/
 .progress-width{

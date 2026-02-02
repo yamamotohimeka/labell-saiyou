@@ -913,7 +913,7 @@ header .edit {
 }
 
 .red {
-  color: #ff5252;
+  color: #ff5252 !important;
   font-weight: bold !important;
 }
 

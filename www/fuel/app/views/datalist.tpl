@@ -135,43 +135,43 @@
         <div class="table_cmn">
             <table>
                 <colgroup>
-                    <col class="date-width">
                     <col>
-                    <col class="baitainame-width">
-                    <col class="media-width">
-                    <col class="girlname-width">
                     <col>
-                    <col class="girlname-width">
-                    <col class="apply-width"">
-                    <col class="tel-width">
                     <col>
-                    <col class="progress-width">
-                    <col class="result-width">
-                    <col class="intvw_conf">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="date-width">申込日</th>
-                    <th class="">ID</th>
-                    <th class="baitainame-width">掲載求人</th>
-                    <th class="media-width">掲載媒体</th>
-                    <th class="girlname-width">申込名</th>
-                    <th class="apply-width">申込方法</th>
-                    <th class="girlname-width">名前</th>
-                    <th class="">年齢</th>
-                    <th class="tel-width">TEL</th>
+                    <th>申込日</th>
+                    <th>ID</th>
+                    <th >掲載求人</th>
+                    <th>掲載媒体</th>
+                    <th>申込名</th>
+                    <th>申込方法</th>
+                    <th>名前</th>
+                    <th>年齢</th>
+                    <th>TEL</th>
                     <th>MAIL</th>
-                    <th class="progress-width">進捗</th>
-                    <th class="result-width">面接結果</th>
-                    <th class="intvw_conf">追跡状況</th>
+                    <th>進捗</th>
+                    <th>面接結果</th>
+                    <th>追跡状況</th>
                 </tr>
                 </thead>
                 {foreach from=$result item=value key=key}
                 <tr{if $value.interview_send == 1 AND $value.status <= 1 } style="background-color: #F6DFA4;"{/if}>
                     <td><a href="/inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m.%d"}</a></td>
                     <td>{$value.id}</td>
-                    <td>{$value.media}</td>
-                    <td>{$value.publicity|truncate:8:"..."}</td>
+                    <td>{$value.media|truncate:13:'...':true}</td>
+                    <td>{$value.publicity|truncate:7:"..."}</td>
                     <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:8:"..."}</td>
                     <td>{$value.apply|default:""}</td>
                     <td>{$value.surname|default:""}{$value.name|default:""}</td>

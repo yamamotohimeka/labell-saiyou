@@ -63,36 +63,36 @@
         <div class="table_cmn intvw">
             <table>
                 <colgroup>
-                    <col class="date-width">
-                    <col class="interviewTime-width">
-                    <col class="shopname-width">
-                    <col class="girlname-width">
-                    <col>
-                    <col class="experience-width">
-                    <col class="baitainame-width">
-                    <col class="date-width">
-                    <col class="sentdate-width">
-                    <col class="">
                     <col>
                     <col>
-                    <col class="intvw_conf">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="date-width">面接日</th>
-                    <th class="interviewTime-width">面接</br>時間</th>
-                    <th class="shopname-width">面接店舗</th>
-                    <th class="girlname-width">申込名</th>
-                    <th class="">年齢</th>
-                    <th class="experience-width">経験</th>
-                    <th class="baitainame-width">掲載求人</th>
-                    <th class="date-width">申込日</th>
-                    <th class="sentdate-width">送信日</th>
-                    <th class="contact-width">連絡方法</th>
+                    <th>面接日</th>
+                    <th>面接</br>時間</th>
+                    <th>面接店舗</th>
+                    <th>申込名</th>
+                    <th>年齢</th>
+                    <th>経験</th>
+                    <th>掲載求人</th>
+                    <th>申込日</th>
+                    <th>送信日</th>
+                    <th>連絡方法</th>
                     <th class="">タイマー<br>設定時間</th>
-                    <th class="intvw_conf">確認状況</th>
+                    <th>確認状況</th>
                     {if isset($userData.group) && $userData.group == 1}
-                        <th class="intvw_conf" width="80">追跡状況</th>
+                        <th>追跡状況</th>
                     {/if}
                 </tr>
                 </thead>
@@ -107,7 +107,7 @@
                             <td abbr="" class="red">{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:7:"..."}</td>
                             <td class="red">{$value.age}</a></td>
                             <td abbr="" class="red">{$value.experience|truncate:8:"..."}</td>
-                            <td class="red">{$value.media}</td>
+                            <td class="red">{$value.media|truncate:13:'...':true}</td>
                             <td class="red"><a href="/inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m.%d"}</a></td>
                             <td class="red">{$value.interview_send_date|default:""}</td>
                             <td class="red">{$value.contact|truncate:3:"..."}</td>
@@ -124,7 +124,7 @@
                             <td abbr="" >{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:7:"..."}</td>
                             <td>{$value.age}</a></td>
                             <td abbr="">{$value.experience|truncate:8:"..."}</td>
-                            <td>{$value.media}</td>
+                            <td>{$value.media|truncate:13:'...':true}</td>
                             <td><a href="/inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m.%d"}</a></td>
                             <td>{$value.interview_send_date|default:""}</td>
                             <td>{$value.contact|truncate:6:"..."}</td>
@@ -183,7 +183,6 @@
       $('#form_interview_date_month_to').val($('#form_interview_date_month_from').val());
       $('#form_interview_date_day_to').val($('#form_interview_date_day_from').val());
     }
-
   });
 </script>
 

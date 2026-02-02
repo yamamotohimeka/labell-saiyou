@@ -231,31 +231,31 @@
         <div class="table_cmn">
             <table class="scout_check">
                 <colgroup>
-                    <col class="date-width">
                     <col>
                     <col>
                     <col>
-                    <col class="baitainame-width">
-                    <col class="girlname-width">
                     <col>
                     <col>
-                    <col class="mail-width">
-                    <col class="result-width">
-                    <col class="intvw_conf">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
                 </colgroup>
                 <thead>
                 <tr>
-                    <th class="date-width">申込日</th>
-                    <th class="">ID</th>
-                    <th class="">本名</th>
-                    <th class="">掲載求人名</th>
-                    <th class="baitainame-width">掲載媒体</th>
-                    <th class="girlname-width">申込名</th>
-                    <th class="">年齢</th>
-                    <th class="tel-width">TEL</th>
-                    <th class="mail-width">MAIL</th>
-                    <th class="result-width">面接結果</th>
-                    <th class="intvw_conf">追跡状況</th>
+                    <th>申込日</th>
+                    <th>ID</th>
+                    <th>本名</th>
+                    <th>掲載求人名</th>
+                    <th>掲載媒体</th>
+                    <th>申込名</th>
+                    <th>年齢</th>
+                    <th>TEL</th>
+                    <th>MAIL</th>
+                    <th>面接結果</th>
+                    <th>追跡状況</th>
                 </tr>
                 </thead>
                 {foreach from=$result name="search" item=value key=key}
