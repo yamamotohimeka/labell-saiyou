@@ -172,7 +172,7 @@
                     <td>{$value.id}</td>
                     <td>{$value.media|truncate:13:'...':true}</td>
                     <td>{$value.publicity|truncate:7:"..."}</td>
-                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:8:"..."}</td>
+                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:12:"..."}</td>
                     <td>{$value.apply|default:""}</td>
                     <td>{$value.surname|default:""}{$value.name|default:""}</td>
                     <td>{$value.age|default:""}</td>

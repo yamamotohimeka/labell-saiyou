@@ -263,14 +263,14 @@
                     <td><a href="/inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m%d"}</a></td>
                     <td>{$value.id}</td>
                     <td>{$value.surname|default:""} {$value.name|default:""|truncate:6:"..."}</td>
-                    <td>{$value.publicity|truncate:8:"..."}</td>
+                    <td>{$value.publicity|truncate:12:"..."}</td>
                     <td>{$value.media}</td>
-                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:8:"..."}</td>
+                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""|truncate:12:"..."}</td>
                     <td>{$value.age|default:""}</td>
                     <td>{$value.tel01|default:""}-{$value.tel02|default:""}-{$value.tel03|default:""}</td>
                     <td>
                         {if $value.mail01|default:"" !== "" AND $value.maildomain|default:"" !== ""}
-                            {$value.mail01|default:""}@{$value.maildomain|default:""|truncate:5:"..."}
+                            {$value.mail01|default:""|truncate:7:"..."}@{$value.maildomain|default:""|truncate:5:"..."}
                         {/if}
                     </td>
                     <td>{$value.interview_result|default:""}</td>
