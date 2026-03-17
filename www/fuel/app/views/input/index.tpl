@@ -1925,9 +1925,10 @@
     }
   }
 
-  // 追加: 初期化（ページロード時に既に .check がある場合）
+  // 追加: 初期化（ページロード時に既にチェック済みがある場合）
   $(document).ready(function() {
-    updateBlinkAnimation();
+    // 既存の change ハンドラを使って、現在のチェック状態から見た目を復元
+    $('.checkbox-check').trigger('change');
   });
 
   // 申込名フィールドのセレクタを指定（name属性で特定）
