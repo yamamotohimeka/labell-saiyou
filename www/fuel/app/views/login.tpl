@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="{$base_url|default:'/'}assets/css/reset.css">
+    <link rel="stylesheet" href="{$base_url|default:'/'}assets/css/style.css">
+    <link rel="stylesheet" href="{$base_url|default:'/'}assets/css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/js/common.js"></script>
+    <script type="text/javascript" src="{$base_url|default:'/'}assets/js/common.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     </header>
 
     <div class="">
-        <form action="http://re.sp-labelle.com/login/login" method="post" id="login" accept-charset="utf-8">
+        <form action="{$base_url|default:'/'}login/login" method="post" id="login" accept-charset="utf-8">
             <ul>
                 <li>
                     <label for="userid">Mail</label>
