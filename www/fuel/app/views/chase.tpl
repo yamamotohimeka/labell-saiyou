@@ -7,7 +7,7 @@
     <section id="chase" class="container interview_wrap">
         <h2 class="breadcrumb">&gt;&nbsp;追跡予定情報</h2>
         <p class="description">本日までの追跡予定情報を表示しています</p>
-        <form action="/chase" method="get">
+        <form action="{$base_url|default:'/'}chase" method="get">
         <div class="chase_white_box">
             <!-- ID -->
             <div class="white_box" style="width: 10%;">
@@ -123,41 +123,80 @@
             </form>
         </div><!-- /.chase_white_box -->
 
-        <div class="table_cmn">
-            <table>
-                <thead>
-                <tr>
-                    <th class="">追跡予定日（時）</th>
-                    <th class="">申込日</th>
-                    <th class="">ID</th>
-                    <th class="">掲載求人名</th>
-                    <th class="">掲載媒体</th>
-                    <th class="">申込名</th>
-                    <th class="">年齢</th>
-                    <th class="">追跡理由</th>
-                    <th class="">連絡方法</th>
-                </tr>
-                </thead>
-                {foreach from=$tracking_data name="tracking_data" item=value key=key}
-                <tr>
-                    <td>{$value.scheduled_date|date_format:"%y.%m%d"}{if isset($value.scheduled_date_hour)}（{if $value.scheduled_date_hour == 0}深夜{/if}{$value.scheduled_date_hour}時）{/if}</td>
-                    <td><a href="/inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m%d"}</a></td>
-                    <td>{$value.id}</td>
-                    <td>{$value.media|default:""}</td>
-                    <td>{$value.publicity|default:""}</td>
-                    <td>{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""}</td>
-                    <td>{$value.age|default:""}</td>
-                    <td>{$value.reason|default:""}</td>
-                    <td>{$value.contact|default:""}</td>
-                </tr>
-                {/foreach}
-            </table>
-        </div><!--table_cmn -->
+{* 追跡予定情報テーブルのヘッダー部分を修正 *}
+<div class="table_cmn">
+    <table>
+        <thead>
+        <tr>
+            <th class="sortable" data-column="scheduled_date">
+                追跡予定日（時）
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+            <th class="sortable" data-column="submission_date">
+                申込日
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+            <th class="sortable" data-column="id">
+                ID
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+            <th class="sortable" data-column="media">
+                掲載求人名
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+            <th class="sortable" data-column="publicity">
+                掲載媒体
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+            <th class="sortable" data-column="submission_name">
+                申込名
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+            <th class="sortable" data-column="age">
+                年齢
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+            <th class="sortable" data-column="reason">
+                追跡理由
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+            <th class="sortable" data-column="contact">
+                連絡方法
+                <span class="sort-icon" data-sort="asc">▲</span>
+                <span class="sort-icon" data-sort="desc">▼</span>
+            </th>
+        </tr>
+        </thead>
+        <tbody id="tracking-table-body">
+        {foreach from=$tracking_data name="tracking_data" item=value key=key}
+        <tr>
+            <td data-sort-value="{$value.scheduled_date}">{$value.scheduled_date|date_format:"%y.%m%d"}{if isset($value.scheduled_date_hour)}（{if $value.scheduled_date_hour == 0}深夜{/if}{$value.scheduled_date_hour}時）{/if}</td>
+            <td data-sort-value="{$value.submission_date}"><a href="{$base_url|default:'/'}inputdata/data/{$value.id}">{$value.submission_date|date_format:"%y.%m%d"}</a></td>
+            <td data-sort-value="{$value.id}">{$value.id}</td>
+            <td data-sort-value="{$value.media|default:""}">{$value.media|default:""}</td>
+            <td data-sort-value="{$value.publicity|default:""}">{$value.publicity|default:""}</td>
+            <td data-sort-value="{$value.submission_name|default:""}">{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""}</td>
+            <td data-sort-value="{$value.age|default:0}">{$value.age|default:""}</td>
+            <td data-sort-value="{$value.reason|default:""}">{$value.reason|default:""}</td>
+            <td data-sort-value="{$value.contact|default:""}">{$value.contact|default:""}</td>
+        </tr>
+        {/foreach}
+        </tbody>
+    </table>
+</div><!--table_cmn -->
 
         <h2 class="breadcrumb">&gt;&nbsp;事前連絡日</h2>
         <p class="description">事前連絡日が当日、もしくは当日以前で連絡済みになっていないものを表示</p>
         <div class="intvw_jizen">
-            <form action="/chase" method="post">
+            <form action="{$base_url|default:'/'}chase" method="post">
             <div class="table_cmn">
                 <table>
                     <tr>
@@ -179,7 +218,7 @@
                         <td>{$value.interview_date|date_format:"%y.%m%d"}</td>
                         <td>{$value.interview_hour|string_format:"%02d"}:{$value.interview_time|string_format:"%02d"}</td>
                         <td>{$value.interviewshop|default:""}</td>
-                        <td><a href="/inputdata/data/{$value.id}">{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""}</a></td>
+                        <td><a href="{$base_url|default:'/'}inputdata/data/{$value.id}">{if $value.nikoiti_flg === "1"}<i class="fa fa-star "></i>{/if}{$value.submission_name|default:""}</a></td>
                         <td>{$value.age}</td>
                         <td>{$value.media}</td>
                         <td>{$value.contact}</td>
@@ -225,5 +264,52 @@
         $('#select_reason').multipleSelect('setSelects', [{$search.reason_hidden|default:""}]);
     });
 </script>
+
+{* ソート用 JS は Smarty と波括弧が衝突するため literal。スタイルは style.css の #chase .sortable *}
+{literal}
+<script>
+$(function(){
+    var currentSort = { column: null, direction: 'asc' };
+
+    $('.sortable').click(function() {
+        var column = $(this).data('column');
+        var colIndex = $(this).index();
+        var tbody = $('#tracking-table-body');
+        var rows = tbody.find('tr').toArray();
+
+        if (currentSort.column === column) {
+            currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSort.direction = 'asc';
+        }
+        currentSort.column = column;
+
+        $('.sortable .sort-icon').removeClass('active');
+        $(this).find('[data-sort="' + currentSort.direction + '"]').addClass('active');
+
+        rows.sort(function(a, b) {
+            var aValue = $(a).children('td').eq(colIndex).attr('data-sort-value') || '';
+            var bValue = $(b).children('td').eq(colIndex).attr('data-sort-value') || '';
+
+            if (column === 'id' || column === 'age') {
+                aValue = parseInt(aValue, 10) || 0;
+                bValue = parseInt(bValue, 10) || 0;
+                return currentSort.direction === 'asc' ? aValue - bValue : bValue - aValue;
+            }
+
+            aValue = aValue.toString().toLowerCase();
+            bValue = bValue.toString().toLowerCase();
+
+            if (currentSort.direction === 'asc') {
+                return aValue < bValue ? -1 : (aValue > bValue ? 1 : 0);
+            }
+            return aValue > bValue ? -1 : (aValue < bValue ? 1 : 0);
+        });
+
+        tbody.empty().append(rows);
+    });
+});
+</script>
+{/literal}
 
 {include file=$smarty.const.ADMIN_FOOTER}

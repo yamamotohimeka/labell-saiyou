@@ -8,8 +8,8 @@
 }
 
 /*変数の設定*/
-:root{
-  --bg-color:#09275D ;
+:root {
+  --bg-color: #09275d;
 }
 
 html {
@@ -22,8 +22,8 @@ body {
   background: var(--bg-color);
   height: 100%;
   letter-spacing: 1px;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
 }
 
 li {
@@ -156,7 +156,7 @@ header .logout {
   display: inline-block;
 }
 
-header .username{
+header .username {
   display: inline-block;
   margin-left: 10px;
   position: relative;
@@ -281,7 +281,8 @@ header ul li ul.dropmenu li a {
 }
 
 header ul li ul.dropmenu li:hover {
-  background: url(../img/icon_arrow_2.png) no-repeat right 10px center,
+  background:
+    url(../img/icon_arrow_2.png) no-repeat right 10px center,
     linear-gradient(to bottom, #f7931e 0%, #f15a24 100%);
   background-size: 12px;
 }
@@ -503,13 +504,13 @@ header .edit {
   overflow: hidden;
 }
 
-.drawer .table_cmn{
+.drawer .table_cmn {
   .chase_yellow {
-    background-color: #E47B19e0;
+    background-color: #e47b19e0;
     color: #ffff;
   }
-  tbody{
-    tr{
+  tbody {
+    tr {
       background-color: #fff;
       color: #000000;
     }
@@ -517,12 +518,11 @@ header .edit {
       border: 1px solid #000;
       font-weight: 500;
 
-      a{
+      a {
         color: #000000;
       }
     }
   }
-
 }
 
 /* 面接予定 -------------*/
@@ -587,7 +587,7 @@ header .edit {
 ========================*/
 
 .girl_search_col {
-  padding:25px 20px 55px;
+  padding: 25px 20px 55px;
   margin-top: 20px !important;
   margin-bottom: 30px;
   position: relative;
@@ -833,16 +833,16 @@ header .edit {
 .interview_wrap a {
   text-decoration: underline;
 }
-.interview_wrap{
-  table{
-  tbody{
-    tr{
-      td{
-        color: #000000;
-        font-weight: 500;
+.interview_wrap {
+  table {
+    tbody {
+      tr {
+        td {
+          color: #000000;
+          font-weight: 500;
+        }
       }
     }
-  }
   }
 }
 .interview_whitebox {
@@ -1058,6 +1058,33 @@ span.radio-txt {
   width: 68%;
 }
 
+/* 追跡予定テーブル：列ヘッダーソート（.sortable / .sort-icon は chase 画面用） */
+#chase .sortable {
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+#chase .sortable:hover {
+  background-color: #09275d;
+}
+
+#chase .sort-icon {
+  font-size: 10px;
+  color: #ccc;
+  margin-left: 5px;
+  display: none;
+}
+
+#chase .sortable:hover .sort-icon {
+  display: inline;
+}
+
+#chase .sort-icon.active {
+  color: #333;
+  display: inline !important;
+}
+
 /*======================
 問合せリスト
 ========================*/
@@ -1098,7 +1125,7 @@ span.radio-txt {
 }
 
 .chase_yellow {
-  color: #E47B19e0;
+  color: #e47b19e0;
 }
 
 .btn_orange.chase a {
@@ -1766,7 +1793,7 @@ span.alert_list_over {
 /*======================
 検索条件
 ========================*/
-.grid__wrapper{
+.grid__wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 10px;
@@ -1777,7 +1804,7 @@ span.alert_list_over {
   padding: 10px 15px 20px;
   flex-grow: 1;
 
-  p{
+  p {
     padding-bottom: 5px;
   }
 }
