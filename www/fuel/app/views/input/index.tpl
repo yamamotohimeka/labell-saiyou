@@ -141,6 +141,7 @@
                             <div class="select_arrow select_input_half">
                                 {$forms.interview_date.html}
                             </div>
+                            <p class="description">仮予約時は一度送信し後程チェックつける</p>
                         </div>
                         {*                    {/if}*}
                         {*                    <div class="white_box input_left">*}
@@ -244,7 +245,8 @@
                             {*                            {$forms.advance_contact_date_day.html}*}
                             {*                        </div>*}
                             <span class="select_input_ymd_txt">日</span>
-                            <p class="description">事前連絡日を変更する場合は連絡済チェックを外して下さい</p>
+                            <p class="description">事前連絡を付けなおす際は、<br>
+                              ☐連絡済レ点チェックを外す</p>
                         </div>
 
                         <!-- 面接店舗-->
@@ -433,7 +435,7 @@
                             </div>
                         </div>
                         <!--掲載業種-->
-                        <div class="white_box input_right SSmall">
+                        <div class="white_box input_right XSMedium">
                             <p>掲載業種</p>
                             <div class="select_arrow genre_data">
                                 {*{$forms.genre.html}*}
@@ -457,12 +459,14 @@
                             </div>
                         </div>
 
-                        <div class="white_box XSMedium clear" style="padding:0px;">
+                        <div class="white_box input_right XSMedium" >
+                            <p>オファーメール返信✉</p>
                             <div class="select_arrow">
                                 {$forms.scout_mail_flg.html}
                             </div>
                         </div>
 
+                        <div class="box__wrap">
                         <!--SC-->
                         <div class="white_box input_right XSmall {if $userData.group === "2"}clear{/if}">
                             <p>SC<br><span class="required2">※必須</span></p>
@@ -476,6 +480,7 @@
                             <div class="select_arrow">
                                 {$forms.move.html}
                             </div>
+                        </div>
                         </div>
                         {if $userData.group === "2"}
                             <!--面接予定日-->
@@ -504,6 +509,7 @@
                         <div class="white_box input_check clear">
                             <p>面接希望条件欄</p>
                             <div class="checkbox">
+                            <div class="checkbox_wrap">
                                 {*<span class="text_ide">希望勤務地</span>*}
                                 {*{$forms.hope_workplace.html}*}
                                 <span class="text_ide">希望勤務地</span>
@@ -513,7 +519,8 @@
                                     </optgroup>
                                 </select>
                                 <input type="hidden" name="hope_workplace_hidden" id="hope_workplace_hidden" value="" />
-
+</div>
+   <div class="checkbox_wrap">
                                 <span class="text_ide">身分証</span>
                                 <select id="select_apply_identity_card" name="apply_identity_card" class="atleast">
                                     <optgroup label="全て選択">
@@ -521,125 +528,169 @@
                                     </optgroup>
                                 </select>
                                 <input type="hidden" name="apply_identity_card_hidden" id="apply_identity_card_hidden" value="" />
-
+</div>
+   <div class="checkbox_wrap">
                                 <span class="text_ide">身分証備考</span>
                                 {$forms.apply_identity_card_remark.html}
-
-                                <br>
+</div>
+                                <div class="flex">
+                                    <div class="flex-box">
+                                <div class="checkbox_wrap">
                                 <label>
                                     <input type="hidden" name="residence_flg" value="0" />
                                     {$forms.residence_flg.html}
                                     <span class="checkbox-txt">居住地</span>
                                 </label>
                                 {$forms.residence.html}
-
                                 <span class="select_other_txt">　</span>
+                              </div>
+
+                                        <div class="checkbox_wrap">
+                                            <label class="hope_back_flg_1" {if empty($default.hope_back_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="hope_back_flg" value="0" />
+                                                {$forms.hope_back_flg.html}
+                                                <span class="checkbox-txt">希望バック</span>
+                                            </label>
+                                            <label class="hope_back_flg_1" {if empty($default.hope_back_flg)}style="opacity: 0.3;"{/if}>
+                                                {$forms.hope_back_price.html}
+                                                <span class="select_other_txt text_right">円</span>
+                                                {if isset($validate.hope_back_price)}
+                                                    <span class="input_error">{$validate.hope_back_price}</span>
+                                                {/if}
+                                            </label>
+                                        </div>
+
+                                        <label class="transportation_expenses_flg_1" {if empty($default.transportation_expenses_flg)}style="opacity: 0.3;"{/if}>
+                                            <input type="hidden" name="transportation_expenses_flg" value="0" />
+                                            {$forms.transportation_expenses_flg.html}
+                                            <span class="checkbox-txt text_right">交通費</span>
+                                        </label>
+
+                                        {*<label>*}
+                                        {*<input type="hidden" name="pick_up_flg" value="0" />*}
+                                        {*{$forms.pick_up_flg.html}*}
+                                        {*<span class="checkbox-txt text_right">送迎</span>*}
+                                        {*</label>*}
+                                        {*送迎を送り、迎えに分割*}
+                                        <label class="send_to_home_flg_1" {if empty($default.send_to_home_flg)}style="opacity: 0.3;"{/if}>
+                                            <input type="hidden" name="send_to_home_flg" value="0" />
+                                            {$forms.send_to_home_flg.html}
+                                            <span class="checkbox-txt text_right">送り</span>
+                                        </label>
+                                        <div class="checkbox_wrap">
+                                            <label class="tatoo_flg_1" {if empty($default.tatoo_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="tatoo_flg" value="0" />
+                                                {$forms.tatoo_flg.html}
+                                                <span class="checkbox-txt text_right">タトゥーや傷痕あり</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-box" >
+                                <div class="checkbox_wrap">
                                 <label>
                                     <input type="hidden" name="experience_possible_flg" value="0" />
                                     {$forms.experience_possible_flg.html}
                                     <span class="checkbox-txt text_right">体験可能</span>
                                 </label>
-
-                                <label class="without_prior_flg_1" {if empty($default.without_prior_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="without_prior_flg" value="0" />
-                                    {$forms.without_prior_flg.html}
-                                    <span class="checkbox-txt text_right">面接のみ</span>
-                                </label>
-                                <br/>
-
-                                <label class="hope_back_flg_1" {if empty($default.hope_back_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="hope_back_flg" value="0" />
-                                    {$forms.hope_back_flg.html}
-                                    <span class="checkbox-txt">希望バック</span>
-                                </label>
-                                <label class="hope_back_flg_1" {if empty($default.hope_back_flg)}style="opacity: 0.3;"{/if}>
-                                    {$forms.hope_back_price.html}
-                                    <span class="select_other_txt text_right">円</span>
-                                    {if isset($validate.hope_back_price)}
-                                        <span class="input_error">{$validate.hope_back_price}</span>
-                                    {/if}
-                                </label>
-
-                                <label class="warranty_flg_1" {if empty($default.warranty_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="warranty_flg" value="0" />
-                                    {$forms.warranty_flg.html}
-                                    <span class="checkbox-txt">希望保証</span>
-                                </label>
-                                <label class="warranty_flg_1" {if empty($default.warranty_flg)}style="opacity: 0.3;"{/if}>
-                                    {$forms.warranty_time.html}
-                                    <span class="select_other_txt">時間</span>
-                                    {if isset($validate.warranty_time)}
-                                        <span class="input_error">{$validate.warranty_time}</span>
-                                    {/if}
-
-                                    {$forms.warranty_price.html}
-                                    <span class="select_other_txt text_right">円</span>
-                                    {if isset($validate.warranty_price)}
-                                        <span class="input_error">{$validate.warranty_price}</span>
-                                    {/if}
-                                </label>
-                                <label class="celebration_flg_1" {if empty($default.celebration_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="celebration_flg" value="0" />
-                                    {$forms.celebration_flg.html}
-                                    <span class="checkbox-txt">入店祝い金</span>
-                                </label>
-                                {*{$forms.celebration_time.html}*}
-                                {*<span class="select_other_txt">時間</span>*}
-                                <label class="celebration_flg_1" {if empty($default.celebration_flg)}style="opacity: 0.3;"{/if}>
-                                    {$forms.celebration_price.html}
-                                    <span class="select_other_txt">円</span>
-
-                                    {if isset($validate.celebration_price)}
-                                        <span class="input_error">{$validate.celebration_price}</span>
-                                    {/if}
-                                </label>
-                                <br>
-                                <label class="transportation_expenses_flg_1" {if empty($default.transportation_expenses_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="transportation_expenses_flg" value="0" />
-                                    {$forms.transportation_expenses_flg.html}
-                                    <span class="checkbox-txt text_right">交通費</span>
-                                </label>
+                                    </div>
+                                        <div class="checkbox_wrap">
+                                            <label class="without_prior_flg_1" {if empty($default.without_prior_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="without_prior_flg" value="0" />
+                                                {$forms.without_prior_flg.html}
+                                                <span class="checkbox-txt text_right">面接のみ</span>
+                                            </label>
+                                        </div>
 
 
-                                {*<label>*}
-                                {*<input type="hidden" name="pick_up_flg" value="0" />*}
-                                {*{$forms.pick_up_flg.html}*}
-                                {*<span class="checkbox-txt text_right">送迎</span>*}
-                                {*</label>*}
-                                {*送迎を送り、迎えに分割*}
-                                <label class="send_to_home_flg_1" {if empty($default.send_to_home_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="send_to_home_flg" value="0" />
-                                    {$forms.send_to_home_flg.html}
-                                    <span class="checkbox-txt text_right">送り</span>
-                                </label>
-                                <label class="send_to_shop_flg_1" {if empty($default.send_to_shop_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="send_to_shop_flg" value="0" />
-                                    {$forms.send_to_shop_flg.html}
-                                    <span class="checkbox-txt text_right">迎え</span>
-                                </label>
+                                        <div class="checkbox_wrap">
+                                            <label class="warranty_flg_1" {if empty($default.warranty_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="warranty_flg" value="0" />
+                                                {$forms.warranty_flg.html}
+                                                <span class="checkbox-txt">希望保証</span>
+                                            </label>
+                                            <label class="warranty_flg_1" {if empty($default.warranty_flg)}style="opacity: 0.3;"{/if}>
+                                                {$forms.warranty_time.html}
+                                                <span class="select_other_txt">時間</span>
+                                                {if isset($validate.warranty_time)}
+                                                    <span class="input_error">{$validate.warranty_time}</span>
+                                                {/if}
+
+                                                {$forms.warranty_price.html}
+                                                <span class="select_other_txt text_right">円</span>
+                                                {if isset($validate.warranty_price)}
+                                                    <span class="input_error">{$validate.warranty_price}</span>
+                                                {/if}
+                                            </label>
+                                        </div>
+                                        <label class="send_to_shop_flg_1" {if empty($default.send_to_shop_flg)}style="opacity: 0.3;"{/if}>
+                                            <input type="hidden" name="send_to_shop_flg" value="0" />
+                                            {$forms.send_to_shop_flg.html}
+                                            <span class="checkbox-txt text_right">迎え</span>
+                                        </label>
+
+                                        <div class="checkbox_wrap">
+                                            <label class="single_room_wait_flg_1" {if empty($default.single_room_wait_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="single_room_wait_flg" value="0" />
+                                                {$forms.single_room_wait_flg.html}
+                                                <span class="checkbox-txt text_right">個室待機</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="checkbox_wrap">
+                                            <label class="dorm_flg_1" {if empty($default.dorm_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="dorm_flg" value="0" />
+                                                {$forms.dorm_flg.html}
+                                                <span class="checkbox-txt text_right">寮</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="checkbox_wrap">
+                                            <label class="menses_flg_1" {if empty($default.menses_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="menses_flg" value="0" />
+                                                {$forms.menses_flg.html}
+                                                <span class="checkbox-txt text_right">生理中</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox_wrap">
+                                            <label class="nursery_flg_1" {if empty($default.nursery_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="nursery_flg" value="0" />
+                                                {$forms.nursery_flg.html}
+                                                <span class="checkbox-txt text_right">託児所</span>
+                                            </label>
+                                        </div>
+                                        <div class="checkbox_wrap">
+                                            <label class="advance_salary_flg_1" {if empty($default.advance_salary_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="advance_salary_flg" value="0" />
+                                                {$forms.advance_salary_flg.html}
+                                                <span class="checkbox-txt text_right">バンス</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-box">
+
+                                        <div class="checkbox_wrap">
+                                            <label class="celebration_flg_1" {if empty($default.celebration_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="celebration_flg" value="0" />
+                                                {$forms.celebration_flg.html}
+                                                <span class="checkbox-txt">入店祝い金</span>
+                                            </label>
+                                            {*{$forms.celebration_time.html}*}
+                                            {*<span class="select_other_txt">時間</span>*}
+                                            <label class="celebration_flg_1" {if empty($default.celebration_flg)}style="opacity: 0.3;"{/if}>
+                                                {$forms.celebration_price.html}
+                                                <span class="select_other_txt">円</span>
+
+                                                {if isset($validate.celebration_price)}
+                                                    <span class="input_error">{$validate.celebration_price}</span>
+                                                {/if}
+                                            </label>
+                                        </div>
 
 
-                                <label class="single_room_wait_flg_1" {if empty($default.single_room_wait_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="single_room_wait_flg" value="0" />
-                                    {$forms.single_room_wait_flg.html}
-                                    <span class="checkbox-txt text_right">個室待機</span>
-                                </label>
-                                <label class="dorm_flg_1" {if empty($default.dorm_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="dorm_flg" value="0" />
-                                    {$forms.dorm_flg.html}
-                                    <span class="checkbox-txt text_right">寮</span>
-                                </label>
-                                <label class="nursery_flg_1" {if empty($default.nursery_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="nursery_flg" value="0" />
-                                    {$forms.nursery_flg.html}
-                                    <span class="checkbox-txt text_right">託児所</span>
-                                </label>
-                                <label class="advance_salary_flg_1" {if empty($default.advance_salary_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="advance_salary_flg" value="0" />
-                                    {$forms.advance_salary_flg.html}
-                                    <span class="checkbox-txt text_right">バンス</span>
-                                </label>
-                                <label class="working_away_flg_1" {if empty($default.working_away_flg)}style="opacity: 0.3;"{/if}>
+<div class="checkbox_wrap">
+                                                <label class="working_away_flg_1" {if empty($default.working_away_flg)}style="opacity: 0.3;"{/if}>
                                     <input type="hidden" name="working_away_flg" value="0" />
                                     {$forms.working_away_flg.html}
                                     <span class="checkbox-txt">出稼ぎ</span>
@@ -648,24 +699,16 @@
                                     </div>
                                     <span class="select_other_txt">日間</span>
                                 </label>
+</div>
 
-                                <br>
-                                <label class="tatoo_flg_1" {if empty($default.tatoo_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="tatoo_flg" value="0" />
-                                    {$forms.tatoo_flg.html}
-                                    <span class="checkbox-txt text_right">タトゥーや傷痕あり</span>
-                                </label>
-                                <label class="menses_flg_1" {if empty($default.menses_flg)}style="opacity: 0.3;"{/if}>
-                                    <input type="hidden" name="menses_flg" value="0" />
-                                    {$forms.menses_flg.html}
-                                    <span class="checkbox-txt text_right">生理中</span>
-                                </label>
+
+<div class="checkbox_wrap">
+
                                 <label class="same_person_flg_1" {if empty($default.same_person_flg)}style="opacity: 0.3;"{/if}>
                                     <input type="hidden" name="same_person_flg" value="0" />
                                     {$forms.same_person_flg.html}
                                     <span class="checkbox-txt text_right">同一人物あり</span>
                                 </label>
-                                <br />
 
                                 {*<label>*}
                                 {*<input type="hidden" name="identity_card_flg" value="0" />*}
@@ -687,7 +730,12 @@
                                 {*{$forms.confirmed_flg.html}*}
                                 {*<span class="checkbox-txt text_right">確認あり</span>*}
                                 {*</label>*}
+</div>
+                                    </div>
+                                    </div>
 
+
+<div class="checkbox_wrap">
                                 <label class="nikoiti_flg_1" {if empty($default.nikoiti_flg)}style="opacity: 0.3;"{/if}>
                                     <input type="hidden" name="nikoiti_flg" value="0" />
                                     {$forms.nikoiti_flg.html}
@@ -696,8 +744,7 @@
                                 <label class="nikoiti_flg_1" {if empty($default.nikoiti_flg)}style="opacity: 0.3;"{/if}>
                                     {$forms.nikoiti.html}<p class="description">ニコイチは面接予定情報で★マークがつく</p>
                                 </label>
-
-                                <br />
+</div>
                                 <label class="other_flg_1" {if empty($default.other_flg)}style="opacity: 0.3;"{/if}>
                                     <input type="hidden" name="other_flg" value="0" />
                                     {$forms.other_flg.html}
@@ -772,44 +819,77 @@
 
                             <!--右下サイドここから-->
                             <div class="date_right_btm_col_layer_yellow1">
+                              <p class="description-navy">
+                                [注意] <br>
+                                以下の項目は、面接内容の共有および集計に使用されます。<br>
+                              面接担当者の方は、入力漏れや内容の不一致がないよう、必ずご確認のうえご入力ください。</p>
 
-                                <!--TEL-->
+                               <div class="date_right_btm_col_layer_yellow1-flex">
+                               <div class="date_right_btm_col_layer_yellow1-left">
+                                                <!--TEL-->
                                 <div class="white_box yellow_box input_right XSMedium clear">
                                     <p>TEL</p>
+                                    <div class="flex"> 
                                     {$forms.tel01.html}
                                     <span class="hyphen">-</span>
                                     {$forms.tel02.html}
                                     <span class="hyphen">-</span>
                                     {$forms.tel03.html}
-                                </div>
-                                <!--Mail-->
-                                <div class="white_box yellow_box input_right Mail">
-                                    <p>Mail</p>
-                                    {$forms.mail01.html}<span class="at">＠</span>
-                                    <div class="select_arrow select_mail">
-                                        {$forms.maildomain.html}
-                                    </div>
-                                </div>
-                                <div class="white_box yellow_box input_right XSMedium" style="margin-top:-10px;padding:0px;">
-                                    <p class="description" style="padding:0px;">相違がないか確認</p>
-                                </div>
-                                <div class="white_box yellow_box input_right XSMedium" style="margin-top:-10px;padding:0px;">
-                                    <p class="description" style="padding:0px;">空欄の場合は面接で聞き取り記入する</p>
-                                </div>
-                                <!--年齢-->
-                                <div class="white_box yellow_box input_right SSmall clear">
+                                  </div> 
+                                  <p class="description width-calc">相違がないか確認</p>
+                              </div>
+                               <!--年齢-->
+                                <div class="white_box yellow_box input_right XSMedium" style="align-items: baseline;">
                                     <p>年齢</p>
                                     {$forms.age.html}
                                     <span class="select_other_txt">歳</span>
                                     {if isset($validate.age)}
                                         <span class="input_error">{$validate.age}</span>
                                     {/if}
+                                 <p class="description width-calc">年齢・経験の相違があれば変更する</p>
+
                                 </div>
+                                  <div class="flex">
+                                   <!--身長-->
+                                <div class="white_box yellow_box input_right XSMedium clear">
+                                    <p>身長</p>
+                                    {$forms.tall.html}
+                                    <span class="select_other_txt">cm</span>
+                                    <p class="description width-calc">身長・体重の相違があれば変更する</p>
+
+                                </div>
+                                <!--体重-->
+                                <div class="white_box yellow_box input_right XSMedium">
+                                    <p>体重</p>
+                                    {$forms.weight.html}
+                                    <span class="select_other_txt">kg</span>
+                                </div>
+                                <!--BMI-->
+                                <div class="white_box yellow_box input_right XSmall">
+                                    <p>BMI</p>
+                                    {$forms.bmi.html}
+                                </div>
+                                </div>
+                               </div>
+                               <div class="date_right_btm_col_layer_yellow1-right">
+                
+                                <!--Mail-->
+                                <div class="white_box yellow_box input_right Mail">
+                                    <p>Mail</p>
+                                    <div class="flex"> 
+                                    {$forms.mail01.html}<span class="at">＠</span>
+                                    <div class="select_arrow select_mail">
+                                        {$forms.maildomain.html}
+                                    </div>
+                                    </div>
+                                    <p class="description width-calc">空欄の場合は面接で聞き取り記入する</p>
+                                </div>
+                                <div class="flex">
                                 <!--経験-->
                                 <div class="white_box yellow_box input_right Small">
                                     <p>経験</p>
-                                    <div class="select_arrow">
-                                        <div class="select_arrow">
+                                    <div class="select_arrow yellow_box">
+                                        <div class="select_arrow yellow_box">
                                             <select id="select_experience" name="experience" class="atleast">
                                                 <optgroup label="全て選択">
                                                     {$experience_select}
@@ -824,62 +904,41 @@
                                     <p>経験備考</p>
                                     {$forms.experience_remarks.html}
                                 </div>
-                                <div class="white_box yellow_box input_right XSMedium clear" style="margin-top:-10px;padding:0px;">
-                                    <p class="description" style="padding:0px;">年齢・経験の相違があれば変更する</p>
+                                <div class="white_box yellow_box input_righ" style="margin-top:-10px;padding:0px;">
                                 </div>
-                                <!--身長-->
-                                <div class="white_box yellow_box input_right SSmall clear">
-                                    <p>身長</p>
-                                    {$forms.tall.html}
-                                    <span class="select_other_txt">cm</span>
                                 </div>
-                                <!--体重-->
-                                <div class="white_box yellow_box input_right SSmall">
-                                    <p>体重</p>
-                                    {$forms.weight.html}
-                                    <span class="select_other_txt">kg</span>
-                                </div>
-                                <!--BMI-->
-                                <div class="white_box input_right XSmall">
-                                    <p>BMI</p>
-                                    {$forms.bmi.html}
-                                </div>
+                             <div class="flex" style="margin-top: 14px;">
                                 <!--バスト-->
-                                <div class="white_box yellow_box input_right XSmall">
+                                <div class="white_box yellow_box input_right">
                                     <p>バスト</p>
                                     {$forms.bust.html}
                                     <span class="select_other_txt">cm</span>
                                 </div>
                                 <!--カップ数-->
-                                <div class="white_box yellow_box input_right XSmall">
+                                <div class="white_box yellow_box input_right">
                                     <p>カップ数</p>
                                     <div class="select_arrow slect_input_cup">
                                         {$forms.cup.html}
                                     </div>
                                     <span class="select_other_txt">cup</span>
+                                    <p class="description width-calc">３サイズ・カップ数は面接で聞き取り記入する</p>
                                 </div>
                                 <!--ウエスト-->
-                                <div class="white_box yellow_box input_right XSmall">
+                                <div class="white_box yellow_box input_right">
                                     <p>ウエスト</p>
                                     {$forms.waist.html}
                                     <span class="select_other_txt">cm</span>
                                 </div>
                                 <!--ヒップ-->
-                                <div class="white_box yellow_box input_right XSmall">
+                                <div class="white_box yellow_box input_right">
                                     <p>ヒップ</p>
                                     {$forms.hip.html}
                                     <span class="select_other_txt">cm</span>
                                 </div>
-                                <div class="white_box yellow_box input_right Medium" style="margin-top:-10px;padding:0px;">
-                                    <p class="description" style="padding:0px;">身長・体重の相違があれば変更する</p>
-                                </div>
-                                <div class="white_box yellow_box input_right XSMedium" style="margin-top:-10px;padding:0px;">
-                                    <p class="description" style="padding:0px;">３サイズ・カップ数は面接で聞き取り記入する</p>
-                                </div>
-                                <br style="clear: both">
+                              </div>
                             </div>
-
-
+                            </div>
+</div>
                             <div class="date_right_btm_col_layer_yellow2">
 
                                 <!--所属店舗-->
@@ -927,12 +986,11 @@
                                 <div class="white_box yellow_box input_right SSSmall clear">
                                     <p>姓</p>
                                     {$forms.surname.html}
-                                    <p class="description">※旧字を使用するとエラーになり入力した内容がなくなりますので注意してください</p>
-                                </div>
+                              <p class="LLarge description description-full">※旧字体を使用するとエラーが発生し、入力した内容が消えてしまいます。</p>
+                                  </div>
                                 <div class="white_box yellow_box input_right SSSmall">
                                     <p>名</p>
                                     {$forms.name.html}
-                                    <p class="description">※旧字を使用するとエラーになり入力した内容がなくなりますので注意してください</p>
                                 </div>
                                 <!--ふりがな-->
                                 <div class="white_box yellow_box input_right SSSmall">
@@ -951,6 +1009,7 @@
                                     {/if}
 
                                 </div>
+                                <!-- <p class="LLarge description">※旧字体を使用するとエラーが発生し、入力した内容が消えてしまいます。</p> -->
                                 <!--住所-->
                                 <div class="white_box yellow_box input_right LLarge clear">
                                     <p>住所</p>
@@ -964,91 +1023,10 @@
                                     <span class="select_other_txt">都道府県</span>
                                     {$forms.address.html}
                                 </div>
-                                <!--面接結果-->
-                                <div class="white_box yellow_box input_right SSSmall clear">
-                                    <p>面接結果</p>
-                                    <div class="select_arrow">
-                                        {$forms.interview_result.html}
-                                    </div>
-                                </div>
-                                <!--面接担当-->
-                                <div class="white_box yellow_box input_right SSmall">
-                                    <p>面接担当</p>
-                                    <div class="select_arrow">
-                                        {$forms.interview_staff.html}
-                                    </div>
-
-                                    {*                            <div class="select_arrow">*}
-                                    {*                            <select id="form_interview_staff" name="interview_staff">*}
-                                    {*                                {$interview_staff_select}*}
-                                    {*                            </select>*}
-                                    {*                            </div>*}
-
-                                </div>
-                                <!--面接担当（サブ）-->
-                                <div class="white_box yellow_box input_right SSmall">
-                                    <p>面接担当（サブ）</p>
-                                    <div class="select_arrow">
-                                        {$forms.interview_staff_sub.html}
-                                    </div>
-
-                                    {*                            <div class="select_arrow">*}
-                                    {*                                <select id="form_interview_staff_sub" name="interview_staff_sub">*}
-                                    {*                                    {$interview_staff_sub_select}*}
-                                    {*                                </select>*}
-                                    {*                            </div>*}
-
-                                </div>
-                                <!--KS担当-->
-                                <div class="white_box yellow_box input_right SSmall">
-                                    <p>KS担当</p>
-                                    <div class="select_arrow">
-                                        {$forms.ks_staff.html}
-                                    </div>
-                                </div>
-                                <!-- 退店日-->
-                                <!--★-->
-                                {*                        {if $smarty.server.REMOTE_ADDR == '221.113.41.190'}*}
-                                <div class="white_box yellow_box input_right Small clear">
-                                    <p>退店日<span class="required3">※必須</span></p>
-                                    <div class="select_arrow select_input_half" style="">
-                                        {$forms.leaving_date.html}
-                                    </div>
-                                </div>
-                                {*                        {/if}*}
-                                {*                        <div class="white_box input_right XMedium clear">*}
-                                {*                            <p>退店日<span class="required3">※必須</span></p>*}
-                                {*                            <div class="select_arrow select_input_y">*}
-                                {*                                {$forms.leaving_year.html}*}
-                                {*                            </div>*}
-                                {*                            <span class="select_ymd_txt">年</span>*}
-                                {*                            <div class="select_arrow select_input_md">*}
-                                {*                                {$forms.leaving_month.html}*}
-                                {*                            </div>*}
-                                {*                            <span class="select_ymd_txt">月</span>*}
-                                {*                            <div class="select_arrow select_input_md">*}
-                                {*                                {$forms.leaving_day.html}*}
-                                {*                            </div>*}
-                                {*                            <span class="select_ymd_txt">日</span>*}
-                                {*                        </div>*}
-                                <!--退店理由-->
-                                <div class="white_box yellow_box input_right SSSmall">
-                                    <p>退店理由</p>
-                                    <div id="closed_reason" class="select_arrow">
-                                        {$forms.leaving_reason.html}
-                                    </div>
-                                </div>
-                                <!--勤務形態-->
-                                <div class="white_box yellow_box input_right SSmall clear">
-                                    <p>勤務形態</p>
-                                    <div class="select_arrow">
-                                        {$forms.work.html}
-                                    </div>
-                                </div>
                                 <!--本人確認-->
-                                <div class="white_box yellow_box input_right SSmall">
+                                <div class="white_box yellow_box input_right SSmall clear">
                                     <p>身分証</p>
-                                    <div class="select_arrow">
+                                    <div class="select_arrow yellow_box">
                                         <select id="select_identity_card" name="identity_card_select">
                                             <optgroup label="全て選択">
                                                 {$person_select}
@@ -1062,41 +1040,9 @@
                                     <p>身分証備考</p>
                                     {$forms.identity_card_remarks.html}
                                 </div>
-                                <!--給料-->
-                                <div class="white_box yellow_box input_right SSmall clear">
-                                    <p>給料</p>
-                                    {$forms.salary.html}
-                                    <span class="select_other_txt">円</span>
-                                    {if isset($validate.salary)}
-                                        <span class="input_error">{$validate.salary}</span>
-                                    {/if}
-
-                                </div>
-                                <!--特別指名料-->
-                                <div class="white_box yellow_box input_right SSmall">
-                                    <p>特別指名料</p>
-                                    {$forms.nomination_fee.html}
-                                    <span class="select_other_txt">円</span>
-                                    {if isset($validate.nomination_fee)}
-                                        <span class="input_error">{$validate.nomination_fee}</span>
-                                    {/if}
-                                </div>
-                                <!--他店紹介-->
-                                <div class="white_box yellow_box input_right">
-                                    <p>他店グループ紹介</p>
-                                    {*                            <p>他店紹介</p>*}
-                                    <div class="select_arrow">
-                                        {$forms.another_shop.html}
-                                    </div>
-                                </div>
-                                <!--備考（他店紹介用）-->
-                                <div class="white_box yellow_box input_right XSMedium">
-                                    <p>他店グループ紹介備考</p>
-                                    {*                            <p>他店紹介備考</p>*}
-                                    {$forms.another_shop_remarks.html}
-                                </div>
                                 <!--検索ワード-->
                                 <div class="input_right clear">
+                                    <p class="description" style="font-size: 15px; padding: 10px 0;">▼【検索ワード・備考】求人面接の場合は、必ず記入ください</p>
                                     <p>検索ワード</p>
 
                                     {*<div class="word_col">*}
@@ -1154,20 +1100,153 @@
                                     <p>検索ワード備考</p>
                                     {$forms.word_remarks.html}
                                 </div>
+                                <!--面接結果-->
+                                <div class="white_box yellow_box input_right SSSmall clear">
+                                    <p>面接結果</p>
+                                    <div class="select_arrow">
+                                        {$forms.interview_result.html}
+                                    </div>
+                                </div>
+                                <!--面接担当-->
+                                <div class="white_box yellow_box input_right SSmall">
+                                    <p>面接担当</p>
+                                    <div class="select_arrow">
+                                        {$forms.interview_staff.html}
+                                    </div>
+
+                                    {*                            <div class="select_arrow">*}
+                                    {*                            <select id="form_interview_staff" name="interview_staff">*}
+                                    {*                                {$interview_staff_select}*}
+                                    {*                            </select>*}
+                                    {*                            </div>*}
+
+                                </div>
+                                <!--面接担当（サブ）-->
+                                <div class="white_box yellow_box input_right SSmall">
+                                    <p>面接担当（サブ）</p>
+                                    <div class="select_arrow">
+                                        {$forms.interview_staff_sub.html}
+                                    </div>
+
+                                    {*                            <div class="select_arrow">*}
+                                    {*                                <select id="form_interview_staff_sub" name="interview_staff_sub">*}
+                                    {*                                    {$interview_staff_sub_select}*}
+                                    {*                                </select>*}
+                                    {*                            </div>*}
+
+                                </div>
+                                <!--KS担当-->
+                                <div class="white_box yellow_box input_right SSmall">
+                                    <p>KS担当</p>
+                                    <div class="select_arrow">
+                                        {$forms.ks_staff.html}
+                                    </div>
+                                </div>
+                                <!--勤務形態-->
+                                <div class="white_box yellow_box input_right SSmall clear">
+                                    <p>勤務形態</p>
+                                    <div class="select_arrow">
+                                        {$forms.work.html}
+                                    </div>
+                                </div>
+                                <!--給料-->
+                                <div class="white_box yellow_box input_right SSmall">
+                                    <p>給料</p>
+                                    {$forms.salary.html}
+                                    <span class="select_other_txt">円</span>
+                                    {if isset($validate.salary)}
+                                        <span class="input_error">{$validate.salary}</span>
+                                    {/if}
+
+                                </div>
+
+                                <!--特別指名料-->
+                                <div class="white_box yellow_box input_right SSmall　clear">
+                                    <p>特別指名料</p>
+                                    {$forms.nomination_fee.html}
+                                    <span class="select_other_txt">円</span>
+                                    {if isset($validate.nomination_fee)}
+                                        <span class="input_error">{$validate.nomination_fee}</span>
+                                    {/if}
+                                </div>
 
 
+                                <!--初回出勤日 -->
+                                <div class="white_box yellow_box input_left flex clear" style="width: auto">
+                                    <!--初回出勤日-->
+                                    <!--★-->
+                                    {*                                    {if $smarty.server.REMOTE_ADDR == '221.113.41.190'}*}
+                                    <div class="white_box yellow_box input_absl" >
+                                        <p class="inline">初回出勤日</p>
+                                        <div class="select_arrow select_input_half yellow_box">
+                                            {$forms.working_day_date.html}
+                                        </div>
+                                    </div>
+                                    <div class="checkbox3" style="width: auto;">
+                                        <label>
+                                            <input type="hidden" name="working_day_undecided_flg" value="0" />
+                                            {$forms.working_day_undecided_flg.html}
+                                            <span class="checkbox-txt text_right">未定</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- 退店日-->
+                                <!--★-->
+                                {*                        {if $smarty.server.REMOTE_ADDR == '221.113.41.190'}*}
+                                <div class="white_box yellow_box input_right Small">
+                                    <p>退店日<span class="required3">※必須</span></p>
+                                    <div class="select_arrow select_input_half" style="">
+                                        {$forms.leaving_date.html}
+                                    </div>
+                                </div>
+                                {*                        {/if}*}
+                                {*                        <div class="white_box input_right XMedium clear">*}
+                                {*                            <p>退店日<span class="required3">※必須</span></p>*}
+                                {*                            <div class="select_arrow select_input_y">*}
+                                {*                                {$forms.leaving_year.html}*}
+                                {*                            </div>*}
+                                {*                            <span class="select_ymd_txt">年</span>*}
+                                {*                            <div class="select_arrow select_input_md">*}
+                                {*                                {$forms.leaving_month.html}*}
+                                {*                            </div>*}
+                                {*                            <span class="select_ymd_txt">月</span>*}
+                                {*                            <div class="select_arrow select_input_md">*}
+                                {*                                {$forms.leaving_day.html}*}
+                                {*                            </div>*}
+                                {*                            <span class="select_ymd_txt">日</span>*}
+                                {*                        </div>*}
+                                <!--退店理由-->
+                                <div class="white_box yellow_box input_right SSSmall">
+                                    <p>退店理由</p>
+                                    <div id="closed_reason" class="select_arrow">
+                                        {$forms.leaving_reason.html}
+                                    </div>
+                                </div>
+
+
+
+
+                                <!--他店紹介-->
+                                <div class="white_box yellow_box input_right clear">
+                                    <p>他店グループ紹介</p>
+                                    {*                            <p>他店紹介</p>*}
+                                    <div class="select_arrow">
+                                        {$forms.another_shop.html}
+                                    </div>
+                                </div>
+                                <!--備考（他店紹介用）-->
+                                <div class="white_box yellow_box input_right XSMedium">
+                                    <p>他店グループ紹介備考</p>
+                                    {*                            <p>他店紹介備考</p>*}
+                                    {$forms.another_shop_remarks.html}
+                                </div>
                                 <!--備考-->
                                 <div class="white_box yellow_box input_left">
                                     <div class="right_absl" style="top:-30px;right:-200px;">
                                         <!--初回出勤日-->
                                         <!--★-->
                                         {*                                    {if $smarty.server.REMOTE_ADDR == '221.113.41.190'}*}
-                                        <div class="white_box yellow_box input_absl" style="width: 40%;">
-                                            <p class="inline">初回出勤日</p>
-                                            <div class="select_arrow select_input_half">
-                                                {$forms.working_day_date.html}
-                                            </div>
-                                        </div>
                                         {*                                    {/if}*}
                                         {*                                    <div class="white_box input_absl">*}
                                         {*                                        <p class="inline">初回出勤日</p>*}
@@ -1184,18 +1263,17 @@
                                         {*                                        </div>*}
                                         {*                                        <span class="select_ymd_txt">日</span>*}
                                         {*                                    </div>*}
-                                        <div class="checkbox3">
-                                            <label>
-                                                <input type="hidden" name="working_day_undecided_flg" value="0" />
-                                                {$forms.working_day_undecided_flg.html}
-                                                <span class="checkbox-txt text_right">未定</span>
-                                            </label>
-                                        </div>
                                     </div><!--/right_absl-->
                                     <p>備考</p>
                                     {$forms.remarks.html}
                                     <p class="description">※旧字を使用するとエラーになり入力した内容がなくなりますので注意してください</p>
                                 </div>
+
+
+
+
+
+
                                 <!--追跡理由-->
                                 <div class="white_box yellow_box input_right Small clear" {if isset($userData.group) && $userData.group == 2}style="display: none;"{/if}>
                                     <p>追跡理由</p>
@@ -1417,6 +1495,7 @@
           if($("#changeSelect2").val() == '') {
             error_message = "掲載媒体を選択してください。\n";
             error_flg = 1;
+
           }
         }
       }
