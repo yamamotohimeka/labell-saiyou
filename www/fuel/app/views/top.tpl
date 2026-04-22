@@ -231,29 +231,38 @@
 
                 <div class="right_col">
 
-                    <div class="girl_info_item_wrap">
+                    <div class="girl_info_item_wrap">   
                         <div class="girl_info_item_1">ID.<span>{$value.id}</span>
                         </div>
                         <div class="girl_info_item_1">申込日<span>{$value.submission_date|date_format:"%Y年%m月%d日"}</span>
                         </div>
                         <div class="girl_info_item_1">申込時間<span>{$value.submission_hour}:{$value.submission_time|default:"—"}</span>
                         </div>
-                        <div class="girl_info_item_1">申込名<span>{$value.submission_name|default:"—"}</span></div>
-                    </div>
-
-                    <div class="girl_info_item_wrap mg_bottom50">
-                        <div class="girl_info_item_1">面接予定時間<span>{$value.interview_hour|default:"—"}
-                                :{$value.interview_time|default:"—"}</span></div>
                         <div class="girl_info_item_1">
                             面接店舗<span>{$masterData.interviewshop[$value.interviewshop]|default:"—"}</span></div>
                         <div class="girl_info_item_1">待ち合わせ場所<span>{$masterData.place[$value.place]|default:"—"}</span>
                         </div>
                     </div>
+                    
+                    <div class="mg_bottom50"></div>
 
+                    <div class="girl_info_item_wrap">       
+                        <div class="girl_info_item_1">
+                            <div class="girl_info_item_1_title">面接日</div>
+                            <span>{$value.interview_date|date_format:"%Y年%m月%d日"|default:"—"}</span>
+                        </div>
+                        <div class="girl_info_item_1" style="padding-left: 25px;">
+                            面接予定時間<span>{$value.interview_hour|default:"—"}
+                                :{$value.interview_time|default:"—"}</span></div>
+                        <div class="girl_info_item_1">申込名<span>{$value.submission_name|default:"—"}</span></div>
+                    </div>
+  
+                    
                     <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">
-                            面接日<span>{$value.interview_date|date_format:"%Y年%m月%d日"|default:"—"}</span></div>
-                        <div class="girl_info_item_1">
+                        <div class="girl_info_item_1" style="width: 231px;!important" >
+                            <div class="girl_info_item_1_title">所属店舗</div>
+                            <span>{$masterData.belonging_store[$value.belonging_store]|default:"—"}</span></div>
+                        <div class="girl_info_item_1" style="padding-left: 51px;">
                             面接結果<span>{$masterData.interview_result[$value.interview_result]|default:"—"}</span></div>
                         <div class="girl_info_item_1">
                             面接担当<span>{$masterData.staff[$value.interview_staff]|default:"—"}</span></div>
@@ -263,28 +272,42 @@
                         </div>
                     </div>
 
+
+
+          
+
                     <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">
-                            所属店舗<span>{$masterData.belonging_store[$value.belonging_store]|default:"—"}</span></div>
-                        <div class="girl_info_item_1">源氏名<span>{$value.genji_name|default:"—"}</span></div>
+                        <div class="girl_info_item_1" style="width: 156px;!important">
+                            <div class="girl_info_item_1_title">源氏名</div>
+                            <span>{$value.genji_name|default:"—"}</span></div>
                         <div class="girl_info_item_1">給料<span>{$value.salary|default:"—"}</span>円</div>
                         <div class="girl_info_item_1">特別指名<span>{$value.nomination_fee|default:"—"}</span>円</div>
                         <div class="girl_info_item_1">勤務形態<span>{$masterData.work[$value.work]|default:"—"}</span>
                         </div>
+                                                <div class="girl_info_item_1">退店日<span>{$value.leaving_date|date_format:"%Y年%m月%d日"|default:"—"}</span>
+                        </div>
+                        <div class="girl_info_item_1">
+                            退店理由<span>{$masterData.leaving_reason[$value.leaving_reason]|default:"—"}</span></div>
                     </div>
+                    
+                    <div class="mg_bottom50"></div>
 
                     <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">名前<span>{$value.surname|default:"—"}　{$value.name|default:"—"}
+                        <div class="girl_info_item_1">
+                            <div class="girl_info_item_1_title">名前</div>
+                            <span>{$value.surname|default:"—"}　{$value.name|default:"—"}
                                 （{$value.surnamekana|default:"—"}　{$value.namekana|default:"—"}）</span></div>
-                        <div class="girl_info_item_1">年齢<span>{$value.age|default:"—"}</span></div>
+                        <div class="girl_info_item_1"  style="padding-left: 17px;">年齢<span>{$value.age|default:"—"}</span></div>
                         <div class="girl_info_item_1">住所<span>{$setting_data["pref_name"][$value.pref]|default:"—"} {$value.address|default:"—"}</span></div>
                     </div>
 
                     <div class="girl_info_item_wrap">
 
-                        <div class="girl_info_item_1">身長<span>{$value.tall|default:"—"}</span>cm</div>
-                        <div class="girl_info_item_1">体重<span>{$value.weight|default:"—"}</span>kg</div>
                         <div class="girl_info_item_1">
+                            <div class="girl_info_item_1_title">身長</div>
+                            <span>{$value.tall|default:"—"}</span>cm</div>
+                        <div class="girl_info_item_1">体重<span>{$value.weight|default:"—"}</span>kg</div>
+                        <div class="girl_info_item_1" style="padding-left: 41px;">
                             バスト<span>{$value.bust|default:"—"}</span>cm<span>{$setting_data.cup_data[$value.cup]|default:"—"}</span>cup
                         </div>
                         <div class="girl_info_item_1">ウエスト<span>{$value.waist|default:"—"}</span>cm</div>
@@ -292,13 +315,16 @@
                     </div>
 
                     <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">TEL<span>{$value.tel01}</span><span>{$value.tel02}</span><span>{$value.tel03}</span></div>
                         <div class="girl_info_item_1">
+                            <div class="girl_info_item_1_title">TEL</div>
+                            <span>{$value.tel01}</span><span>{$value.tel02}</span><span>{$value.tel03}</span></div>
+                        <div class="girl_info_item_1" style="padding-left: 60px;">
                             Mail<span>{$value.mail01|default:"—"}</span>@<span>{$value.maildomain|default:"—"}</span>
                         </div>
                     </div>
-                    <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">経験
+                    <div class="girl_info_item_wrap ">
+                        <div class="girl_info_item_1">
+                            <div class="girl_info_item_1_title">経験</div>
                             {foreach from=","|explode:$value.experience item="experience"}
                             <span>{$masterData.experience[$experience]|default:""}</span>
                             {/foreach}
@@ -307,7 +333,8 @@
                     </div>
 
                     <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">身分証
+                        <div class="girl_info_item_1">
+                            <div class="girl_info_item_1_title">身分証</div>
                             {foreach from=","|explode:$value.identity_card_select item="identity_card_select"}
                                 <span>{$masterData.person[$identity_card_select]|default:""}</span>
                             {/foreach}
@@ -315,23 +342,22 @@
                         <div class="girl_info_item_1">身分証備考<span>{$value.identity_card_remarks|default:"—"}</span></div>
                     </div>
 
-                    <div class="girl_info_item_wrap">
+                     <div class="mg_bottom50"></div>
+
+                    <div class="girl_info_item_wrap ">
                         <div class="girl_info_item_1">
-                            掲載媒体<span>{$masterData.publicity[$value.publicity]|default:"—"}</span></div>
+                            <div class="girl_info_item_1_title">掲載媒体</div>
+                            <span>{$masterData.publicity[$value.publicity]|default:"—"}</span></div>
                         <div class="girl_info_item_1">掲載求人<span>{$masterData.media[$value.media]|default:"—"}</span>
                         </div>
                         <div class="girl_info_item_1">掲載業種<span>{$masterData.genre[$value.genre]|default:"—"}</span>
                         </div>
                     </div>
 
-                    <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">SC<span>{$value.scout|default:"—"}</span></div>
-                        <div class="girl_info_item_1">出戻り・移籍<span>{$masterData.move[$value.move]|default:"—"}</span>
-                        </div>
-                    </div>
 
                     <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">検索ワード
+                        <div class="girl_info_item_1">
+                            <div class="girl_info_item_1_title">検索ワード</div>
                             {if isset($masterData.word[$value.word1])}
                                 <span>{$masterData.word[$value.word1]}</span>
                             {/if}
@@ -355,7 +381,7 @@
                     </div>
 
                     <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1 radio_item"><img
+                        <div class="girl_info_item_1 radio_item" style="display: inline-block"><img
                                     src="/assets/img/btn_radio{if $value.working_away_flg === "1"}_active{/if}.png"
                                     width="18"><span>出稼ぎ</span></div>
                         <div class="girl_info_item_1 radio_item"><img
@@ -365,18 +391,20 @@
                                     src="/assets/img/btn_radio{if $value.scout_mail_flg === "1"}_active{/if}.png"
                                     width="18"><span>オファーメールからの申込</span></div>
                     </div>
-
+                    
                     <div class="girl_info_item_wrap">
                         <div class="girl_info_item_1">
-                            他店紹介<span>{$masterData.another_shop[$value.another_shop]|default:"—"}</span></div>
-                        <div class="girl_info_item_1">他店紹介備考<span>{$value.another_shop_remarks|default:"—"}</span></div>
+                            <div class="girl_info_item_1_title">SC</div>
+                            <span>{$value.scout|default:"—"}</span></div>
+                        <div class="girl_info_item_1">出戻り・移籍<span>{$masterData.move[$value.move]|default:"—"}</span>
+                        </div>
                     </div>
 
                     <div class="girl_info_item_wrap">
-                        <div class="girl_info_item_1">退店日<span>{$value.leaving_date|date_format:"%Y年%m月%d日"|default:"—"}</span>
-                        </div>
                         <div class="girl_info_item_1">
-                            退店理由<span>{$masterData.leaving_reason[$value.leaving_reason]|default:"—"}</span></div>
+                            <div class="girl_info_item_1_title">他店紹介</div>
+                            <span>{$masterData.another_shop[$value.another_shop]|default:"—"}</span></div>
+                        <div class="girl_info_item_1">他店紹介備考<span>{$value.another_shop_remarks|default:"—"}</span></div>
                     </div>
 
 

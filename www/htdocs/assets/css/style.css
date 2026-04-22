@@ -708,7 +708,7 @@ header .edit {
 }
 
 .girl_info_col .right_col {
-  width: 880px;
+  width: 1150px;
   line-height: 1.8;
   font-size: 15px;
   margin-top: 4px;
@@ -716,13 +716,24 @@ header .edit {
 
 .girl_info_col .right_col .girl_info_item_wrap {
   margin-bottom: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 15px;
 }
 
 .girl_info_col .right_col .girl_info_item_1 {
   display: inline-block;
-  margin-right: 5px;
+  /* margin-right: 5px; */
   *display: inline;
   *zoom: 1;
+}
+.girl_info_col .right_col .girl_info_item_1:first-child {
+  display: inline-flex;
+}
+.girl_info_col .right_col .girl_info_item_1_title {
+  min-width: 80px;
+  text-align: right;
 }
 
 .girl_info_col .right_col .girl_info_item_1 span {
@@ -1003,7 +1014,9 @@ span.radio-txt {
 }
 
 .mg_bottom50 {
-  margin-bottom: 50px !important;
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
+  border-bottom: 2px solid #fff;
 }
 
 /*======================
