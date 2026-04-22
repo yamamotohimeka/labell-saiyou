@@ -560,11 +560,13 @@
                                             </label>
                                         </div>
 
-                                        <label class="transportation_expenses_flg_1" {if empty($default.transportation_expenses_flg)}style="opacity: 0.3;"{/if}>
-                                            <input type="hidden" name="transportation_expenses_flg" value="0" />
-                                            {$forms.transportation_expenses_flg.html}
-                                            <span class="checkbox-txt text_right">交通費</span>
-                                        </label>
+                                        <div class="checkbox_wrap">
+                                            <label class="transportation_expenses_flg_1" {if empty($default.transportation_expenses_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="transportation_expenses_flg" value="0" />
+                                                {$forms.transportation_expenses_flg.html}
+                                                <span class="checkbox-txt text_right">交通費</span>
+                                            </label>
+                                        </div>
 
                                         {*<label>*}
                                         {*<input type="hidden" name="pick_up_flg" value="0" />*}
@@ -572,11 +574,13 @@
                                         {*<span class="checkbox-txt text_right">送迎</span>*}
                                         {*</label>*}
                                         {*送迎を送り、迎えに分割*}
-                                        <label class="send_to_home_flg_1" {if empty($default.send_to_home_flg)}style="opacity: 0.3;"{/if}>
-                                            <input type="hidden" name="send_to_home_flg" value="0" />
-                                            {$forms.send_to_home_flg.html}
-                                            <span class="checkbox-txt text_right">送り</span>
-                                        </label>
+                                        <div class="checkbox_wrap">
+                                            <label class="send_to_home_flg_1" {if empty($default.send_to_home_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="send_to_home_flg" value="0" />
+                                                {$forms.send_to_home_flg.html}
+                                                <span class="checkbox-txt text_right">送り</span>
+                                            </label>
+                                        </div>
                                         <div class="checkbox_wrap">
                                             <label class="tatoo_flg_1" {if empty($default.tatoo_flg)}style="opacity: 0.3;"{/if}>
                                                 <input type="hidden" name="tatoo_flg" value="0" />
@@ -623,11 +627,13 @@
                                                 {/if}
                                             </label>
                                         </div>
-                                        <label class="send_to_shop_flg_1" {if empty($default.send_to_shop_flg)}style="opacity: 0.3;"{/if}>
-                                            <input type="hidden" name="send_to_shop_flg" value="0" />
-                                            {$forms.send_to_shop_flg.html}
-                                            <span class="checkbox-txt text_right">迎え</span>
-                                        </label>
+                                        <div class="checkbox_wrap">
+                                            <label class="send_to_shop_flg_1" {if empty($default.send_to_shop_flg)}style="opacity: 0.3;"{/if}>
+                                                <input type="hidden" name="send_to_shop_flg" value="0" />
+                                                {$forms.send_to_shop_flg.html}
+                                                <span class="checkbox-txt text_right">迎え</span>
+                                            </label>
+                                        </div>
 
                                         <div class="checkbox_wrap">
                                             <label class="single_room_wait_flg_1" {if empty($default.single_room_wait_flg)}style="opacity: 0.3;"{/if}>
@@ -745,11 +751,13 @@
                                     {$forms.nikoiti.html}<p class="description">ニコイチは面接予定情報で★マークがつく</p>
                                 </label>
 </div>
+                                <div class="checkbox_wrap">
                                 <label class="other_flg_1" {if empty($default.other_flg)}style="opacity: 0.3;"{/if}>
                                     <input type="hidden" name="other_flg" value="0" />
                                     {$forms.other_flg.html}
                                     <span class="checkbox-txt">その他</span>
                                 </label>
+                                </div>
                                 {*{$forms.other.html}*}
                                 <div style="width: 800px;">
                                     <textarea name="other" id="form_other" class="input_memo other_flg_1" {if empty($default.other_flg)}style="opacity: 0.3;"{/if}>{$default.other|nl2br|strip_tags:false|escape|default:""}</textarea>

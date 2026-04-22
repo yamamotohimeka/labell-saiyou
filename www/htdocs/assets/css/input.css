@@ -484,9 +484,9 @@ span.checkbox-txt {
   border-right: 2px solid #001537;
 }
 
+/* 点滅は背景のみ（padding を付けるとチェック時にレイアウトがずれる） */
 .check-blink-on {
   background-color: #ffdd00;
-  padding: 2px 0;
 }
 .check-blink-off {
   background-color: transparent; /* 非点滅時の色 */
