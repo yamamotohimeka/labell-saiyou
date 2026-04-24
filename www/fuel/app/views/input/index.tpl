@@ -104,6 +104,7 @@
                             </div>
                         </div>
 
+
                         <!-- 他のやりとり手段-->
                         <div class="white_box input_left">
                             <p>他のやりとり手段</p>
@@ -114,15 +115,18 @@
                                 {/foreach}
                             </div>
                         </div>
-
                         <!-- 申込名-->
                         <div class="white_box input_left">
                             <p>申込名<span class="required">※必須</span></p>
                             {$forms.submission_name.html}
-                            <p class="description">※全角、半角のスペースの入力があった場合は自動で除去されます<br />※旧字を使用するとエラーになり入力した内容がなくなりますので注意してください</p>
+                            <p class="description">※全角/半角のスペースは自動で除去</p>
                         </div>
+
+   
+
+
                         <!-- 店舗スタッフ-->
-                        <div class="white_box input_left bottom20">
+                        <div class="white_box input_left">
                             <div class="tenpostaff">
                                 <label>
                                     <input type="hidden" name="staff_flg" value="0" />
@@ -131,6 +135,8 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="bottom20"></div>
+
 
                         <!-- 面接予定日-->
                         <!--★-->
@@ -160,7 +166,7 @@
                         {*                        <span class="select_input_ymd_txt">日</span>*}
                         {*                    </div>*}
                         {*                    <!-- 面接予定時間-->*}
-                        <div class="white_box input_left relative">
+                        <!-- <div class="white_box input_left relative"> -->
                             {*                        <p>面接予定時間<span class="required">※必須</span></p>*}
                             {*                        <div class="select_arrow select_input_h">*}
                             {*                            {$forms.interview_hour.html}*}
@@ -177,14 +183,55 @@
                                     <span class="checkbox-txt text_right">仮予約</span>
                                 </label>
                             </div>
-                            <p class="description">仮予約の場合は面接予定メールは送信しない</p>
+                            <!-- <p class="description">仮予約の場合は面接予定メールは送信しない</p> -->
+                        <!-- </div> -->
+
+                        <!-- 面接店舗-->
+                        <div class="white_box input_left">
+                            <p>面接店舗</p>
+                            <div class="select_arrow select_input_half">
+                                {$forms.interviewshop.html}
+                            </div>
                         </div>
+                        
+
+                        <!-- 待ち合わせ場所-->
+                        <div class="white_box input_left">
+                            <p>待ち合わせ場所</p>
+                            <div class="select_arrow select_input_half">
+                                {$forms.place.html}
+                            </div>
+                        </div>
+                        <!-- 待ち合わせ備考-->
+                        <div class="white_box input_left">
+                            <p>待ち合わせ備考</p>
+                            {$forms.place_remarks.html}
+                        </div>
+
                         <!-- 連絡方法 -->
                         <div class="white_box input_left">
                             <p>連絡方法</p>
                             <div class="select_arrow select_input_half">
                                 {$forms.contact.html}
                             </div>
+                        </div>
+                                    <!-- 面接前確認 -->
+                        <div class="white_box input_left ">
+                            <p>面接前確認</p>
+                            <div class="select_arrow select_input_half">
+                                {$forms.check.html}
+                            </div>
+                        </div>
+                        
+                        <!-- 面接時間-->
+                        <div class="white_box input_left relative">
+                            <p class="inline">面接時間</p>
+                            {$forms.timer.html}
+                            <span class="select_ymd_txt">分前</span><span class="required">※必須</span>
+                            {if isset($validate.timer)}
+                                <span class="input_error">{$validate.timer}</span>
+                            {/if}
+
                         </div>
                         <!-- タイマー-->
                         <div class="white_box input_left">
@@ -197,23 +244,8 @@
                                 </label>
                             </div>
                         </div>
-                        <!-- 面接前確認 -->
-                        <div class="white_box input_left ">
-                            <p>面接前確認</p>
-                            <div class="select_arrow select_input_half">
-                                {$forms.check.html}
-                            </div>
-                        </div>
-                        <!-- 面接時間-->
-                        <div class="white_box input_left relative">
-                            <p class="inline">面接時間</p>
-                            {$forms.timer.html}
-                            <span class="select_ymd_txt">分前</span><span class="required">※必須</span>
-                            {if isset($validate.timer)}
-                                <span class="input_error">{$validate.timer}</span>
-                            {/if}
-
-                        </div>
+                        <div class="bottom20"></div>
+            
 
                         <!-- 事前連絡日-->
                         <div class="white_box input_left">
@@ -247,26 +279,6 @@
                             <span class="select_input_ymd_txt">日</span>
                             <p class="description">事前連絡を付けなおす際は、<br>
                               ☐連絡済レ点チェックを外す</p>
-                        </div>
-
-                        <!-- 面接店舗-->
-                        <div class="white_box input_left">
-                            <p>面接店舗</p>
-                            <div class="select_arrow select_input_half">
-                                {$forms.interviewshop.html}
-                            </div>
-                        </div>
-                        <!-- 待ち合わせ場所-->
-                        <div class="white_box input_left">
-                            <p>待ち合わせ場所</p>
-                            <div class="select_arrow select_input_half">
-                                {$forms.place.html}
-                            </div>
-                        </div>
-                        <!-- 待ち合わせ備考-->
-                        <div class="white_box input_left">
-                            <p>待ち合わせ備考</p>
-                            {$forms.place_remarks.html}
                         </div>
 
                         <!-- 画像参照-->
@@ -741,17 +753,17 @@
                                     </div>
 
 
-<div class="checkbox_wrap">
-                                <label class="nikoiti_flg_1" {if empty($default.nikoiti_flg)}style="opacity: 0.3;"{/if}>
+<div class="checkbox_wrap flex" style="max-width: 100%">
+                                <label class="nikoiti_flg_1"style="width: 11%;" {if empty($default.nikoiti_flg)}style="opacity: 0.3;"{/if} >
                                     <input type="hidden" name="nikoiti_flg" value="0" />
                                     {$forms.nikoiti_flg.html}
-                                    <span class="checkbox-txt">ニコイチ</span>
+                                    <span class="checkbox-txt" style="display: inline-block">ニコイチ</span>
                                 </label>
-                                <label class="nikoiti_flg_1" {if empty($default.nikoiti_flg)}style="opacity: 0.3;"{/if}>
+                                <label class="nikoiti_flg_1 flex" {if empty($default.nikoiti_flg)}style="opacity: 0.3;"{/if}>
                                     {$forms.nikoiti.html}<p class="description">ニコイチは面接予定情報で★マークがつく</p>
                                 </label>
 </div>
-                                <div class="checkbox_wrap">
+                                <div class="checkbox_wrap" style="width: 100%;" >
                                 <label class="other_flg_1" {if empty($default.other_flg)}style="opacity: 0.3;"{/if}>
                                     <input type="hidden" name="other_flg" value="0" />
                                     {$forms.other_flg.html}
@@ -892,9 +904,9 @@
                                     </div>
                                     <p class="description width-calc">空欄の場合は面接で聞き取り記入する</p>
                                 </div>
-                                <div class="flex">
+                                <div class="flex" style="gap: 30px;">
                                 <!--経験-->
-                                <div class="white_box yellow_box input_right Small">
+                                <div class="white_box yellow_box input_right XSMedium">
                                     <p>経験</p>
                                     <div class="select_arrow yellow_box">
                                         <div class="select_arrow yellow_box">
@@ -1184,20 +1196,20 @@
                                     <!--初回出勤日-->
                                     <!--★-->
                                     {*                                    {if $smarty.server.REMOTE_ADDR == '221.113.41.190'}*}
-                                    <div class="white_box yellow_box input_absl" >
+                                    <div class="white_box yellow_box input_right Small clear" >
                                         <p class="inline">初回出勤日</p>
                                         <div class="select_arrow select_input_half yellow_box">
                                             {$forms.working_day_date.html}
                                         </div>
                                     </div>
-                                    <div class="checkbox3" style="width: auto;">
+                                    <div class="checkbox3" style="width: auto;padding-top: 20px;">
                                         <label>
                                             <input type="hidden" name="working_day_undecided_flg" value="0" />
                                             {$forms.working_day_undecided_flg.html}
                                             <span class="checkbox-txt text_right">未定</span>
                                         </label>
                                     </div>
-                                </div>
+                                
 
                                 <!-- 退店日-->
                                 <!--★-->
@@ -1233,7 +1245,7 @@
                                 </div>
 
 
-
+</div>
 
                                 <!--他店紹介-->
                                 <div class="white_box yellow_box input_right clear">
@@ -2768,4 +2780,4 @@
 {/literal}
 
 
-{include file=$smarty.const.ADMIN_FOOTER}
+{include file=$smarty.const.ADMIN_FOOTER}OTER}
