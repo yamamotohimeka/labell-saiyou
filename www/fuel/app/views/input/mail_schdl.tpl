@@ -6,7 +6,7 @@
     </section>
     <section class="container send_mail_col">
         <h2>面接予定送信</h2>
-        <form class="send_mail_wrap" action="/inputdata/mail_schdl/{$id}" method="post">
+        <form class="send_mail_wrap" action="{$base_url|default:'/'}inputdata/mail_schdl/{$id}" method="post">
             <div class="send_mail_line">
                 <p class="send_mail_tl inline">送信先グループ</p>
                 <input type="text" class="send_mail_txt" name="group_name" value="{$group_name}">
@@ -26,15 +26,21 @@
             </div>
             <div class="send_col_wrap">
                 <div class="info_return inline mail_button">
-                    <a href="/inputdata/send_schdl/{$id}"><button type="button">前のページに戻る <i class="fa fa-undo"></i></button></a>
+                    <a href="{$base_url|default:'/'}inputdata/send_schdl/{$id}"><button type="button">前のページに戻る <i class="fa fa-undo"></i></button></a>
                 </div>
                 <div class="info_send inline mail_button">
-                    <a href="/inputdata/mail_schdl/{$id}"><button type="submit" name="sendmail" value="sendmail">メール送信</button></a>
+                    <button type="submit">メール送信</button>
                 </div>
             </div>
 
+            <input type="hidden" name="sendmail" value="sendmail" />
+            <input type="hidden" name="id" value="{$id}" />
+            {if isset($groupId)}<input type="hidden" name="groupId" value="{$groupId}" />{/if}
             {foreach from=$sender_list item=value key=key}
-                <input type="hidden" name="sender_list[]" value="{$value}" />
+                {assign var=sender_id value=$value|trim}
+                {if $sender_id ne ''}
+                <input type="hidden" name="sender_list[]" value="{$sender_id}" />
+                {/if}
             {/foreach}
         </form>
     </section>

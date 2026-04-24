@@ -11,6 +11,7 @@ use \Model\Master;
  */
 class Presenter_Inputdata extends Presenter
 {
+
     /**
      * Prepare the view data, keeping this in here helps clean up
      * the controller.
@@ -32,9 +33,13 @@ class Presenter_Inputdata extends Presenter
         //編集権
         $authority = 0;
 
-        $tracking_remarks_data[] = "";
+        $tracking_remarks_data[] = array(
+            'scheduled_date' => '',
+            'responsible' => '',
+            'passage' => '',
+        );
 
-        $other_means_data[] = "";
+        $other_means_data[] = array('means' => '');
 
         // 既にあるデータを変更の場合
         if (Request::active()->param('id')) {
@@ -48,7 +53,11 @@ class Presenter_Inputdata extends Presenter
                 if(!empty($value["scheduled_date"])) list($tracking_remarks_data[$key]["scheduled_date_year"], $tracking_remarks_data[$key]["scheduled_date_month"], $tracking_remarks_data[$key]["scheduled_date_day"]) = explode("-", $value["scheduled_date"]);
             }
             //追跡備考は入力分＋１つ
-            $tracking_remarks_data[] = "";
+            $tracking_remarks_data[] = array(
+                'scheduled_date' => '',
+                'responsible' => '',
+                'passage' => '',
+            );
 
 
             $sql = "SELECT means FROM other_means WHERE interview_id = $data_id";
@@ -57,7 +66,7 @@ class Presenter_Inputdata extends Presenter
 //                if(!empty($value["means"])) list($tracking_remarks_data[$key]["scheduled_date_year"], $tracking_remarks_data[$key]["scheduled_date_month"], $tracking_remarks_data[$key]["scheduled_date_day"]) = explode("-", $value["scheduled_date"]);
 //            }
             //他のやりとり手段は入力分＋１つ
-            $other_means_data[] = "";
+            $other_means_data[] = array('means' => '');
 
 
             if (!$result) {
@@ -865,6 +874,9 @@ EOD;
 
         $this->set_safe('forms', $fieldset->getFormElements());
 
+        $relax_input_required = (\Fuel::$env === \Fuel::DEVELOPMENT && \Config::get('input_relax_required_validation', false));
+        $this->set_safe('relax_input_required', $relax_input_required);
+
     }
 
     //同一人物を探す
@@ -1075,33 +1087,34 @@ EOD;
 
         $result = Inputdata::get_rowdata($data_id);
 
-        if(Input::post('groupId')){
+        $posted_group_id = Input::post('groupId');
+        if ($posted_group_id !== null && $posted_group_id !== '') {
 
-            $group = Staffgroup::get_rowdata(Input::post('groupId'));
+            $group = Staffgroup::get_rowdata($posted_group_id);
 
             $default = array(
-                'groupId' => Input::post('groupId')
+                'groupId' => $posted_group_id,
             );
 
-            if(!empty($group)){
+            if (!empty($group)) {
                 $default['group'] = $group[0]['group_data'];
             }
 
-            $fieldset->populate( $default );
+            $fieldset->populate($default);
 
-            $this->set_safe( 'group', $group);
-            $this->set_safe( 'default', $default );
+            $this->set_safe('group', $group);
+            $this->set_safe('default', $default);
         }
 
-        $this->set_safe( 'forms', $fieldset->getFormElements());
+        $this->set_safe('forms', $fieldset->getFormElements());
 
         // 表示中スタッフと非表示中スタッフの結合
         $masterData['staff'] = $masterData['staff'] + $masterData['staff_hidden'];
 
-        $this->set_safe( 'staff', $masterData['staff'] );
+        $this->set_safe('staff', $masterData['staff']);
 
-        if(isset($masterData['interviewshop'][$result[0]['interviewshop']])){
-            $this->set_safe( 'interviewshop', $masterData['interviewshop'][$result[0]['interviewshop']] );
+        if (isset($masterData['interviewshop'][$result[0]['interviewshop']])) {
+            $this->set_safe('interviewshop', $masterData['interviewshop'][$result[0]['interviewshop']]);
         }
 
     }
@@ -1146,15 +1159,44 @@ EOD;
     {
         $this->title = "面接予定送信メール | データ入力";
 
+        $data_id = Request::active()->param('id');
+        if (empty($data_id)) {
+            $data_id = Input::post('id');
+        }
+        if (empty($data_id)) {
+            Response::redirect('/inputdata/data/');
+            return;
+        }
+        $groupId = Input::post('groupId');
+
+        // POST 以外・groupId なし・本番 DB で group 列が NULL 等のときの未定義／explode TypeError を防ぐ
+        if ($groupId === null || $groupId === '') {
+            Response::redirect('/inputdata/send_schdl/' . $data_id);
+            return;
+        }
+
         $setting_data = Config::get('setting', array());
         $masterData = Inputdata::get_select_data($setting_data);
 
-        $group_name = $masterData["group"][Input::post('groupId')];
-        $group = Staffgroup::get_rowdata(Input::post('groupId'));
-        $sender_list = explode(',', $group[0]['group']);
+        if (empty($masterData['group']) || !isset($masterData['group'][$groupId])) {
+            Response::redirect('/inputdata/send_schdl/' . $data_id);
+            return;
+        }
 
-        $this->set_safe( 'group_name', $group_name);
-        $this->set_safe( 'sender_list', $sender_list);
+        $group_name = $masterData['group'][$groupId];
+        $group = Staffgroup::get_rowdata($groupId);
+        $sender_list = array();
+        if (!empty($group[0]) && array_key_exists('group', $group[0])) {
+            $group_csv = $group[0]['group'];
+            if ($group_csv === null) {
+                $group_csv = '';
+            }
+            $sender_list = array_values(array_filter(array_map('trim', explode(',', (string) $group_csv)), 'strlen'));
+        }
+
+        $this->set_safe('group_name', $group_name);
+        $this->set_safe('groupId', $groupId);
+        $this->set_safe('sender_list', $sender_list);
     }
 
     public function mail_rcrt()
