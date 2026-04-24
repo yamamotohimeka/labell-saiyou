@@ -74,11 +74,13 @@ class Controller_Inputdata extends Controller_Frontbase
                 }
             }
 
+            $basePath = \Uri::base(false);
+
             if(Input::post('complete_form') === "complete_form") {
 
                 $addjs = <<<EOD
-window.open().location.href="/inputdata/sendmail/$id"
-location.href="/interview/"
+window.open().location.href="{$basePath}inputdata/sendmail/$id"
+location.href="{$basePath}inputdata/data/"
 EOD;
                 // location.href="/inputdata/data/$id"
 //                Response::redirect("/inputdata/sendmail/$id");
@@ -86,7 +88,7 @@ EOD;
                 return json_encode(array('result' => 'success', 'id' => $id ));
             }else{
 //                Response::redirect("/datalist");
-                Response::redirect("/interview");
+                Response::redirect($basePath . "inputdata/data/");
             }
         }
 
@@ -111,6 +113,10 @@ EOD;
     }
 
     private function data_validation_errors() {
+        if (\Fuel::$env === \Fuel::DEVELOPMENT && \Config::get('input_relax_required_validation', false)) {
+            return array();
+        }
+
         $validation = \Fuel\Core\Validation::forge('input_data_validate_data');
         $validation->add_callable('Validation_Japanese');
 
@@ -328,10 +334,11 @@ EOD;
 
         }
         if(Input::post("sendmail") === "sendmail"){
+            $basePath = \Uri::base(false);
             $sender_list = Input::post("sender_list");
 
             if(!$sender_list){
-                Response::redirect("/inputdata/send_schdl/{$id}");
+                Response::redirect($basePath . "inputdata/send_schdl/{$id}");
             }
 
             $staffData = Inputdata::get_staff_mail();
@@ -343,7 +350,8 @@ EOD;
             $plainmail = strip_tags(Input::post("mail_text"));
 //            $returnmail = "return@exe.193-123.execute.jp";
             $returnmail = "info@re.sp-labelle.com";
-            $error = 0;
+            $had_send_error = false;
+            $send_succeeded = false;
             foreach ($sender_list as $key => $value) {
                 if(isset($staffData[$value])){
                     $mailto = $staffData[$value];
@@ -367,14 +375,15 @@ EOD;
                     try
                     {
                         $email->send();
+                        $send_succeeded = true;
                     }
                     catch(\EmailValidationFailedException $e)
                     {
-                        $error = 1;
+                        $had_send_error = true;
                     }
                     catch(\EmailSendingFailedException $e)
                     {
-                        $error = 1;
+                        $had_send_error = true;
                     }
                 }
             }
@@ -397,10 +406,11 @@ EOD;
             //$history_id = Interviewhistory::get_id($id, 1);
             //Common::set_data(array("interview_id" => $id, "status" => 1, 'submission_date' => date('Y-m-d'), 'created_at' => date('Y-m-d H:i:s')), $history_id, "interview_history");
 
-            if($error === 0){
-                Response::redirect("/inputdata/sent_schdl/{$id}");
+            // 一部宛先で失敗しても、1件以上送信できていれば完了画面へ進める
+            if($send_succeeded || !$had_send_error){
+                Response::redirect($basePath . "inputdata/sent_schdl/{$id}");
             }else{
-                Response::redirect("/inputdata/send_schdl/{$id}?error=1");
+                Response::redirect($basePath . "inputdata/send_schdl/{$id}?error=1");
             }
 
         }
@@ -633,8 +643,12 @@ EOD;
 
     public function action_sent_schdl($id = null){
 
-        // 編集中の解除
-        Common::del_data_col($id, 'editlist', 'data_id');
+        // 編集中の解除（失敗しても完了画面は表示する）
+        try {
+            Common::del_data_col($id, 'editlist', 'data_id');
+        } catch (\Exception $e) {
+            // noop
+        }
 
         $view = View_Smarty::forge( "input/sent_schdl" );
         $view->set_safe( "id", $id );
@@ -646,8 +660,12 @@ EOD;
 
     public function action_sent_rcrt($id = null){
 
-        // 編集中の解除
-        Common::del_data_col($id, 'editlist', 'data_id');
+        // 編集中の解除（失敗しても完了画面は表示する）
+        try {
+            Common::del_data_col($id, 'editlist', 'data_id');
+        } catch (\Exception $e) {
+            // noop
+        }
 
         $view = View_Smarty::forge( "input/sent_rcrt" );
         $view->set_safe( "id", $id );

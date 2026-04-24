@@ -8,7 +8,7 @@
         <div class="send_col_wrap">
             <h2>面接予定送信 {if !empty($interviewshop)}<br />面接店舗【{$interviewshop}】{/if}</h2>
             {*<form action="/inputdata/mail_schdl/{$id}" method="post">*}
-            <form action="/inputdata/send_schdl/{$id}" method="post" class="white_box send">
+            <form action="{$base_url|default:'/'}inputdata/send_schdl/{$id}" method="post" class="white_box send">
                 <div class="grop_select_wrap">
                 <p>グループ名を選択</p>
                 <div class="select_arrow select_input_send">
@@ -17,7 +17,8 @@
                 </div>
                 <button class="btn_orange sentaku" type="submit" name="選択" style="visibility: hidden;">選択</button>
             </form>
-            <form action="/inputdata/mail_schdl/{$id}" method="post">
+            <form id="mail_schdl_form" action="{$base_url|default:'/'}inputdata/mail_schdl/{$id}" method="post">
+            <input type="hidden" name="id" value="{$id}" />
             <div class="input_sender_wrap">
                 {*<p>送信先</p>*}
                 {*<label for="allcheck" class="btn_wht">*}
@@ -63,10 +64,11 @@
             <div class="send_col_wrap">
                 <div class="info_send">
                     <button type="submit" class="send_schdl_btn">送信確認</button>
-                    {if isset($smarty.post.groupId)}<input type="hidden" name="groupId" value="{$smarty.post.groupId}" />{/if}
+                    {* groupId は default 優先（本番で $smarty.post が効かないケース対策）。POST 直後のフォールバックあり *}
+                    <input type="hidden" name="groupId" id="mail_group_id" value="{if isset($default.groupId)}{$default.groupId}{elseif isset($smarty.post.groupId)}{$smarty.post.groupId}{/if}" />
                 </div>
                 <div class="info_return">
-                    <a href="/inputdata/data/{$id}"><button type="button">前のページに戻る <i class="fa fa-undo"></i></button></a>
+                    <a href="{$base_url|default:'/'}inputdata/data/{$id}"><button type="button">前のページに戻る <i class="fa fa-undo"></i></button></a>
                 </div>
             </div>
             </form>
@@ -90,9 +92,17 @@
         $('.sentaku').trigger('click');
     });
 
-    $('.send_schdl_btn').click(function() {
-        if(!$('#staff_group_select').val()){
+    // 送信確認フォーム送信時に、選択中の groupId を必ず hidden に反映する
+    $('#mail_schdl_form').on('submit', function(e) {
+        var selectedGroupId = $('#staff_group_select').val();
+        if (selectedGroupId) {
+            $('#mail_group_id').val(selectedGroupId);
+        }
+
+        var postGroupId = $('#mail_group_id').val();
+        if (!postGroupId) {
             alert("グループ名を選択して下さい");
+            e.preventDefault();
             return false;
         }
     });
