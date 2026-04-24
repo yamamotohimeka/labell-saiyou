@@ -88,7 +88,7 @@ EOD;
                 return json_encode(array('result' => 'success', 'id' => $id ));
             }else{
 //                Response::redirect("/datalist");
-                Response::redirect($basePath . "inputdata/data/");
+                Response::redirect($basePath . "interview");
             }
         }
 
