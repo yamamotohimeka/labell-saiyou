@@ -2506,8 +2506,12 @@
         var id = data.id;
         if(class_name === "btn_orange complete_form_ajax"){
           window.open('/inputdata/sendmail/' + id);
+          swal('ID:' + id + 'のデータの登録を完了しました').then(function() {
+            window.location.href = '/interview';
+          });
+        } else {
+          swal('ID:' + id + 'のデータの登録を完了しました');
         }
-        swal('ID:' + id + 'のデータの登録を完了しました');
 
         $("#copy_title_" + formId).append("&gt;&nbsp;データ入力【ID. " + id + "】");
 
