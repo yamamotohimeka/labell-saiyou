@@ -80,9 +80,9 @@ class Controller_Inputdata extends Controller_Frontbase
 
                 $addjs = <<<EOD
 window.open().location.href="{$basePath}inputdata/sendmail/$id"
-location.href="{$basePath}inputdata/data/"
+location.href="{$basePath}interview"
 EOD;
-                // location.href="/inputdata/data/$id"
+                // 確定後は面接予定情報へ（新規データ入力 inputdata/data/ へは送らない）
 //                Response::redirect("/inputdata/sendmail/$id");
             }elseif(Input::post('update_ajax') === "update_ajax"){
                 return json_encode(array('result' => 'success', 'id' => $id ));
