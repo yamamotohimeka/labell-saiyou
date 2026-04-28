@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--スタイルシート読み込み-->
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link rel="stylesheet" href="css/bxslider.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+　<!--スタイルシート読み込み-->
+
+  <!--JS読み込み-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://use.typekit.net/xwk7bgv.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="js/bxslider.js"></script>
+  <!--JS読み込み-->
+  <title>採用通知</title>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header>
+
+    <div class="inner">
+      <div class="container">
+        <h1><img src="img/logo.png" width="53"><span>HeadOffice</span></h1>
+        <div class="logout"><a href="#">LOGOUT</a></div>
+        <div class="searchbox">
+          <form method="get" action="http://www.google.co.jp/search" target="_blank">
+            <input name="q" size="31" maxlength="255" type="text" class="search_form" placeholder="おなまえ検索">
+            <input name="btng" value="検索" type="image" class="search_btn" src="img/btn_search.png" width="38">
+            <input name="hl" value="ja" type="hidden">
+            <input name="sitesearch" value="web-officer.com" type="hidden">
+          </form>
+        </div>
+        <div class="print">
+          <a href="javascript:void(0)" onclick="window.print();return false;">
+            <img src="img/icon_print.png" width="30">
+            <span>PRINT OUT</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- header nav -->
+    <nav>
+      <div class="container">
+        <ul>
+          <li class="active"><a href="index.html">採用情報</a></li><!--
+          --><li><a href="interview.html">面接予定情報</a></li><!--
+          --><li><a href="chase.html">追跡予定情報</a></li><!--
+          --><li><a href="#">検索条件</a></li><!--
+          --><li><a href="input.html">データ入力</a></li><!--
+          --><li><a href="#">スカウトメール</a></li><!--
+          --><li><a href="master_shop.html">マスター登録</a></li><!--
+          --><li><a href="analyze.html">集計</a></li><!--
+          --><li><a href="#">グループ登録</a></li><!--
+          --><li><a href="#">面接履歴</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /header nav -->
+
+  </header>
+  <!--header-->
+
+
+  <article>
+    <section>
+
+      <div class="container interview_wrap">
+        <h1>>&nbsp;面接予定情報</h1>
+        <table>
+          <colgroup span="4"></colgroup>
+          <tr>
+            <th class="w_sm">送信日</th>
+            <th class="w_sm">送信時間</th>
+            <th class="w_md">店舗</th>
+            <th class="w_md">名前</th>
+            <th class="w_xs">年齢</th>
+            <th class="w_md">経験</th>
+            <th class="w_lg">掲載求人名</th>
+          </tr>
+          <tr>
+            <td class="date">30.0108</td>
+            <td class="time">13：08</td>
+            <td class="shop">スピード難波</td>
+            <td class="name"><a href="#">りかこ</a></td>
+            <td class="age">23</td>
+            <td class="janre">ホテヘル</td>
+            <td class="jobsite">ガールズヘブン</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </article>
+
+
+
+</div><!--  /wrapper-->
+
+</body>
+</html>

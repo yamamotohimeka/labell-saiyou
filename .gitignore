@@ -1,0 +1,33 @@
+﻿# IDE
+.idea/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Local runtime / generated files
+www/fuel/vendor/
+www/fuel/core/vendor/
+www/fuel/app/vendor/
+www/fuel/app/logs/
+www/fuel/app/cache/
+www/fuel/app/tmp/
+
+# Local-only tooling artifact
+www/composer.phar
+
+# Local env and docker overrides (never commit)
+.env.local
+.env.*.local
+docker-compose.override.yml
+docker-compose.local.yml
+docker-compose.local.yaml
+
+# Local debug artifacts
+agent-last-error.html
+*.log
+www/htdocs/log.txt
+www/htdocs/uploader.txt
+
+# User-uploaded / runtime images (large; keep out of Git)
+www/htdocs/img/girl_image/

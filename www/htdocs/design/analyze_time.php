@@ -1,0 +1,95 @@
+<?php include('common/resource.php'); ?>
+<title>申込時間｜集計</title>
+<?php include('common/header.php'); ?>
+<?php include('common/array.php'); ?>
+
+
+<article>
+  <section class="top_content_wrap">
+
+  </section>
+<section class="">
+  <div class="container analyze_wrap date_info_col">
+    <h1 class="breadcrumb">&gt;&nbsp;集計</h1>
+    <?php include('common/analyze_navi.php'); ?>
+    <!-- date_info_inner-->
+    <form class="analyze_info_inner" action="analyze_time_result.php" method="get">
+      <h2>申込時間</h2>
+      <!--date_left_col-->
+      <div class="analyze_form_wrap">
+        <!-- 申込日-->
+        <div class="white_box MMedium">
+          <p>申込日</p>
+          <div class="select_arrow select_y">
+            <select name="申込年" required>
+              <option value="">—</option>
+              <?php for ($i=2013; $i < 2025; $i++) : ?>
+              <option value="<?php echo $i;?>"><?php echo $i; ?></option>
+              <?php endfor; ?>
+            </select>
+          </div>
+          <span class="select_ymd_txt">年</span>
+
+          <div class="select_arrow select_md">
+            <select name="申込月" required>
+              <option value="">—</option>
+              <?php for ($i=1; $i < 13; $i++) : ?>
+              <option value="<?php echo $i;?>"><?php echo $i; ?></option>
+              <?php endfor; ?>
+            </select>
+          </div>
+          <span class="select_ymd_txt">月</span>
+
+          <div class="select_arrow select_md">
+            <select name="申込日" required>
+              <option value="">—</option>
+              <?php for ($i=1; $i < 32; $i++) : ?>
+              <option value="<?php echo $i;?>"><?php echo $i; ?></option>
+              <?php endfor; ?>
+            </select>
+            </div>
+          <span class="select_ymd_txt">日&nbsp;～&nbsp;</span>
+          <div class="select_arrow select_y">
+            <select name="申込年" required>
+              <option value="">—</option>
+              <?php for ($i=2013; $i < 2025; $i++) : ?>
+              <option value="<?php echo $i;?>"><?php echo $i; ?></option>
+              <?php endfor; ?>
+            </select>
+          </div>
+          <span class="select_ymd_txt">年</span>
+
+          <div class="select_arrow select_md">
+            <select name="申込月" required>
+              <option value="">—</option>
+              <?php for ($i=1; $i < 13; $i++) : ?>
+              <option value="<?php echo $i;?>"><?php echo $i; ?></option>
+              <?php endfor; ?>
+            </select>
+          </div>
+          <span class="select_ymd_txt">月</span>
+
+          <div class="select_arrow select_md">
+            <select name="申込日" required>
+              <option value="">—</option>
+              <?php for ($i=1; $i < 32; $i++) : ?>
+              <option value="<?php echo $i;?>"><?php echo $i; ?></option>
+              <?php endfor; ?>
+            </select>
+          </div>
+          <span class="select_ymd_txt">日&nbsp;迄</span>
+        </div>
+
+        <!--検索ボタン-->
+        <div class="analyze_btn">
+          <a href="analyze_time_result.php"><button type="submit" class="btn_orange">検索</button></a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+</article>
+
+
+
+<?php include('common/footer.php'); ?>

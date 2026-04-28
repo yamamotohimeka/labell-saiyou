@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--スタイルシート読み込み-->
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link rel="stylesheet" href="css/bxslider.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/input.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!--スタイルシート読み込み-->
+
+  <!--JS読み込み-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://use.typekit.net/xwk7bgv.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <!--JS読み込み-->
+  <title>データ入力</title>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+
+    <div class="inner">
+      <div class="container">
+        <h1><img src="img/logo.png" width="53"><span>HeadOffice</span></h1>
+        <div class="logout"><a href="#">LOGOUT</a></div>
+        <div class="searchbox">
+          <form method="get" action="http://www.google.co.jp/search" target="_blank">
+            <input name="q" size="31" maxlength="255" type="text" class="search_form" placeholder="おなまえ検索">
+            <input name="btng" value="検索" type="image" class="search_btn" src="img/btn_search.png" width="38">
+            <input name="hl" value="ja" type="hidden">
+            <input name="sitesearch" value="web-officer.com" type="hidden">
+          </form>
+        </div>
+        <div class="print">
+          <a href="javascript:void(0)" onclick="window.print();return false;">
+            <img src="img/icon_print.png" width="30">
+            <span>PRINT OUT</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- header nav -->
+    <nav>
+      <div class="container">
+        <ul>
+          <li class="active"><a href="index.html">採用情報</a></li><!--
+          --><li><a href="interview.html">面接予定情報</a></li><!--
+          --><li><a href="chase.html">追跡予定情報</a></li><!--
+          --><li><a href="#">検索条件</a></li><!--
+          --><li><a href="input.html">データ入力</a></li><!--
+          --><li><a href="#">スカウトメール</a></li><!--
+          --><li><a href="master_shop.html">マスター登録</a></li><!--
+          --><li><a href="analyze.html">集計</a></li><!--
+          --><li><a href="#">グループ登録</a></li><!--
+          --><li><a href="#">面接履歴</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /header nav -->
+
+  </header>
+  <!--header-->
+
+<section class="container date_info_col">
+  <h2 class="date_info_breadcrumb">&gt;検索条件</h2>
+
+    <!-- date_info_inner-->
+    <div class="date_info_inner">
+      <!--date_left_col-->
+      <div class="date_left_col">
+        <dl>
+          <!-- 申込日-->
+          <dt>申込日<span class="required">※必須</span></dt>
+          <dd>
+            <div class="select_arw select_year">
+            <select name="申込年">
+              <option value="">—</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+            </div><span class="txt">年</span>
+            <div class="select_arw">
+            <select name="申込月">
+              <option value="">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            </div><span class="txt">月</span>
+            <div class="select_arw">
+            <select name="申込日">
+              <option value="" selected="selected">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            </div><span class="txt">日</span>
+          </dd>
+
+          <!-- 入店日-->
+          <dt>入店日</dt>
+          <dd>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="checkbox[]" class="checkbox-sqar">
+                <span class="checkbox-txt">未定</span>
+              </label>
+            </div>
+            <div class="select_arw select_year">
+            <select name="入店年">
+              <option value="">—</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+            </div><span class="txt">年</span>
+            <div class="select_arw">
+            <select name="入店月">
+              <option value="">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            </div><span class="txt">月</span>
+            <div class="select_arw">
+            <select name="入店日">
+              <option value="" selected="selected">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            </div><span class="txt">日</span>
+          </dd>
+
+          <!-- 面接日-->
+          <dt>面接日</dt>
+          <dd>
+            <div class="select_arw select_year">
+            <select name="面接年">
+              <option value="">—</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+            </div><span class="txt">年</span>
+            <div class="select_arw">
+            <select name="面接月">
+              <option value="">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            </div><span class="txt">月</span>
+            <div class="select_arw">
+            <select name="面接日">
+              <option value="" selected="selected">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            </div><span class="txt">日</span>
+          </dd>
+
+          <!-- 面接日-->
+          <dt>面接予定日</dt>
+          <dd>
+            <div class="select_arw select_year">
+            <select name="面接予定年">
+              <option value="">—</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+            </select>
+            </div><span class="txt">年</span>
+            <div class="select_arw">
+            <select name="面接予定月">
+              <option value="">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            </div><span class="txt">月</span>
+            <div class="select_arw">
+            <select name="面接予定日">
+              <option value="" selected="selected">—</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            </div><span class="txt">日</span>
+          </dd>
+
+          <!-- 申込時間-->
+          <dt>申込時間</dt>
+          <dd>
+            <div class="select_arw">
+            <select name="申込時間/時">
+              <option value="">—</option>
+              <option value="00">00</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+            </select>
+            </div><span class="txt">時</span>
+            <div class="select_arw">
+            <select name="申込時間/分">
+              <option value="">—</option>
+              <option value="00">00</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+            </select>
+            </div><span class="txt">分</span>
+          </dd>
+          <!-- 面接予定時間-->
+          <dt>面接予定時間</dt>
+          <dd>
+            <div class="select_arw">
+            <select name="面接予定時間/時">
+              <option value="">—</option>
+              <option value="00">00</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+            </select>
+            </div><span class="txt">時</span>
+            <div class="select_arw">
+            <select name="面接予定時間/分">
+              <option value="">—</option>
+              <option value="00">00</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+            </select>
+            </div><span class="txt">分</span>
+          </dd>
+
+          <!-- 希望勤務地-->
+          <dt>希望勤務地</dt>
+          <dd>
+            <div class="select_arw select_long">
+            <select name="希望勤務地">
+              <option value="">—</option>
+              <option value="スピード梅田">スピード梅田</option>
+              <option value="スピード京橋">スピード京橋</option>
+              <option value="スピード難波">スピード難波</option>
+              <option value="スピード日本橋">スピード日本橋</option>
+              <option value="エコ梅田">エコ梅田</option>
+              <option value="エコ京橋">エコ京橋</option>
+              <option value="エコ難波">エコ難波</option>
+              <option value="エコ日本橋">エコ日本橋</option>
+              <option value="エコ天王寺">エコ天王寺</option>
+              <option value="ティーク谷9">ティーク谷9</option>
+              <option value="本部">本部</option>
+            </select>
+            </div>
+          </dd>
+
+          <!-- 待ち合わせ場所-->
+          <dt>待ち合わせ場所</dt>
+          <dd>
+            <div class="select_arw select_long">
+            <select name="待ち合わせ場所">
+              <option value="">—</option>
+              <option value="60">泉の広場</option>
+              <option value="25">文楽劇場前</option>
+            </select>
+            </div>
+          </dd>
+
+          <!-- 広告掲載エリア-->
+          <dt>広告掲載エリア</dt>
+          <dd>
+            <div class="select_arw select_long">
+            <select name="広告掲載エリア">
+              <option value="">—</option>
+              <option value="梅田">梅田</option>
+              <option value="京橋">京橋</option>
+              <option value="難波">難波</option>
+              <option value="日本橋">日本橋</option>
+              <option value="谷９">谷９</option>
+              <option value="キタ">キタ</option>
+              <option value="ミナミ">ミナミ</option>
+            </select>
+            </div>
+          </dd>
+
+          <!-- 掲載求人名-->
+          <dt>掲載求人名</dt>
+          <dd>
+            <div class="select_arw select_long">
+            <select name="掲載求人名">
+              <option value="">—</option>
+              <option value="スピード">スピード</option>
+              <option value="エコ">エコ</option>
+              <option value="ティーク">ティーク</option>
+              <option value="プルミエール">プルミエール</option>
+              <option value="ティーク">エデン</option>
+              <option value="関西セレクション">関西セレクション</option>
+              <option value="プレミアムリゾート">プレミアムリゾート</option>
+              <option value="ハート">ハート</option>
+              <option value="KIREI">KIREI</option>
+              <option value="カンテサンス">カンテサンス</option>
+              <option value="今日はココまで！">今日はココまで！</option>
+              <option value="巨乳じゃなくても！">巨乳じゃなくても！</option>
+              <option value="お姉さんの指先">お姉さんの指先</option>
+              <option value="なでシコ女学院">なでシコ女学院</option>
+              <option value="ノーリップ">ノーリップ</option>
+              <option value="エピレ">エピレ</option>
+              <option value="キャミソール">キャミソール</option>
+              <option value="STOP">STOP</option>
+              <option value="フラミンゴ">フラミンゴ</option>
+              <option value="バリスパ">バリスパ</option>
+            </select>
+            </div>
+          </dd>
+
+          <!-- 掲載業種-->
+          <dt>掲載業種</dt>
+          <dd>
+            <div class="select_arw select_long">
+            <select name="掲載業種">
+              <option value="">—</option>
+              <option value="ヘルス">ヘルス</option>
+              <option value="オナクラ">オナクラ</option>
+            </select>
+            </div>
+          </dd>
+
+          <!-- 掲載店舗名-->
+          <dt>掲載店舗名</dt>
+          <dd>
+            <div class="select_arw select_long">
+            <select name="掲載店舗名">
+              <option value="">—</option>
+              <option value="スピード梅田">スピード梅田</option>
+              <option value="スピード京橋">スピード京橋</option>
+              <option value="スピード難波">スピード難波</option>
+              <option value="スピード日本橋">スピード日本橋</option>
+              <option value="エコ梅田">エコ梅田</option>
+              <option value="エコ京橋">エコ京橋</option>
+              <option value="エコ難波">エコ難波</option>
+              <option value="エコ日本橋">エコ日本橋</option>
+              <option value="エコ天王寺">エコ天王寺</option>
+              <option value="ティーク谷9">ティーク谷9</option>
+              <option value="本部">本部</option>
+            </select>
+            </div>
+          </dd>
+
+        </dl>
+      </div><!--/date_left_col-->
+
+      <!--date_right_col-->
+      <div class="date_right_col">
+        <div class="date_right_line">
+          <div class="date_right_cont">
+            <p>申込名<span class="required">※必須</span></p>
+            <input type="text" name="申込名" value="" size="24">
+          </div>
+          <div class="date_right_cont">
+            <p>源氏名</p>
+            <input type="text" name="源氏名" value="" size="24">
+          </div>
+          <div class="date_right_cont">
+            <p>TEL</p>
+            <input type="tel" name="tel01" value="" size="5"><span class="hyphen">—</span><input type="tel" name="tel02" value="" size="5"><span class="hyphen">—</span><input type="tel" name="tel03" value="" size="5">
+          </div>
+        </div>
+        <div class="date_right_line">
+          <div class="date_right_cont">
+            <p>氏名</p>
+            <input type="text" name="氏名" value="" size="24">
+          </div>
+          <div class="date_right_cont">
+            <p>ふりがな</p>
+            <input type="text" name="ふりがな" value="" size="24">
+          </div>
+          <div class="date_right_cont mail_wrap">
+            <p class="mail">mail</p>
+            <input type="mail" name="maill01" value="" size="20"><span class="at">＠</span>
+            <div class="select_arw select_large">
+              <select name="mail02">
+                <option value="">—</option>
+                <option value="softbank.ne.jp">softbank.ne.jp</option>
+                <option value="i.softbank.jp">i.softbank.jp</option>
+                <option value="docomo.ne.jp">docomo.ne.jp</option>
+                <option value="gmail.com">gmail.com</option>
+                <option value="yahoo.co.jp">yahoo.co.jp</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="date_right_line">
+          <div class="date_right_cont2">
+            <p class="line3">年齢</p>
+            <div class="select_arw2 select_short">
+              <select name="age">
+                <option value="">—</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+              </select>
+              <span class="txt">歳</span>
+            </div>
+          </div>
+          <div class="date_right_cont2">
+            <p class="line3">身長</p>
+            <div class="select_arw2 select_short">
+              <select name="height">
+                <option value="">—</option>
+                <option value="141">141~145</option>
+                <option value="146">146~150</option>
+              </select>
+              <span class="txt">cm</span>
+            </div>
+          </div>
+          <div class="date_right_cont2">
+            <p class="line3">体重</p>
+            <div class="select_arw2 select_short">
+              <select name="height">
+                <option value="">—</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+              </select>
+              <span class="txt">kg</span>
+            </div>
+          </div>
+          <div class="date_right_cont2">
+            <p class="line3">バスト</p>
+            <div class="select_arw2 select_short">
+              <select name="height">
+                <option value="">—</option>
+                <option value="80">80</option>
+                <option value="85">85</option>
+                <option value="90">90</option>
+              </select>
+              <span class="txt">cm</span>
+            </div>
+          </div>
+          <div class="date_right_cont2">
+            <p class="line3">カップ数</p>
+            <div class="select_arw2 select_short">
+              <select name="height">
+                <option value="">—</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+              </select>
+              <span class="txt">cm</span>
+            </div>
+          </div>
+          <div class="date_right_cont2">
+            <p class="line3">ウエスト</p>
+            <div class="select_arw2 select_short">
+              <select name="height">
+                <option value="">—</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+                <option value="60">60</option>
+              </select>
+              <span class="txt">cm</span>
+            </div>
+          </div>
+          <div class="date_right_cont2">
+            <p class="line3">ヒップ</p>
+            <div class="select_arw2 select_short">
+              <select name="height">
+                <option value="">—</option>
+                <option value="81">81~90</option>
+                <option value="91">91~100</option>
+                <option value="101">101~105</option>
+              </select>
+              <span class="txt">cm</span>
+            </div>
+          </div>
+        </div>
+        <div class="date_right_line">
+          <div class="date_right_cont">
+            <p class="line4">所属店舗名</p>
+            <div class="select_arw2">
+              <select name="所属店舗名">
+                <option value="">—</option>
+                <option value="スピード梅田">スピード梅田</option>
+                <option value="スピード京橋">スピード京橋</option>
+                <option value="スピード難波">スピード難波</option>
+                <option value="スピード日本橋">スピード日本橋</option>
+                <option value="エコ梅田">エコ梅田</option>
+                <option value="エコ京橋">エコ京橋</option>
+                <option value="エコ難波">エコ難波</option>
+                <option value="エコ日本橋">エコ日本橋</option>
+                <option value="エコ天王寺">エコ天王寺</option>
+                <option value="ティーク谷9">ティーク谷9</option>
+                <option value="本部">本部</option>
+              </select>
+            </div>
+          </div>
+          <div class="date_right_cont">
+            <p class="line4">勤務形態</p>
+            <div class="select_arw2">
+              <select name="勤務形態">
+                <option value="">—</option>
+                <option value="早番">早番</option>
+                <option value="中番">中番</option>
+                <option value="遅番">遅番</option>
+                <option value="深夜">深夜</option>
+              </select>
+            </div>
+          </div>
+          <div class="date_right_cont">
+            <p class="line4">経験</p>
+            <div class="select_arw2">
+              <select name="経験">
+                <option value="">—</option>
+                <option value="あり">あり</option>
+                <option value="なし">なし</option>
+              </select>
+            </div>
+          </div>
+          <div class="date_right_cont">
+            <p class="line4">本人確認</p>
+            <div class="select_arw2">
+              <select name="本人確認">
+                <option value="">—</option>
+                <option value="免許証">免許証</option>
+                <option value="パスポート">パスポート</option>
+                <option value="マイナンバー">マイナンバー</option>
+                <option value="住基カード">住基カード</option>
+                <option value="在留カード">在留カード</option>
+                <option value="保険証">保険証</option>
+                <option value="学生証">学生証</option>
+                <option value="療育手帳">療育手帳</option>
+                <option value="年金手帳">年金手帳</option>
+                <option value="住民票">住民票</option>
+                <option value="戸籍謄本">戸籍謄本</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="date_right_line">
+          <div class="date_right_cont">
+            <p class="line4">面接結果</p>
+            <div class="select_arw2">
+              <select name="面接結果">
+                <option value="">—</option>
+                <option value="採用">採用</option>
+                <option value="不採用">不採用</option>
+                <option value="撃沈">撃沈</option>
+                <option value="退店">退店</option>
+              </select>
+            </div>
+          </div>
+          <div class="date_right_cont">
+            <p class="line4">面接担当</p>
+            <div class="select_arw2">
+              <select name="面接担当">
+                <option value="">—</option>
+                <option value="ごん">ごん</option>
+                <option value="けむまき">けむまき</option>
+                <option value="きーぼー">きーぼー</option>
+                <option value="おさる">おさる</option>
+              </select>
+            </div>
+          </div>
+          <div class="date_right_cont">
+            <p class="line4">ＫＳ担当</p>
+            <div class="select_arw2">
+              <select name="ＫＳ担当">
+                <option value="">—</option>
+                <option value="ごん">ごん</option>
+                <option value="けむまき">けむまき</option>
+                <option value="きーぼー">きーぼー</option>
+                <option value="おさる">おさる</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="date_right_line">
+          <div class="date_right_cont2">
+            <p class="line6">給料</p>
+            <div class="select_arw2 select_short">
+              <select name="給料">
+                <option value="">—</option>
+                <option value="4000">4000</option>
+                <option value="4500">4500</option>
+                <option value="5000">5000</option>
+                <option value="5500">5500</option>
+              </select>
+              <span class="txt">円</span>
+            </div>
+          </div>
+          <div class="date_right_cont2">
+            <p class="line6">特別指名料</p>
+            <div class="select_arw2 select_short">
+              <select name="給料">
+                <option value="">—</option>
+                <option value="0">0</option>
+                <option value="5000">500</option>
+                <option value="1000">1000</option>
+                <option value="1500">1500</option>
+              </select>
+              <span class="txt">円</span>
+            </div>
+          </div>
+        </div>
+        <div class="date_right_line">
+          <div class="checkbox2">
+            <label>
+              <input type="checkbox2" name="checkbox2[]" class="checkbox2-sqar">
+              <span class="checkbox2-txt">ニコイチ</span>
+            </label>
+            <label>
+              <input type="checkbox2" name="checkbox2[]" class="checkbox2-sqar">
+              <span class="checkbox2-txt">出稼ぎ</span>
+            </label>
+            <label>
+              <input type="checkbox2" name="checkbox2[]" class="checkbox2-sqar">
+              <span class="checkbox2-txt">スカウトメール</span>
+            </label>
+            <label>
+              <input type="checkbox2" name="checkbox2[]" class="checkbox2-sqar">
+              <span class="checkbox2-txt">追跡中</span>
+            </label>
+            <label>
+              <input type="checkbox2" name="checkbox2[]" class="checkbox2-sqar">
+              <span class="checkbox2-txt">追跡中止</span>
+            </label>
+          </div>
+        </div>
+        <div class="date_right_line">
+          <div class="date_right_cont">
+            <p class="line8">他店紹介</p>
+            <div class="select_arw2">
+              <select name="他店紹介">
+                <option value="">—</option>
+                <option value="激安グループ">激安グループ</option>
+                <option value="スパークグループ">スパークグループ</option>
+                <option value="珍太郎">珍太郎</option>
+                <option value="奥様日記">奥様日記</option>
+                <option value="センスプロモーション">センスプロモーション</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="date_right_line">
+          <div class="date_right_cont">
+            <p class="line9">住所</p>
+            <div class="select_arw2 select_pref">
+              <select name="住所">
+                <optgroup label="">
+                  <option value="">—</option>
+                </optgroup>
+                <optgroup label="北海道">
+                  <option value="北海道">北海道</option>
+                </optgroup>
+                <optgroup label="東北">
+                  <option value="青森県">青森県</option>
+                  <option value="岩手県">岩手県</option>
+                  <option value="宮城県">宮城県</option>
+                  <option value="秋田県">秋田県</option>
+                  <option value="山形県">山形県</option>
+                  <option value="福島県">福島県</option>
+                </optgroup>
+                <optgroup label="関東">
+                  <option value="東京都">東京都</option>
+                  <option value="茨城県">茨城県</option>
+                  <option value="栃木県">栃木県</option>
+                  <option value="群馬県">群馬県</option>
+                  <option value="埼玉県">埼玉県</option>
+                  <option value="千葉県">千葉県</option>
+                  <option value="神奈川県">神奈川県</option>
+                </optgroup>
+                <optgroup label="北陸">
+                  <option value="富山県">富山県</option>
+                  <option value="石川県">石川県</option>
+                  <option value="福井県">福井県</option>
+                </optgroup>
+                <optgroup label="甲信越">
+                  <option value="新潟県">新潟県</option>
+                  <option value="山梨県">山梨県</option>
+                  <option value="長野県">長野県</option>
+                </optgroup>
+                <optgroup label="東海">
+                  <option value="岐阜県">岐阜県</option>
+                  <option value="静岡県">静岡県</option>
+                  <option value="愛知県">愛知県</option>
+                  <option value="三重県">三重県</option>
+                </optgroup>
+                  <optgroup label="関西">
+                  <option value="滋賀県">滋賀県</option>
+                  <option value="京都府">京都府</option>
+                  <option value="大阪府">大阪府</option>
+                  <option value="兵庫県">兵庫県</option>
+                  <option value="奈良県">奈良県</option>
+                  <option value="和歌山県">和歌山県</option>
+                </optgroup>
+                <optgroup label="中四国">
+                  <option value="鳥取県">鳥取県</option>
+                  <option value="島根県">島根県</option>
+                  <option value="岡山県">岡山県</option>
+                  <option value="広島県">広島県</option>
+                  <option value="山口県">山口県</option>
+                  <option value="徳島県">徳島県</option>
+                  <option value="香川県">香川県</option>
+                  <option value="愛媛県">愛媛県</option>
+                  <option value="高知県">高知県</option>
+                </optgroup>
+                <optgroup label="九州">
+                  <option value="福岡県">福岡県</option>
+                  <option value="佐賀県">佐賀県</option>
+                  <option value="長崎県">長崎県</option>
+                  <option value="熊本県">熊本県</option>
+                  <option value="大分県">大分県</option>
+                  <option value="宮崎県">宮崎県</option>
+                  <option value="鹿児島県">鹿児島県</option>
+                </optgroup>
+                <optgroup label="沖縄">
+                <option value="沖縄県">沖縄県</option>
+                </optgroup>
+              </select>
+              <span class="txt bold">都道府県</span>
+            </div>
+          </div>
+          <input type="text" name="住所" value="" size="75" class="address_detail">
+        </div>
+        <div class="date_right_line">
+          <div class="date_right_cont">
+            <p class="line8">検索ワード（複数選択）</p>
+            <div class="select_arw2">
+              <select name="検索ワード">
+                <option value="">—</option>
+                <option value="大阪">大阪</option>
+                <option value="高収入">高収入</option>
+                <option value="オナクラ">オナクラ</option>
+                <option value="高級デリ">高級デリ</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="date_right_tbl">
+            <table class="photo_table">
+              <tr>
+                <th>写真1</th>
+                <th>写真2</th>
+                <th>写真3</th>
+              </tr>
+              <tr>
+                <td>
+                  <label for="file_photo" class="photo_input">
+                    画像参照
+                    <input type="file" id="file_photo" style="display:none;">
+                  </label>
+                  <div class="preview"></div>
+                </td>
+                <td>
+                  <label for="file_photo" class="photo_input">
+                    画像参照
+                    <input type="file" id="file_photo" style="display:none;">
+                  </label>
+                  <div class="preview"></div>
+                </td>
+                <td>
+                  <label for="file_photo" class="photo_input">
+                    画像参照
+                    <input type="file" id="file_photo" style="display:none;">
+                  </label>
+                  <div class="preview"></div>
+                </td>
+              </tr>
+            </table>
+        </div>
+
+        <script type="text/javascript">
+        $(function(){
+          //画像ファイルプレビュー表示のイベント追加 fileを選択時に発火するイベントを登録
+          $('form').on('change', 'input[type="file"]', function(e) {
+            var file = e.target.files[0],
+                reader = new FileReader(),
+                $preview = $(".preview");
+                t = this;
+
+            // 画像ファイル以外の場合は何もしない
+            if(file.type.indexOf("image") < 0){
+              return false;
+            }
+
+            // ファイル読み込みが完了した際のイベント登録
+            reader.onload = (function(file) {
+              return function(e) {
+                //既存のプレビューを削除
+                $preview.empty();
+                // .prevewの領域の中にロードした画像を表示するimageタグを追加
+                $preview.append($('<img>').attr({
+                          src: e.target.result,
+                          width: "150px",
+                          class: "preview",
+                          title: file.name
+                      }));
+              };
+            })(file);
+
+            reader.readAsDataURL(file);
+          });
+        });
+        </script>
+        <div class="date_right_line">
+          <p>備考</p>
+          <input type="text" name="備考" value="" class="remarks_txt" size="110">
+        </div>
+        <div class="date_right_line">
+          <p>追跡理由</p>
+          <input type="text" name="追跡理由" value="" class="remarks_txt" size="110">
+        </div>
+
+        <div class="date_right_confirm">
+          <input type="submit">確定</button>
+        </div>
+      </div><!--/date_right_col-->
+    </div><!-- /date_info_inner-->
+</section>
+
+
+</div><!-- /wrapper-->
+</body>
+</html>
