@@ -1,0 +1,13 @@
+Options -Indexes
+# Fuel の入口を優先（index.html だけだと静的案内が先に表示される）
+DirectoryIndex index.php index.html
+
+# サブディレクトリ（/sp-labelle/www/htdocs/）でクリーン URL を index.php に渡す
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	RewriteRule ^index\.php - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+</IfModule>

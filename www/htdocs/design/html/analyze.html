@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--スタイルシート読み込み-->
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link rel="stylesheet" href="css/bxslider.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/input.css">
+  <link rel="stylesheet" href="css/analyze.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+　<!--スタイルシート読み込み-->
+
+  <!--JS読み込み-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://use.typekit.net/xwk7bgv.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="js/bxslider.js"></script>
+  <!--JS読み込み-->
+  <title>採用通知</title>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header>
+
+    <div class="inner">
+      <div class="container">
+        <h1><img src="img/logo.png" width="53"><span>HeadOffice</span></h1>
+        <div class="logout"><a href="#">LOGOUT</a></div>
+        <div class="searchbox">
+          <form method="get" action="http://www.google.co.jp/search" target="_blank">
+            <input name="q" size="31" maxlength="255" type="text" class="search_form" placeholder="おなまえ検索">
+            <input name="btng" value="検索" type="image" class="search_btn" src="img/btn_search.png" width="38">
+            <input name="hl" value="ja" type="hidden">
+            <input name="sitesearch" value="web-officer.com" type="hidden">
+          </form>
+        </div>
+        <div class="print">
+          <a href="javascript:void(0)" onclick="window.print();return false;">
+            <img src="img/icon_print.png" width="30">
+            <span>PRINT OUT</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- header nav -->
+    <nav>
+      <div class="container">
+        <ul>
+          <li class="active"><a href="index.html">採用情報</a></li><!--
+          --><li><a href="interview.html">面接予定情報</a></li><!--
+          --><li><a href="chase.html">追跡予定情報</a></li><!--
+          --><li><a href="#">検索条件</a></li><!--
+          --><li><a href="input.html">データ入力</a></li><!--
+          --><li><a href="#">スカウトメール</a></li><!--
+          --><li><a href="master_shop.html">マスター登録</a></li><!--
+          --><li><a href="analyze.html">集計</a></li><!--
+          --><li><a href="#">グループ登録</a></li><!--
+          --><li><a href="#">面接履歴</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /header nav -->
+
+  </header>
+  <!--header-->
+
+
+  <article>
+    <section class="">
+      <div class="container analyze_wrap date_info_col">
+        <h1>>&nbsp;集計</h1>
+        <ul class="analyze_navi">
+          <li><a href="#">採用数</a></li>
+          <li><a href="#">掲載媒体</a></li>
+          <li><a href="#">掲載ジャンル</a></li>
+          <li><a href="#">掲載店舗名</a></li>
+          <li><a href="#">申込時間</a></li>
+          <li><a href="#">面接件数</a></li>
+          <li><a href="#">面接振り件数</a></li>
+          <li><a href="#">広告掲載エリア</a></li>
+          <li><a href="#">ニコイチ</a></li>
+          <li><a href="#">出稼ぎ</a></li>
+          <li><a href="#">採用率</a></li>
+          <li><a href="#">継続率</a></li>
+          <li><a href="#">他店紹介</a></li>
+          <li><a href="#">検索ワード</a></li>
+          <li><a href="#">月間集計</a></li>
+        </ul>
+
+
+
+        <!-- date_info_inner-->
+        <div class="analyze_info_inner">
+          <h2>掲載媒体</h2>
+          <!--date_left_col-->
+          <div class="analyze_form_wrap">
+
+            <dl>
+              <!-- 申込日-->
+              <dt>申込日<span class="required">※必須</span></dt>
+              <dd>
+                <div class="select_arw select_year">
+                <select name="申込年">
+                  <option value="">—</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                </select>
+                </div><span class="txt">年</span>
+                <div class="select_arw">
+                <select name="申込月">
+                  <option value="">—</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                </div><span class="txt">月</span>
+                <div class="select_arw">
+                <select name="申込日">
+                  <option value="" selected="selected">—</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select>
+                </div><span class="txt">日</span>
+              </dd>
+
+              <dt>入店日</dt>
+              <dd>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="checkbox[]" class="checkbox-sqar">
+                    <span class="checkbox-txt">未定</span>
+                  </label>
+                </div>
+                <div class="select_arw select_year">
+                <select name="入店年">
+                  <option value="">—</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                </select>
+                </div><span class="txt">年</span>
+                <div class="select_arw">
+                <select name="入店月">
+                  <option value="">—</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                </div><span class="txt">月</span>
+                <div class="select_arw">
+                <select name="入店日">
+                  <option value="" selected="selected">—</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select>
+                </div><span class="txt">日</span>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+  </article>
+
+
+
+</div><!--  /wrapper-->
+
+</body>
+</html>

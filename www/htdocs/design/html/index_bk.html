@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--スタイルシート読み込み-->
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link rel="stylesheet" href="css/bxslider.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+　<!--スタイルシート読み込み-->
+
+  <!--JS読み込み-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://use.typekit.net/xwk7bgv.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="js/bxslider.js"></script>
+  <!--JS読み込み-->
+  <title>採用通知</title>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <header>
+
+    <div class="inner">
+      <div class="container">
+        <h1><img src="img/logo.png" width="53"><span>HeadOffice</span></h1>
+        <div class="logout"><a href="#">LOGOUT</a></div>
+        <div class="searchbox">
+          <form method="get" action="http://www.google.co.jp/search" target="_blank">
+            <input name="q" size="31" maxlength="255" value="" type="text">
+            <input name="btng" value="検索" type="submit">
+            <input name="hl" value="ja" type="hidden">
+            <input name="sitesearch" value="web-officer.com" type="hidden">
+          </form>
+        </div>
+        <div class="print">
+          <img src="img/icon_print.png" width="30">
+          <span>PRINT OUT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- header nav -->
+    <nav>
+      <div class="container">
+        <ul>
+          <li class="active"><a href="index.html">採用情報</a></li><!--
+          --><li><a href="interview.html">面接予定情報</a></li><!--
+          --><li><a href="#">追跡予定情報</a></li><!--
+          --><li><a href="#">検索条件</a></li><!--
+          --><li><a href="#">データ入力</a></li><!--
+          --><li><a href="#">スカウトメール</a></li><!--
+          --><li><a href="#">マスター登録</a></li><!--
+          --><li><a href="#">集計</a></li><!--
+          --><li><a href="#">グループ登録</a></li><!--
+          --><li><a href="#">面接履歴</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /header nav -->
+
+  </header>
+  <!--header-->
+
+
+  <article>
+    <section>
+      <div class="girl_info_col container">
+        <h1>No.100</h1>
+
+        <div class="left_col">
+          <ul class="btn_list_1">
+            <li><a href="#">編集</a></li>
+            <li><a href="#">採用情報に送信</a></li>
+            <li><a href="#">複製</a></li>
+            <li><a href="#">消去</a></li>
+          </ul>
+          <ul class="btn_list_2">
+            <li><a href="#">スカウトメールに追加する</a></li>
+            <li><a href="#">追跡日時設定</a></li>
+          </ul>
+
+          <ul class="bxslider">
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+          </ul>
+
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('.bxslider').bxSlider();
+            });
+          </script>
+        </div>
+
+        <div class="right_col">
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">申込日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">申込時間<span>12：06</span></div>
+            <div class="girl_info_item_1">申込名<span>ゆかりん</span></div>
+            <div class="girl_info_item_1">希望勤務地<span>梅田</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接予定日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">面接予定時間<span>21：06</span></div>
+            <div class="girl_info_item_1">面接日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">待ち合わせ場所<span>泉の広場</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">入店日<span>2018年05月28日</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio_active.png" width="18"><span>スカウトメール</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio.png" width="18"><span>追跡中</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">店舗名<span>SPEED日本橋</span></div>
+            <div class="girl_info_item_1">源氏名<span>ゆかり</span></div>
+            <div class="girl_info_item_1">名前<span>岡山　由香里（おかやま　ゆかり）</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">年齢<span>28</span></div>
+            <div class="girl_info_item_1">身長<span>158</span>cm</div>
+            <div class="girl_info_item_1">体重<span>50</span>kg</div>
+            <div class="girl_info_item_1">バスト<span>000</span>cm<span>C</span>cup</div>
+            <div class="girl_info_item_1">ヒップ<span>000</span>cm</div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">経験<span>ホテヘル</span></div>
+            <div class="girl_info_item_1">本人確認<span>免許証</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">住所<span>徳島県板野郡上板町神宅字梅ノ木17-2</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">TEL<span>090</span><span>1245</span><span>6785</span></div>
+            <div class="girl_info_item_1">Mail<span>iokimnhtlokmo</span>@<span>i.softbank.jp</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">給料<span>10000</span>円</div>
+            <div class="girl_info_item_1">特別指名<span>10000</span>円</div>
+            <div class="girl_info_item_1">勤務形態<span>深夜</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接結果<span>採用</span></div>
+            <div class="girl_info_item_1">面接担当<span>藤村</span></div>
+            <div class="girl_info_item_1">KS担当<span>藤村</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">掲載媒体名<span>ガールズヘブン</span></div>
+            <div class="girl_info_item_1">掲載業種<span>オナクラ</span></div>
+            <div class="girl_info_item_1">掲載求人名<span>キャミソール</span></div>
+
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">広告掲載エリア<span>京橋</span></div>
+          </div>
+
+
+
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">検索ワード<span>大阪</span><span>オナクラ</span><span>高収入</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">追跡理由<span>ブッチ</span></div>
+          </div>
+
+        </div><!-- /right_col -->
+
+        <div class="bottom_col">
+          <ul>
+            <li><img src="img/btn_radio_active.png" width="18"><span>ニコイチ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>出稼ぎ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>他店紹介（スパークグループ）</span></li>
+          </ul>
+
+          <div class="girl_info_item_2">備考</div>
+          <div class="girl_info_item_3">
+            出張エステ・デリヘルで数日間だけ経験があります。
+            デリヘルで本強があり、ヘルスより安全と思うオナクラで探していたそうです。
+            オナクラはダミー求人だと説明し、プレイ内容も問題なく入店となりました。
+            さらに受付型の店舗であることや会員証のシステムを説明して、出張型よりも安心して働いてもらえる環境をアピールしました。
+            大阪・京都に来ることが多く、近いうちに大阪に住みたいそうなので、継続して働いてもらえるようにします。
+          </div>
+
+          <!-- <div class="girl_info_item_5"></div> -->
+        </div>
+
+      </div>
+    </section>
+  </article>
+
+
+  <article>
+    <section>
+      <div class="girl_info_col container">
+        <h1>No.100</h1>
+
+        <div class="left_col">
+          <ul class="btn_list_1">
+            <li><a href="#">編集</a></li>
+            <li><a href="#">採用情報に送信</a></li>
+            <li><a href="#">複製</a></li>
+            <li><a href="#">消去</a></li>
+          </ul>
+          <ul class="btn_list_2">
+            <li><a href="#">スカウトメールに追加する</a></li>
+            <li><a href="#">追跡日時設定</a></li>
+          </ul>
+
+          <ul class="bxslider">
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+          </ul>
+
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('.bxslider').bxSlider();
+            });
+          </script>
+        </div>
+
+        <div class="right_col">
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">申込日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">申込時間<span>12：06</span></div>
+            <div class="girl_info_item_1">申込名<span>ゆかりん</span></div>
+            <div class="girl_info_item_1">希望勤務地<span>梅田</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接予定日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">面接予定時間<span>21：06</span></div>
+            <div class="girl_info_item_1">面接日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">待ち合わせ場所<span>泉の広場</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">入店日<span>2018年05月28日</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio_active.png" width="18"><span>スカウトメール</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio.png" width="18"><span>追跡中</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">店舗名<span>SPEED日本橋</span></div>
+            <div class="girl_info_item_1">源氏名<span>ゆかり</span></div>
+            <div class="girl_info_item_1">名前<span>岡山　由香里（おかやま　ゆかり）</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">年齢<span>28</span></div>
+            <div class="girl_info_item_1">身長<span>158</span>cm</div>
+            <div class="girl_info_item_1">体重<span>50</span>kg</div>
+            <div class="girl_info_item_1">バスト<span>000</span>cm<span>C</span>cup</div>
+            <div class="girl_info_item_1">ヒップ<span>000</span>cm</div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">経験<span>ホテヘル</span></div>
+            <div class="girl_info_item_1">本人確認<span>免許証</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">住所<span>徳島県板野郡上板町神宅字梅ノ木17-2</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">TEL<span>090</span><span>1245</span><span>6785</span></div>
+            <div class="girl_info_item_1">Mail<span>iokimnhtlokmo</span>@<span>i.softbank.jp</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">給料<span>10000</span>円</div>
+            <div class="girl_info_item_1">特別指名<span>10000</span>円</div>
+            <div class="girl_info_item_1">勤務形態<span>深夜</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接結果<span>採用</span></div>
+            <div class="girl_info_item_1">面接担当<span>藤村</span></div>
+            <div class="girl_info_item_1">KS担当<span>藤村</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">掲載媒体名<span>ガールズヘブン</span></div>
+            <div class="girl_info_item_1">掲載業種<span>オナクラ</span></div>
+            <div class="girl_info_item_1">掲載求人名<span>キャミソール</span></div>
+
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">広告掲載エリア<span>京橋</span></div>
+          </div>
+
+
+
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">検索ワード<span>大阪</span><span>オナクラ</span><span>高収入</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">追跡理由<span>ブッチ</span></div>
+          </div>
+
+        </div><!-- /right_col -->
+
+        <div class="bottom_col">
+          <ul>
+            <li><img src="img/btn_radio_active.png" width="18"><span>ニコイチ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>出稼ぎ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>他店紹介（スパークグループ）</span></li>
+          </ul>
+
+          <div class="girl_info_item_2">備考</div>
+          <div class="girl_info_item_3">
+            出張エステ・デリヘルで数日間だけ経験があります。
+            デリヘルで本強があり、ヘルスより安全と思うオナクラで探していたそうです。
+            オナクラはダミー求人だと説明し、プレイ内容も問題なく入店となりました。
+            さらに受付型の店舗であることや会員証のシステムを説明して、出張型よりも安心して働いてもらえる環境をアピールしました。
+            大阪・京都に来ることが多く、近いうちに大阪に住みたいそうなので、継続して働いてもらえるようにします。
+          </div>
+
+          <!-- <div class="girl_info_item_5"></div> -->
+        </div>
+
+      </div>
+    </section>
+  </article>
+
+
+  <article>
+    <section>
+      <div class="girl_info_col container">
+        <h1>No.100</h1>
+
+        <div class="left_col">
+          <ul class="btn_list_1">
+            <li><a href="#">編集</a></li>
+            <li><a href="#">採用情報に送信</a></li>
+            <li><a href="#">複製</a></li>
+            <li><a href="#">消去</a></li>
+          </ul>
+          <ul class="btn_list_2">
+            <li><a href="#">スカウトメールに追加する</a></li>
+            <li><a href="#">追跡日時設定</a></li>
+          </ul>
+
+          <ul class="bxslider">
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+          </ul>
+
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('.bxslider').bxSlider();
+            });
+          </script>
+        </div>
+
+        <div class="right_col">
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">申込日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">申込時間<span>12：06</span></div>
+            <div class="girl_info_item_1">申込名<span>ゆかりん</span></div>
+            <div class="girl_info_item_1">希望勤務地<span>梅田</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接予定日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">面接予定時間<span>21：06</span></div>
+            <div class="girl_info_item_1">面接日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">待ち合わせ場所<span>泉の広場</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">入店日<span>2018年05月28日</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio_active.png" width="18"><span>スカウトメール</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio.png" width="18"><span>追跡中</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">店舗名<span>SPEED日本橋</span></div>
+            <div class="girl_info_item_1">源氏名<span>ゆかり</span></div>
+            <div class="girl_info_item_1">名前<span>岡山　由香里（おかやま　ゆかり）</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">年齢<span>28</span></div>
+            <div class="girl_info_item_1">身長<span>158</span>cm</div>
+            <div class="girl_info_item_1">体重<span>50</span>kg</div>
+            <div class="girl_info_item_1">バスト<span>000</span>cm<span>C</span>cup</div>
+            <div class="girl_info_item_1">ヒップ<span>000</span>cm</div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">経験<span>ホテヘル</span></div>
+            <div class="girl_info_item_1">本人確認<span>免許証</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">住所<span>徳島県板野郡上板町神宅字梅ノ木17-2</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">TEL<span>090</span><span>1245</span><span>6785</span></div>
+            <div class="girl_info_item_1">Mail<span>iokimnhtlokmo</span>@<span>i.softbank.jp</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">給料<span>10000</span>円</div>
+            <div class="girl_info_item_1">特別指名<span>10000</span>円</div>
+            <div class="girl_info_item_1">勤務形態<span>深夜</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接結果<span>採用</span></div>
+            <div class="girl_info_item_1">面接担当<span>藤村</span></div>
+            <div class="girl_info_item_1">KS担当<span>藤村</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">掲載媒体名<span>ガールズヘブン</span></div>
+            <div class="girl_info_item_1">掲載業種<span>オナクラ</span></div>
+            <div class="girl_info_item_1">掲載求人名<span>キャミソール</span></div>
+
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">広告掲載エリア<span>京橋</span></div>
+          </div>
+
+
+
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">検索ワード<span>大阪</span><span>オナクラ</span><span>高収入</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">追跡理由<span>ブッチ</span></div>
+          </div>
+
+        </div><!-- /right_col -->
+
+        <div class="bottom_col">
+          <ul>
+            <li><img src="img/btn_radio_active.png" width="18"><span>ニコイチ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>出稼ぎ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>他店紹介（スパークグループ）</span></li>
+          </ul>
+
+          <div class="girl_info_item_2">備考</div>
+          <div class="girl_info_item_3">
+            出張エステ・デリヘルで数日間だけ経験があります。
+            デリヘルで本強があり、ヘルスより安全と思うオナクラで探していたそうです。
+            オナクラはダミー求人だと説明し、プレイ内容も問題なく入店となりました。
+            さらに受付型の店舗であることや会員証のシステムを説明して、出張型よりも安心して働いてもらえる環境をアピールしました。
+            大阪・京都に来ることが多く、近いうちに大阪に住みたいそうなので、継続して働いてもらえるようにします。
+          </div>
+
+          <!-- <div class="girl_info_item_5"></div> -->
+        </div>
+
+      </div>
+    </section>
+  </article>
+
+
+  <article>
+    <section>
+      <div class="girl_info_col container">
+        <h1>No.100</h1>
+
+        <div class="left_col">
+          <ul class="btn_list_1">
+            <li><a href="#">編集</a></li>
+            <li><a href="#">採用情報に送信</a></li>
+            <li><a href="#">複製</a></li>
+            <li><a href="#">消去</a></li>
+          </ul>
+          <ul class="btn_list_2">
+            <li><a href="#">スカウトメールに追加する</a></li>
+            <li><a href="#">追跡日時設定</a></li>
+          </ul>
+
+          <ul class="bxslider">
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+          </ul>
+
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('.bxslider').bxSlider();
+            });
+          </script>
+        </div>
+
+        <div class="right_col">
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">申込日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">申込時間<span>12：06</span></div>
+            <div class="girl_info_item_1">申込名<span>ゆかりん</span></div>
+            <div class="girl_info_item_1">希望勤務地<span>梅田</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接予定日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">面接予定時間<span>21：06</span></div>
+            <div class="girl_info_item_1">面接日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">待ち合わせ場所<span>泉の広場</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">入店日<span>2018年05月28日</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio_active.png" width="18"><span>スカウトメール</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio.png" width="18"><span>追跡中</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">店舗名<span>SPEED日本橋</span></div>
+            <div class="girl_info_item_1">源氏名<span>ゆかり</span></div>
+            <div class="girl_info_item_1">名前<span>岡山　由香里（おかやま　ゆかり）</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">年齢<span>28</span></div>
+            <div class="girl_info_item_1">身長<span>158</span>cm</div>
+            <div class="girl_info_item_1">体重<span>50</span>kg</div>
+            <div class="girl_info_item_1">バスト<span>000</span>cm<span>C</span>cup</div>
+            <div class="girl_info_item_1">ヒップ<span>000</span>cm</div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">経験<span>ホテヘル</span></div>
+            <div class="girl_info_item_1">本人確認<span>免許証</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">住所<span>徳島県板野郡上板町神宅字梅ノ木17-2</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">TEL<span>090</span><span>1245</span><span>6785</span></div>
+            <div class="girl_info_item_1">Mail<span>iokimnhtlokmo</span>@<span>i.softbank.jp</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">給料<span>10000</span>円</div>
+            <div class="girl_info_item_1">特別指名<span>10000</span>円</div>
+            <div class="girl_info_item_1">勤務形態<span>深夜</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接結果<span>採用</span></div>
+            <div class="girl_info_item_1">面接担当<span>藤村</span></div>
+            <div class="girl_info_item_1">KS担当<span>藤村</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">掲載媒体名<span>ガールズヘブン</span></div>
+            <div class="girl_info_item_1">掲載業種<span>オナクラ</span></div>
+            <div class="girl_info_item_1">掲載求人名<span>キャミソール</span></div>
+
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">広告掲載エリア<span>京橋</span></div>
+          </div>
+
+
+
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">検索ワード<span>大阪</span><span>オナクラ</span><span>高収入</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">追跡理由<span>ブッチ</span></div>
+          </div>
+
+        </div><!-- /right_col -->
+
+        <div class="bottom_col">
+          <ul>
+            <li><img src="img/btn_radio_active.png" width="18"><span>ニコイチ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>出稼ぎ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>他店紹介（スパークグループ）</span></li>
+          </ul>
+
+          <div class="girl_info_item_2">備考</div>
+          <div class="girl_info_item_3">
+            出張エステ・デリヘルで数日間だけ経験があります。
+            デリヘルで本強があり、ヘルスより安全と思うオナクラで探していたそうです。
+            オナクラはダミー求人だと説明し、プレイ内容も問題なく入店となりました。
+            さらに受付型の店舗であることや会員証のシステムを説明して、出張型よりも安心して働いてもらえる環境をアピールしました。
+            大阪・京都に来ることが多く、近いうちに大阪に住みたいそうなので、継続して働いてもらえるようにします。
+          </div>
+
+          <!-- <div class="girl_info_item_5"></div> -->
+        </div>
+
+      </div>
+    </section>
+  </article>
+
+
+  <article>
+    <section>
+      <div class="girl_info_col container">
+        <h1>No.100</h1>
+
+        <div class="left_col">
+          <ul class="btn_list_1">
+            <li><a href="#">編集</a></li>
+            <li><a href="#">採用情報に送信</a></li>
+            <li><a href="#">複製</a></li>
+            <li><a href="#">消去</a></li>
+          </ul>
+          <ul class="btn_list_2">
+            <li><a href="#">スカウトメールに追加する</a></li>
+            <li><a href="#">追跡日時設定</a></li>
+          </ul>
+
+          <ul class="bxslider">
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+            <li><img src="img/pic_girl_sample.jpg"></li>
+          </ul>
+
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('.bxslider').bxSlider();
+            });
+          </script>
+        </div>
+
+        <div class="right_col">
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">申込日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">申込時間<span>12：06</span></div>
+            <div class="girl_info_item_1">申込名<span>ゆかりん</span></div>
+            <div class="girl_info_item_1">希望勤務地<span>梅田</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接予定日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">面接予定時間<span>21：06</span></div>
+            <div class="girl_info_item_1">面接日<span>2018年05月26日</span></div>
+            <div class="girl_info_item_1">待ち合わせ場所<span>泉の広場</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">入店日<span>2018年05月28日</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio_active.png" width="18"><span>スカウトメール</span></div>
+            <div class="girl_info_item_1 radio_item"><img src="img/btn_radio.png" width="18"><span>追跡中</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">店舗名<span>SPEED日本橋</span></div>
+            <div class="girl_info_item_1">源氏名<span>ゆかり</span></div>
+            <div class="girl_info_item_1">名前<span>岡山　由香里（おかやま　ゆかり）</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">年齢<span>28</span></div>
+            <div class="girl_info_item_1">身長<span>158</span>cm</div>
+            <div class="girl_info_item_1">体重<span>50</span>kg</div>
+            <div class="girl_info_item_1">バスト<span>000</span>cm<span>C</span>cup</div>
+            <div class="girl_info_item_1">ヒップ<span>000</span>cm</div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">経験<span>ホテヘル</span></div>
+            <div class="girl_info_item_1">本人確認<span>免許証</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">住所<span>徳島県板野郡上板町神宅字梅ノ木17-2</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">TEL<span>090</span><span>1245</span><span>6785</span></div>
+            <div class="girl_info_item_1">Mail<span>iokimnhtlokmo</span>@<span>i.softbank.jp</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">給料<span>10000</span>円</div>
+            <div class="girl_info_item_1">特別指名<span>10000</span>円</div>
+            <div class="girl_info_item_1">勤務形態<span>深夜</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">面接結果<span>採用</span></div>
+            <div class="girl_info_item_1">面接担当<span>藤村</span></div>
+            <div class="girl_info_item_1">KS担当<span>藤村</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">掲載媒体名<span>ガールズヘブン</span></div>
+            <div class="girl_info_item_1">掲載業種<span>オナクラ</span></div>
+            <div class="girl_info_item_1">掲載求人名<span>キャミソール</span></div>
+
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">広告掲載エリア<span>京橋</span></div>
+          </div>
+
+
+
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">検索ワード<span>大阪</span><span>オナクラ</span><span>高収入</span></div>
+          </div>
+
+          <div class="girl_info_item_wrap">
+            <div class="girl_info_item_1">追跡理由<span>ブッチ</span></div>
+          </div>
+
+        </div><!-- /right_col -->
+
+        <div class="bottom_col">
+          <ul>
+            <li><img src="img/btn_radio_active.png" width="18"><span>ニコイチ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>出稼ぎ</span></li>
+            <li><img src="img/btn_radio.png" width="18"><span>他店紹介（スパークグループ）</span></li>
+          </ul>
+
+          <div class="girl_info_item_2">備考</div>
+          <div class="girl_info_item_3">
+            出張エステ・デリヘルで数日間だけ経験があります。
+            デリヘルで本強があり、ヘルスより安全と思うオナクラで探していたそうです。
+            オナクラはダミー求人だと説明し、プレイ内容も問題なく入店となりました。
+            さらに受付型の店舗であることや会員証のシステムを説明して、出張型よりも安心して働いてもらえる環境をアピールしました。
+            大阪・京都に来ることが多く、近いうちに大阪に住みたいそうなので、継続して働いてもらえるようにします。
+          </div>
+
+          <!-- <div class="girl_info_item_5"></div> -->
+        </div>
+
+      </div>
+    </section>
+  </article>
+
+
+
+</div><!--  /wrapper-->
+
+</body>
+</html>
